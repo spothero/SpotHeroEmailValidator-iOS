@@ -1,0 +1,4 @@
+SHEmailValidator
+================
+
+iOS Email Validator
