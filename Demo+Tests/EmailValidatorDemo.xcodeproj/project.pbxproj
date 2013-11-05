@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5FD6D344180A401400C37742 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6D343180A401400C37742 /* Foundation.framework */; };
+		5FD6D346180A401400C37742 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6D345180A401400C37742 /* CoreGraphics.framework */; };
+		5FD6D348180A401400C37742 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6D347180A401400C37742 /* UIKit.framework */; };
+		5FD6D34E180A401400C37742 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FD6D34C180A401400C37742 /* InfoPlist.strings */; };
+		5FD6D350180A401400C37742 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D34F180A401400C37742 /* main.m */; };
+		5FD6D354180A401400C37742 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D353180A401400C37742 /* AppDelegate.m */; };
+		5FD6D35A180A401400C37742 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D359180A401400C37742 /* DemoViewController.m */; };
+		5FD6D35C180A401500C37742 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD6D35B180A401500C37742 /* Images.xcassets */; };
+		5FD6D363180A401500C37742 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6D362180A401500C37742 /* XCTest.framework */; };
+		5FD6D364180A401500C37742 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6D343180A401400C37742 /* Foundation.framework */; };
+		5FD6D365180A401500C37742 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6D347180A401400C37742 /* UIKit.framework */; };
+		5FD6D36D180A401500C37742 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FD6D36B180A401500C37742 /* InfoPlist.strings */; };
+		5FD6D36F180A401500C37742 /* SHEmailValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D36E180A401500C37742 /* SHEmailValidatorTests.m */; };
+		5FD6D37D180A409D00C37742 /* SHEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D37C180A409D00C37742 /* SHEmailValidator.m */; };
+		5FD6D380180A40F600C37742 /* SHValidationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D37F180A40F600C37742 /* SHValidationResult.m */; };
+		5FD6D385180A541D00C37742 /* NSString+LevenshteinDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D384180A541D00C37742 /* NSString+LevenshteinDistance.m */; };
+		5FD6D388180CA35400C37742 /* SHAutocorrectSuggestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D387180CA35400C37742 /* SHAutocorrectSuggestionView.m */; };
+		5FD6D38B180CB02F00C37742 /* SHEmailValidationTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D38A180CB02F00C37742 /* SHEmailValidationTextField.m */; };
+		5FE2CF3F1816080E00CEA737 /* LevenshteinDistanceTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2CF3E1816080E00CEA737 /* LevenshteinDistanceTestModel.m */; };
+		5FE2CF421816083800CEA737 /* ValidatorTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2CF411816083800CEA737 /* ValidatorTestModel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5FD6D366180A401500C37742 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FD6D338180A401400C37742 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FD6D33F180A401400C37742;
+			remoteInfo = SHEmailValidator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5FD6D340180A401400C37742 /* EmailValidatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmailValidatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FD6D343180A401400C37742 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5FD6D345180A401400C37742 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5FD6D347180A401400C37742 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5FD6D34B180A401400C37742 /* EmailValidatorDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EmailValidatorDemo-Info.plist"; sourceTree = "<group>"; };
+		5FD6D34D180A401400C37742 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FD6D34F180A401400C37742 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5FD6D351180A401400C37742 /* EmailValidatorDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmailValidatorDemo-Prefix.pch"; sourceTree = "<group>"; };
+		5FD6D352180A401400C37742 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5FD6D353180A401400C37742 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5FD6D358180A401400C37742 /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		5FD6D359180A401400C37742 /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		5FD6D35B180A401500C37742 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5FD6D361180A401500C37742 /* EmailValidatorDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmailValidatorDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FD6D362180A401500C37742 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5FD6D36A180A401500C37742 /* EmailValidatorDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EmailValidatorDemoTests-Info.plist"; sourceTree = "<group>"; };
+		5FD6D36C180A401500C37742 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FD6D36E180A401500C37742 /* SHEmailValidatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHEmailValidatorTests.m; sourceTree = "<group>"; };
+		5FD6D37B180A409D00C37742 /* SHEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEmailValidator.h; sourceTree = "<group>"; };
+		5FD6D37C180A409D00C37742 /* SHEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEmailValidator.m; sourceTree = "<group>"; };
+		5FD6D37E180A40F600C37742 /* SHValidationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHValidationResult.h; sourceTree = "<group>"; };
+		5FD6D37F180A40F600C37742 /* SHValidationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHValidationResult.m; sourceTree = "<group>"; };
+		5FD6D383180A541D00C37742 /* NSString+LevenshteinDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LevenshteinDistance.h"; sourceTree = "<group>"; };
+		5FD6D384180A541D00C37742 /* NSString+LevenshteinDistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LevenshteinDistance.m"; sourceTree = "<group>"; };
+		5FD6D386180CA35400C37742 /* SHAutocorrectSuggestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAutocorrectSuggestionView.h; sourceTree = "<group>"; };
+		5FD6D387180CA35400C37742 /* SHAutocorrectSuggestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAutocorrectSuggestionView.m; sourceTree = "<group>"; };
+		5FD6D389180CB02F00C37742 /* SHEmailValidationTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEmailValidationTextField.h; sourceTree = "<group>"; };
+		5FD6D38A180CB02F00C37742 /* SHEmailValidationTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEmailValidationTextField.m; sourceTree = "<group>"; };
+		5FE2CF3D1816080E00CEA737 /* LevenshteinDistanceTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevenshteinDistanceTestModel.h; sourceTree = "<group>"; };
+		5FE2CF3E1816080E00CEA737 /* LevenshteinDistanceTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevenshteinDistanceTestModel.m; sourceTree = "<group>"; };
+		5FE2CF401816083800CEA737 /* ValidatorTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatorTestModel.h; sourceTree = "<group>"; };
+		5FE2CF411816083800CEA737 /* ValidatorTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorTestModel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5FD6D33D180A401400C37742 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD6D346180A401400C37742 /* CoreGraphics.framework in Frameworks */,
+				5FD6D348180A401400C37742 /* UIKit.framework in Frameworks */,
+				5FD6D344180A401400C37742 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FD6D35E180A401500C37742 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD6D363180A401500C37742 /* XCTest.framework in Frameworks */,
+				5FD6D365180A401500C37742 /* UIKit.framework in Frameworks */,
+				5FD6D364180A401500C37742 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5FD6D337180A401400C37742 = {
+			isa = PBXGroup;
+			children = (
+				5FD6D378180A404900C37742 /* Vendor */,
+				5FD6D349180A401400C37742 /* EmailValidatorDemo */,
+				5FD6D368180A401500C37742 /* SHEmailValidatorTests */,
+				5FD6D342180A401400C37742 /* Frameworks */,
+				5FD6D341180A401400C37742 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5FD6D341180A401400C37742 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5FD6D340180A401400C37742 /* EmailValidatorDemo.app */,
+				5FD6D361180A401500C37742 /* EmailValidatorDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5FD6D342180A401400C37742 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FD6D343180A401400C37742 /* Foundation.framework */,
+				5FD6D345180A401400C37742 /* CoreGraphics.framework */,
+				5FD6D347180A401400C37742 /* UIKit.framework */,
+				5FD6D362180A401500C37742 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5FD6D349180A401400C37742 /* EmailValidatorDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5FD6D352180A401400C37742 /* AppDelegate.h */,
+				5FD6D353180A401400C37742 /* AppDelegate.m */,
+				5FD6D358180A401400C37742 /* DemoViewController.h */,
+				5FD6D359180A401400C37742 /* DemoViewController.m */,
+				5FD6D35B180A401500C37742 /* Images.xcassets */,
+				5FD6D34A180A401400C37742 /* Supporting Files */,
+			);
+			path = EmailValidatorDemo;
+			sourceTree = "<group>";
+		};
+		5FD6D34A180A401400C37742 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FD6D34B180A401400C37742 /* EmailValidatorDemo-Info.plist */,
+				5FD6D34C180A401400C37742 /* InfoPlist.strings */,
+				5FD6D34F180A401400C37742 /* main.m */,
+				5FD6D351180A401400C37742 /* EmailValidatorDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FD6D368180A401500C37742 /* SHEmailValidatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FE2CF3D1816080E00CEA737 /* LevenshteinDistanceTestModel.h */,
+				5FE2CF3E1816080E00CEA737 /* LevenshteinDistanceTestModel.m */,
+				5FE2CF401816083800CEA737 /* ValidatorTestModel.h */,
+				5FE2CF411816083800CEA737 /* ValidatorTestModel.m */,
+				5FD6D36E180A401500C37742 /* SHEmailValidatorTests.m */,
+				5FD6D369180A401500C37742 /* Supporting Files */,
+			);
+			path = SHEmailValidatorTests;
+			sourceTree = "<group>";
+		};
+		5FD6D369180A401500C37742 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FD6D36A180A401500C37742 /* EmailValidatorDemoTests-Info.plist */,
+				5FD6D36B180A401500C37742 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FD6D378180A404900C37742 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				5FD6D37A180A406000C37742 /* SHEmailValidator */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		5FD6D37A180A406000C37742 /* SHEmailValidator */ = {
+			isa = PBXGroup;
+			children = (
+				5FD6D386180CA35400C37742 /* SHAutocorrectSuggestionView.h */,
+				5FD6D387180CA35400C37742 /* SHAutocorrectSuggestionView.m */,
+				5FD6D37B180A409D00C37742 /* SHEmailValidator.h */,
+				5FD6D37C180A409D00C37742 /* SHEmailValidator.m */,
+				5FD6D37E180A40F600C37742 /* SHValidationResult.h */,
+				5FD6D37F180A40F600C37742 /* SHValidationResult.m */,
+				5FD6D383180A541D00C37742 /* NSString+LevenshteinDistance.h */,
+				5FD6D384180A541D00C37742 /* NSString+LevenshteinDistance.m */,
+				5FD6D389180CB02F00C37742 /* SHEmailValidationTextField.h */,
+				5FD6D38A180CB02F00C37742 /* SHEmailValidationTextField.m */,
+			);
+			name = SHEmailValidator;
+			path = ../SHEmailValidator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5FD6D33F180A401400C37742 /* EmailValidatorDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FD6D372180A401500C37742 /* Build configuration list for PBXNativeTarget "EmailValidatorDemo" */;
+			buildPhases = (
+				5FD6D33C180A401400C37742 /* Sources */,
+				5FD6D33D180A401400C37742 /* Frameworks */,
+				5FD6D33E180A401400C37742 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EmailValidatorDemo;
+			productName = SHEmailValidator;
+			productReference = 5FD6D340180A401400C37742 /* EmailValidatorDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5FD6D360180A401500C37742 /* EmailValidatorDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FD6D375180A401500C37742 /* Build configuration list for PBXNativeTarget "EmailValidatorDemoTests" */;
+			buildPhases = (
+				5FD6D35D180A401500C37742 /* Sources */,
+				5FD6D35E180A401500C37742 /* Frameworks */,
+				5FD6D35F180A401500C37742 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FD6D367180A401500C37742 /* PBXTargetDependency */,
+			);
+			name = EmailValidatorDemoTests;
+			productName = SHEmailValidatorTests;
+			productReference = 5FD6D361180A401500C37742 /* EmailValidatorDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5FD6D338180A401400C37742 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SH;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = SpotHero;
+				TargetAttributes = {
+					5FD6D360180A401500C37742 = {
+						TestTargetID = 5FD6D33F180A401400C37742;
+					};
+				};
+			};
+			buildConfigurationList = 5FD6D33B180A401400C37742 /* Build configuration list for PBXProject "EmailValidatorDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5FD6D337180A401400C37742;
+			productRefGroup = 5FD6D341180A401400C37742 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5FD6D33F180A401400C37742 /* EmailValidatorDemo */,
+				5FD6D360180A401500C37742 /* EmailValidatorDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5FD6D33E180A401400C37742 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD6D35C180A401500C37742 /* Images.xcassets in Resources */,
+				5FD6D34E180A401400C37742 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FD6D35F180A401500C37742 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD6D36D180A401500C37742 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5FD6D33C180A401400C37742 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD6D385180A541D00C37742 /* NSString+LevenshteinDistance.m in Sources */,
+				5FD6D388180CA35400C37742 /* SHAutocorrectSuggestionView.m in Sources */,
+				5FD6D350180A401400C37742 /* main.m in Sources */,
+				5FD6D380180A40F600C37742 /* SHValidationResult.m in Sources */,
+				5FD6D35A180A401400C37742 /* DemoViewController.m in Sources */,
+				5FD6D37D180A409D00C37742 /* SHEmailValidator.m in Sources */,
+				5FD6D38B180CB02F00C37742 /* SHEmailValidationTextField.m in Sources */,
+				5FD6D354180A401400C37742 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FD6D35D180A401500C37742 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FE2CF421816083800CEA737 /* ValidatorTestModel.m in Sources */,
+				5FE2CF3F1816080E00CEA737 /* LevenshteinDistanceTestModel.m in Sources */,
+				5FD6D36F180A401500C37742 /* SHEmailValidatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5FD6D367180A401500C37742 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FD6D33F180A401400C37742 /* EmailValidatorDemo */;
+			targetProxy = 5FD6D366180A401500C37742 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5FD6D34C180A401400C37742 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FD6D34D180A401400C37742 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FD6D36B180A401500C37742 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FD6D36C180A401500C37742 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5FD6D370180A401500C37742 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5FD6D371180A401500C37742 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5FD6D373180A401500C37742 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EmailValidatorDemo/EmailValidatorDemo-Prefix.pch";
+				INFOPLIST_FILE = "EmailValidatorDemo/EmailValidatorDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = EmailValidatorDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5FD6D374180A401500C37742 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EmailValidatorDemo/EmailValidatorDemo-Prefix.pch";
+				INFOPLIST_FILE = "EmailValidatorDemo/EmailValidatorDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = EmailValidatorDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5FD6D376180A401500C37742 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EmailValidatorDemo.app/EmailValidatorDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EmailValidatorDemo/EmailValidatorDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SHEmailValidatorTests/EmailValidatorDemoTests-Info.plist";
+				PRODUCT_NAME = EmailValidatorDemoTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5FD6D377180A401500C37742 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EmailValidatorDemo.app/EmailValidatorDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EmailValidatorDemo/EmailValidatorDemo-Prefix.pch";
+				INFOPLIST_FILE = "SHEmailValidatorTests/EmailValidatorDemoTests-Info.plist";
+				PRODUCT_NAME = EmailValidatorDemoTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5FD6D33B180A401400C37742 /* Build configuration list for PBXProject "EmailValidatorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FD6D370180A401500C37742 /* Debug */,
+				5FD6D371180A401500C37742 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FD6D372180A401500C37742 /* Build configuration list for PBXNativeTarget "EmailValidatorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FD6D373180A401500C37742 /* Debug */,
+				5FD6D374180A401500C37742 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FD6D375180A401500C37742 /* Build configuration list for PBXNativeTarget "EmailValidatorDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FD6D376180A401500C37742 /* Debug */,
+				5FD6D377180A401500C37742 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5FD6D338180A401400C37742 /* Project object */;
+}
