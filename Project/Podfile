@@ -1,0 +1,4 @@
+ platform :ios
+#platform :osx
+
+ podspec :path => "../SHEmailValidator.podspec"
