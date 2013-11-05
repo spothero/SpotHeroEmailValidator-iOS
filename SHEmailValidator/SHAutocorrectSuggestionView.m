@@ -86,7 +86,7 @@ static const NSInteger kDismissButtonWidth = 30;
         CGFloat width = MAX(titleSize.width, suggestionSize.width) + kDismissButtonWidth + kCornerRadius * 2;
         CGFloat height = titleSize.height + suggestionSize.height + kArrowHeight + kCornerRadius * 2;
         CGFloat left = MAX(10, target.center.x - width / 2);
-        CGFloat top = target.frame.origin.y - height;
+        CGFloat top = target.frame.origin.y - height + 4;
 
         self.frame = CGRectMake(left, top, width, height);
         self.opaque = NO;
