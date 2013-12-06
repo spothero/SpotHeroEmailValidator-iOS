@@ -88,7 +88,7 @@ static const NSInteger kDismissButtonWidth = 30;
         CGFloat left = MAX(10, target.center.x - width / 2);
         CGFloat top = target.frame.origin.y - height + 4;
 
-        self.frame = CGRectMake(left, top, width, height);
+        self.frame = CGRectIntegral(CGRectMake(left, top, width, height));
         self.opaque = NO;
         
         self.titleRect = CGRectMake((width - kDismissButtonWidth - titleSize.width) / 2, kCornerRadius, titleSize.width, titleSize.height);
@@ -192,7 +192,9 @@ static const NSInteger kDismissButtonWidth = 30;
     
     self.alpha = 0.2;
     self.transform = CGAffineTransformMakeScale(0.6, 0.6);
-    
+
+    // Frame is in target.superview coordinates
+    self.frame = [target.superview convertRect:self.frame toView:container];
     [container addSubview:self];
     
     [UIView animateWithDuration:0.2
@@ -215,7 +217,7 @@ static const NSInteger kDismissButtonWidth = 30;
     CGFloat left = MAX(10, self.target.center.x - width / 2);
     CGFloat top = self.target.frame.origin.y - height;
     
-    self.frame = CGRectMake(left, top, width, height);
+    self.frame = CGRectIntegral([self.target.superview convertRect:CGRectMake(left, top, width, height) toView:self.superview]);
 }
 
 - (void)dismiss
