@@ -34,8 +34,6 @@ static const NSInteger kDismissButtonWidth = 30;
 @interface SHAutocorrectSuggestionView ()
 
 @property (nonatomic, strong) UIView *target;
-@property (nonatomic, strong) UIFont *titleFont;
-@property (nonatomic, strong) UIFont *suggestionFont;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic) CGRect titleRect;
 @property (nonatomic) CGRect suggestionRect;
@@ -75,24 +73,15 @@ static const NSInteger kDismissButtonWidth = 30;
 - (instancetype)initWithTarget:(UIView *)target title:(NSString *)title autocorrectSuggestion:(NSString *)suggestion withSetupBlock:(SetupBlock)block
 {
     if ((self = [super init])) {
+        self.target = target;
         self.title = title;
         self.suggestedText = suggestion;
         self.titleFont = [UIFont boldSystemFontOfSize:13];
         self.suggestionFont = [UIFont boldSystemFontOfSize:13];
         
-        CGSize titleSize = [title sizeWithFont:self.titleFont constrainedToSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-        CGSize suggestionSize = [suggestion sizeWithFont:self.suggestionFont constrainedToSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) lineBreakMode:NSLineBreakByCharWrapping];
-       
-        CGFloat width = MAX(titleSize.width, suggestionSize.width) + kDismissButtonWidth + kCornerRadius * 2;
-        CGFloat height = titleSize.height + suggestionSize.height + kArrowHeight + kCornerRadius * 2;
-        CGFloat left = MAX(10, target.center.x - width / 2);
-        CGFloat top = target.frame.origin.y - height + 4;
-
-        self.frame = CGRectIntegral(CGRectMake(left, top, width, height));
         self.opaque = NO;
         
-        self.titleRect = CGRectMake((width - kDismissButtonWidth - titleSize.width) / 2, kCornerRadius, titleSize.width, titleSize.height);
-        self.suggestionRect = CGRectMake(kCornerRadius, kCornerRadius + titleSize.height, suggestionSize.width, suggestionSize.height);
+        [self updateLabelPositions];
         
         if (block) {
             block(self);
@@ -111,6 +100,22 @@ static const NSInteger kDismissButtonWidth = 30;
         }
     }
     return self;
+}
+
+- (void)updateLabelPositions
+{
+    CGSize titleSize = [self.title sizeWithFont:self.titleFont constrainedToSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize suggestionSize = [self.suggestedText sizeWithFont:self.suggestionFont constrainedToSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) lineBreakMode:NSLineBreakByCharWrapping];
+    
+    CGFloat width = MAX(titleSize.width, suggestionSize.width) + kDismissButtonWidth + kCornerRadius * 2;
+    CGFloat height = titleSize.height + suggestionSize.height + kArrowHeight + kCornerRadius * 2;
+    CGFloat left = MAX(10, self.target.center.x - width / 2);
+    CGFloat top = self.target.frame.origin.y - height + 4;
+    
+    self.frame = CGRectIntegral(CGRectMake(left, top, width, height));
+    
+    self.titleRect = CGRectMake((width - kDismissButtonWidth - titleSize.width) / 2, kCornerRadius, titleSize.width, titleSize.height);
+    self.suggestionRect = CGRectMake(kCornerRadius, kCornerRadius + titleSize.height, suggestionSize.width, suggestionSize.height);
 }
 
 - (void)drawRect:(CGRect)rect
@@ -237,6 +242,24 @@ static const NSInteger kDismissButtonWidth = 30;
                                               self.target = nil;
                                           }];
                      }];
+}
+
+- (void)setSuggestionFont:(UIFont *)suggestionFont
+{
+    _suggestionFont = suggestionFont;
+
+    [self updateLabelPositions];
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setTitleFont:(UIFont *)titleFont
+{
+    _titleFont = titleFont;
+    
+    [self updateLabelPositions];
+    
+    [self setNeedsDisplay];
 }
 
 @end

@@ -187,7 +187,9 @@
             self.suggestionView = [SHAutocorrectSuggestionView showFromView:self title:message autocorrectSuggestion:nil withSetupBlock:^(SHAutocorrectSuggestionView *view) {
                 view.fillColor = self.bubbleFillColor;
                 view.titleColor = self.bubbleTitleColor;
+                view.titleFont = self.bubbleTitleFont;
                 view.suggestionColor = self.bubbleSuggestionColor;
+                view.suggestionFont = self.bubbleSuggestionFont;
             }];
             self.suggestionView.delegate = self;
         } else {
@@ -195,7 +197,9 @@
                 self.suggestionView = [SHAutocorrectSuggestionView showFromView:self title:self.messageForSuggestion autocorrectSuggestion:validationResult.autocorrectSuggestion withSetupBlock:^(SHAutocorrectSuggestionView *view) {
                     view.fillColor = self.bubbleFillColor;
                     view.titleColor = self.bubbleTitleColor;
+                    view.titleFont = self.bubbleTitleFont;
                     view.suggestionColor = self.bubbleSuggestionColor;
+                    view.suggestionFont = self.bubbleSuggestionFont;
                 }];
                 self.suggestionView.delegate = self;
             }
