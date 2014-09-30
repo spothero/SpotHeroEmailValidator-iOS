@@ -27,9 +27,11 @@
 @property (nonatomic, strong) UIColor *bubbleFillColor;
 @property (nonatomic, strong) UIColor *bubbleTitleColor;
 @property (nonatomic, strong) UIColor *bubbleSuggestionColor;
+@property (nonatomic, readwrite) BOOL validated;
 
 - (void)dismissSuggestionView;
 - (void)validateInput;
+- (void)validateInputIgnoreWhitespace:(BOOL)ignoreWhitespace;
 - (void)hostWillAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 - (void)setMessage:(NSString *)message forErrorCode:(NSInteger)errorCode;
 
