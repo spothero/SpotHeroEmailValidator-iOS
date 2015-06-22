@@ -108,4 +108,20 @@
     }
 }
 
+- (void)testPassingNULLError
+{
+    NSString *invalidEmailAddress = @"foo";
+    
+    SHEmailValidator *validator = [SHEmailValidator validator];
+    
+    XCTAssertNoThrow([validator validateSyntaxOfEmailAddress:invalidEmailAddress
+                                                   withError:NULL]);
+    
+    XCTAssertNoThrow([validator validateAndAutocorrectEmailAddress:invalidEmailAddress
+                                                         withError:NULL]);
+    
+    XCTAssertNoThrow([validator autocorrectSuggestionForEmailAddress:invalidEmailAddress
+                                                           withError:NULL]);
+}
+
 @end
