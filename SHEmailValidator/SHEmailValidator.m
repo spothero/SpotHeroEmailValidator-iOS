@@ -70,14 +70,22 @@ NSString *const SHValidatorErrorDomain = @"com.spothero.SHEmailValidator";
 {
     if (emailAddress.length == 0) {
         NSDictionary *errorDictionary = @{NSLocalizedDescriptionKey: @"The email address entered was blank."};
-        *error = [NSError errorWithDomain:SHValidatorErrorDomain code:SHBlankAddressError userInfo:errorDictionary];
+        
+        if (error != NULL) {
+            *error = [NSError errorWithDomain:SHValidatorErrorDomain code:SHBlankAddressError userInfo:errorDictionary];
+        }
+        
         return NO;
     }
     
     NSPredicate *fullEmailPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"^\\b.+@.+\\..+\\b$"];
     if (![fullEmailPredicate evaluateWithObject:emailAddress]) {
         NSDictionary *errorDictionary = @{NSLocalizedDescriptionKey: @"The syntax of the entered email address is invalid."};
-        *error = [NSError errorWithDomain:SHValidatorErrorDomain code:SHInvalidSyntaxError userInfo:errorDictionary];
+        
+        if (error != NULL) {
+            *error = [NSError errorWithDomain:SHValidatorErrorDomain code:SHInvalidSyntaxError userInfo:errorDictionary];
+        }
+        
         return NO;
     }
     
@@ -91,15 +99,27 @@ NSString *const SHValidatorErrorDomain = @"com.spothero.SHEmailValidator";
     
     if (username.length == 0 || ![usernamePredicate evaluateWithObject:username] || [username hasPrefix:@"."] || [username hasSuffix:@"."] || ([username rangeOfString:@".."].location != NSNotFound)) {
         NSDictionary *errorDictionary = @{NSLocalizedDescriptionKey: @"The username section of the entered email address is invalid."};
-        *error = [NSError errorWithDomain:SHValidatorErrorDomain code:SHInvalidUsernameError userInfo:errorDictionary];
+        
+        if (error != NULL) {
+            *error = [NSError errorWithDomain:SHValidatorErrorDomain code:SHInvalidUsernameError userInfo:errorDictionary];
+        }
+        
         return NO;
     } else if (domain.length == 0 || ![domainPredicate evaluateWithObject:domain]) {
         NSDictionary *errorDictionary = @{NSLocalizedDescriptionKey: @"The domain name section of the entered email address is invalid."};
-        *error = [NSError errorWithDomain:SHValidatorErrorDomain code:SHInvalidDomainError userInfo:errorDictionary];
+        
+        if (error != NULL) {
+            *error = [NSError errorWithDomain:SHValidatorErrorDomain code:SHInvalidDomainError userInfo:errorDictionary];
+        }
+        
         return NO;
     } else if (![tldPredicate evaluateWithObject:tld]) {
         NSDictionary *errorDictionary = @{NSLocalizedDescriptionKey: @"The TLD section of the entered email address is invalid."};
-        *error = [NSError errorWithDomain:SHValidatorErrorDomain code:SHInvalidTLDError userInfo:errorDictionary];
+        
+        if (error != NULL) {
+            *error = [NSError errorWithDomain:SHValidatorErrorDomain code:SHInvalidTLDError userInfo:errorDictionary];
+        }
+        
         return NO;
     } else {
         return YES;
