@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = "SHEmailValidator"
   s.license      = 'Apache License, Version 2.0'
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "iOS Email Validator"
 
   s.description  = <<-DESC
@@ -17,7 +17,7 @@ An iOS library that will provide basic email syntax validation as well as provid
   s.platform     = :ios, '5.0'
   s.requires_arc = true
 
-  s.source       = { :git => "https://github.com/spothero/SHEmailValidator.git", :tag => "v1.0.2" }
+  s.source       = { :git => "https://github.com/spothero/SHEmailValidator.git", :tag => "v1.0.3" }
   s.source_files  = 'SHEmailValidator', 'SHEmailValidator/*.{h,m}'
 
 end
