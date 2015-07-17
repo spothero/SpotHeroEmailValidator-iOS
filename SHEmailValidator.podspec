@@ -10,7 +10,7 @@ An iOS library that will provide basic email syntax validation as well as provid
 		   DESC
 
   s.homepage     = "https://github.com/spothero/SHEmailValidator"
-  s.screenshots  = "https://github.com/spothero/SHEmailValidator/blob/master/Screenshots/Screenshot%201.png", "https://github.com/spothero/SHEmailValidator/blob/master/Screenshots/Screenshot%202.png", "https://github.com/spothero/SHEmailValidator/blob/master/Screenshots/Screenshot%203.png"
+  s.screenshots  = "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%201.png", "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%202.png", "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%203.png"
 
   s.authors      = { "spothero" => "admin@spothero.com", "EricKuck" => "eric@spothero.com" }
 
