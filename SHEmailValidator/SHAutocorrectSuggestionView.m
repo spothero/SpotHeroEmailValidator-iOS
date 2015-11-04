@@ -79,15 +79,29 @@ static const NSInteger kDismissButtonWidth = 30;
         self.suggestedText = suggestion;
         self.titleFont = [UIFont boldSystemFontOfSize:13];
         self.suggestionFont = [UIFont boldSystemFontOfSize:13];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+        NSMutableParagraphStyle * paragraphTitleStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+        paragraphTitleStyle.lineBreakMode = NSLineBreakByWordWrapping;
+        paragraphTitleStyle.alignment = NSTextAlignmentLeft;
         
+        NSMutableParagraphStyle * paragraphSuggestedStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+        paragraphSuggestedStyle.lineBreakMode = NSLineBreakByCharWrapping;
+        paragraphSuggestedStyle.alignment = NSTextAlignmentLeft;
+        
+        CGRect titleSizeRect = [title boundingRectWithSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.titleFont, NSParagraphStyleAttributeName:paragraphTitleStyle, NSForegroundColorAttributeName:[UIColor whiteColor]} context:nil];
+        CGSize titleSize = titleSizeRect.size;
+        
+        CGRect suggestionSizeRect = [suggestion boundingRectWithSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.suggestionFont, NSParagraphStyleAttributeName:paragraphSuggestedStyle, NSForegroundColorAttributeName:[UIColor lightGrayColor]} context:nil];
+        CGSize suggestionSize = suggestionSizeRect.size;
+#else
         CGSize titleSize = [title sizeWithFont:self.titleFont constrainedToSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
         CGSize suggestionSize = [suggestion sizeWithFont:self.suggestionFont constrainedToSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) lineBreakMode:NSLineBreakByCharWrapping];
-       
+#endif
         CGFloat width = MAX(titleSize.width, suggestionSize.width) + kDismissButtonWidth + kCornerRadius * 2;
         CGFloat height = titleSize.height + suggestionSize.height + kArrowHeight + kCornerRadius * 2;
         CGFloat left = MAX(10, target.center.x - width / 2);
         CGFloat top = target.frame.origin.y - height + 4;
-
+        
         self.frame = CGRectIntegral(CGRectMake(left, top, width, height));
         self.opaque = NO;
         
@@ -118,8 +132,8 @@ static const NSInteger kDismissButtonWidth = 30;
     CGSize contentSize = CGSizeMake(self.bounds.size.width, self.bounds.size.height - kArrowHeight);
     CGPoint arrowBottom = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height);
     
-	CGMutablePathRef path = CGPathCreateMutable();
-	
+    CGMutablePathRef path = CGPathCreateMutable();
+    
     CGPathMoveToPoint(path, NULL, arrowBottom.x, arrowBottom.y);
     CGPathAddLineToPoint(path, NULL, arrowBottom.x - kArrowWidth, arrowBottom.y - kArrowHeight);
     
@@ -130,19 +144,19 @@ static const NSInteger kDismissButtonWidth = 30;
     
     CGPathAddLineToPoint(path, NULL, arrowBottom.x + kArrowWidth, arrowBottom.y - kArrowHeight);
     
-	CGPathCloseSubpath(path);
-
+    CGPathCloseSubpath(path);
+    
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextSaveGState(context);
     
-	CGContextAddPath(context, path);
-	CGContextClip(context);
+    CGContextAddPath(context, path);
+    CGContextClip(context);
     CGContextSetFillColorWithColor(context, self.fillColor.CGColor);
     CGContextFillRect(context, self.bounds);
     
     CGContextRestoreGState(context);
-	CGPathRelease(path);
+    CGPathRelease(path);
     
     CGFloat separatorX = contentSize.width - kDismissButtonWidth;
     CGContextSetStrokeColorWithColor(context, [UIColor grayColor].CGColor);
@@ -161,10 +175,21 @@ static const NSInteger kDismissButtonWidth = 30;
     CGContextStrokePath(context);
     
     [self.titleColor set];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+    NSMutableParagraphStyle * paragraphTitleStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+    paragraphTitleStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraphTitleStyle.alignment = NSTextAlignmentCenter;
+    NSMutableParagraphStyle * paragraphSuggestedStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+    paragraphSuggestedStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    paragraphSuggestedStyle.alignment = NSTextAlignmentLeft;
+    [self.title drawInRect:self.titleRect withAttributes:@{NSFontAttributeName:self.titleFont, NSParagraphStyleAttributeName:paragraphTitleStyle, NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.suggestionColor set];
+    [self.suggestedText drawInRect:self.suggestionRect withAttributes:@{NSFontAttributeName:self.suggestionFont, NSParagraphStyleAttributeName:paragraphSuggestedStyle, NSForegroundColorAttributeName:[UIColor lightGrayColor]}];
+#else
     [self.title drawInRect:self.titleRect withFont:self.titleFont lineBreakMode:NSLineBreakByWordWrapping alignment:NSTextAlignmentCenter];
-    
     [self.suggestionColor set];
     [self.suggestedText drawInRect:self.suggestionRect withFont:self.suggestionFont lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentLeft];
+#endif
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
