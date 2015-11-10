@@ -162,6 +162,7 @@
     self.bubbleFillColor = [SHAutocorrectSuggestionView defaultFillColor];
     self.bubbleTitleColor = [SHAutocorrectSuggestionView defaultTitleColor];
     self.bubbleSuggestionColor = [SHAutocorrectSuggestionView defaultSuggestionColor];
+    self.validated = FALSE;
 }
 
 - (void)setDelegate:(id<UITextFieldDelegate>)delegate
@@ -175,11 +176,24 @@
 
 - (void)validateInput
 {
-    if (self.text.length > 0) {
+    [self validateInputIgnoreWhitespace:TRUE];
+}
+
+- (void)validateInputIgnoreWhitespace:(BOOL)ignoreWhitespace
+{
+    NSString *textToValidate = self.text;
+    if (ignoreWhitespace) {
+        textToValidate = [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    }
+    
+    if (textToValidate.length > 0 || !ignoreWhitespace) {
         NSError *error;
-        SHValidationResult *validationResult = [self.emailValidator validateAndAutocorrectEmailAddress:self.text withError:&error];
+        SHValidationResult *validationResult = [self.emailValidator validateAndAutocorrectEmailAddress:textToValidate withError:&error];
         
         if (error) {
+            
+            self.validated = NO;
+            
             NSString *message = self.messageDictionary[@(error.code)];
             if (!message) {
                 message = self.defaultErrorMessage;
@@ -191,6 +205,9 @@
             }];
             self.suggestionView.delegate = self;
         } else {
+            
+            self.validated = YES;
+            
             if (validationResult.autocorrectSuggestion) {
                 self.suggestionView = [SHAutocorrectSuggestionView showFromView:self title:self.messageForSuggestion autocorrectSuggestion:validationResult.autocorrectSuggestion withSetupBlock:^(SHAutocorrectSuggestionView *view) {
                     view.fillColor = self.bubbleFillColor;
@@ -202,7 +219,6 @@
         }
     }
 }
-
 - (void)hostWillAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     [self.suggestionView updatePosition];
@@ -245,4 +261,15 @@
     }
 }
 
+- (void)deleteBackward {
+    BOOL shouldDismiss = (self.text.length == 0);
+    
+    [super deleteBackward];
+    
+    if (shouldDismiss) {
+        if ([self.delegate respondsToSelector:@selector(textField:shouldChangeCharactersInRange:replacementString:)]) {
+            [self.delegate textField:self shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@""];
+        }
+    }
+}
 @end
