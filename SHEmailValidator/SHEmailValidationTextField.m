@@ -158,7 +158,6 @@
     self.messageDictionary = [NSMutableDictionary dictionary];
     self.defaultErrorMessage = @"Please enter a valid email address";
     self.messageForSuggestion = @"Did you mean";
-    self.validationError = nil;
 
     self.bubbleFillColor = [SHAutocorrectSuggestionView defaultFillColor];
     self.bubbleTitleColor = [SHAutocorrectSuggestionView defaultTitleColor];
@@ -195,7 +194,7 @@
             self.suggestionView.delegate = self;
         } else {
             self.validationError = nil;
-            
+
             if (validationResult.autocorrectSuggestion) {
                 self.suggestionView = [SHAutocorrectSuggestionView showFromView:self title:self.messageForSuggestion autocorrectSuggestion:validationResult.autocorrectSuggestion withSetupBlock:^(SHAutocorrectSuggestionView *view) {
                     view.fillColor = self.bubbleFillColor;
