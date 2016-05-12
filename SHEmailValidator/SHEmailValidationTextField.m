@@ -48,7 +48,7 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     [self.target dismissSuggestionView];
-    
+
     if ([self.subDelegate respondsToSelector:@selector(textFieldShouldBeginEditing:)]) {
         return [self.subDelegate textFieldShouldBeginEditing:textField];
     } else {
@@ -158,7 +158,7 @@
     self.messageDictionary = [NSMutableDictionary dictionary];
     self.defaultErrorMessage = @"Please enter a valid email address";
     self.messageForSuggestion = @"Did you mean";
-    
+
     self.bubbleFillColor = [SHAutocorrectSuggestionView defaultFillColor];
     self.bubbleTitleColor = [SHAutocorrectSuggestionView defaultTitleColor];
     self.bubbleSuggestionColor = [SHAutocorrectSuggestionView defaultSuggestionColor];
@@ -178,8 +178,10 @@
     if (self.text.length > 0) {
         NSError *error;
         SHValidationResult *validationResult = [self.emailValidator validateAndAutocorrectEmailAddress:self.text withError:&error];
-        
+
         if (error) {
+            self.validationError = error;
+
             NSString *message = self.messageDictionary[@(error.code)];
             if (!message) {
                 message = self.defaultErrorMessage;
@@ -191,6 +193,8 @@
             }];
             self.suggestionView.delegate = self;
         } else {
+            self.validationError = nil;
+
             if (validationResult.autocorrectSuggestion) {
                 self.suggestionView = [SHAutocorrectSuggestionView showFromView:self title:self.messageForSuggestion autocorrectSuggestion:validationResult.autocorrectSuggestion withSetupBlock:^(SHAutocorrectSuggestionView *view) {
                     view.fillColor = self.bubbleFillColor;
