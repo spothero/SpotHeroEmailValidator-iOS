@@ -57,7 +57,7 @@ To customize the look and feel of the popup window that appears, the `fillColor`
 
 ## Updating the IANA TLD list
 To fetch the latest IANA TLDs, run the following script included in the root directory:
-  fetch_iana_list
+  fetch_iana_list.rb
 
 This will update the plist under SHEmailValidator/DomainData.plist
 The script requires the httparty and plist Ruby gems to be installed.
