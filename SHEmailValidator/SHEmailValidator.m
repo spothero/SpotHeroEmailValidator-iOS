@@ -46,7 +46,7 @@ NSString *const SHValidatorErrorDomain = @"com.spothero.SHEmailValidator";
 {
     if ((self = [super init])) {
         
-        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"DomainData" ofType:@"plist"];
+        NSString *plistPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"DomainData" ofType:@"plist"];
         NSDictionary *dataDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
         
         // All TLDs registered with IANA as of Wed May 11 07:07:01 2016 UTC (latest list at: http://data.iana.org/TLD/tlds-alpha-by-domain.txt)
