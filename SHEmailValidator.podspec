@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.summary      = "iOS Email Validator"
 
   s.description  = <<-DESC
-An iOS library that will provide basic email syntax validation as well as provide suggestions for possible typos (for example, test@gamil.con would be corrected to test@gmail.com).                   
+An iOS library that will provide basic email syntax validation as well as provide suggestions for possible typos (for example, test@gamil.con would be corrected to test@gmail.com).
 		   DESC
 
   s.homepage     = "https://github.com/spothero/SHEmailValidator"
@@ -18,6 +18,7 @@ An iOS library that will provide basic email syntax validation as well as provid
   s.requires_arc = true
 
   s.source       = { :git => "https://github.com/spothero/SHEmailValidator.git", :tag => "v1.0.3" }
-  s.source_files  = 'SHEmailValidator', 'SHEmailValidator/*.{h,m}'
+  s.source_files = 'SHEmailValidator', 'SHEmailValidator/*.{h,m}'
+  s.resources    = 'SHEmailValidator/DomainData.plist'
 
 end
