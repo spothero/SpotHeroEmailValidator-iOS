@@ -19,7 +19,7 @@ To customize the look and feel of the popup window that appears, the `fillColor`
 ### Basic syntax checking
 	NSError *error = nil;
 	[[[SHEmailValidator] validator] validateSyntaxOfEmailAddress:emailAddress withError:&error];
-	
+
 	if (error) {
 		// An error occurred
 		switch (error.code) {
@@ -41,12 +41,12 @@ To customize the look and feel of the popup window that appears, the `fillColor`
 		}
 	} else {
 		// Basic email syntax is correct
-	} 
+	}
 
 ### Get typo correction suggestion
 	NSError *error = nil;
 	NSString *suggestion = [[[SHEmailValidator] validator] autocorrectSuggestionForEmailAddress:emailAddress withError:&error];
-	
+
 	if (error) {
 		// The syntax check failed, so no suggestions could be generated
 	} else if (suggestion) {
@@ -54,6 +54,13 @@ To customize the look and feel of the popup window that appears, the `fillColor`
 	} else {
 		// No typo was found, or no suggestions could be generated
 	}
+
+## Updating the IANA TLD list
+To fetch the latest IANA TLDs, run the following script included in the root directory:
+  fetch_iana_list.rb
+
+This will update the plist under SHEmailValidator/DomainData.plist
+The script requires the httparty and plist Ruby gems to be installed.
 
 ## ARC
 SHEmailValidator uses ARC. If your project is not ARC-compliant, simply set the `-fobjc-arc` flag on all SHEmailValidator source files.
