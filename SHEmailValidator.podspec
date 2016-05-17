@@ -17,7 +17,7 @@ An iOS library that will provide basic email syntax validation as well as provid
   s.platform     = :ios, '5.0'
   s.requires_arc = true
 
-  s.source       = { :git => "https://github.com/spothero/SHEmailValidator.git", :tag => "v1.0.3" }
+  s.source       = { :git => "https://github.com/spothero/SHEmailValidator.git", :tag => s.version.to_s }
   s.source_files = 'SHEmailValidator', 'SHEmailValidator/*.{h,m}'
   s.resources    = 'SHEmailValidator/DomainData.plist'
 
