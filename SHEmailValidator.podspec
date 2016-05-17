@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = "SHEmailValidator"
   s.license      = 'Apache License, Version 2.0'
-  s.version      = "1.0.3"
+  s.version      = "1.0.5"
   s.summary      = "iOS Email Validator"
 
   s.description  = <<-DESC
