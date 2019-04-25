@@ -3,9 +3,9 @@
 An iOS library that will provide basic email syntax validation as well as provide suggestions for possible typos (for example, test@gamil.con would be corrected to test@gmail.com).
 
 ## Screenshots
-![Typo correction suggestion](Screenshots/Screenshot\ 1.png "Typo correction suggestion")
-![Basic syntax validation](Screenshots/Screenshot\ 2.png "Basic syntax validation")
-![Typo correction suggestion](Screenshots/Screenshot\ 3.png "Typo correction suggestion")
+![Typo correction suggestion](Screenshots/Screenshot%201.png "Typo correction suggestion")
+![Basic syntax validation](Screenshots/Screenshot%202.png "Basic syntax validation")
+![Typo correction suggestion](Screenshots/Screenshot%203.png "Typo correction suggestion")
 
 ## Usage
 ### UITextField subclass
