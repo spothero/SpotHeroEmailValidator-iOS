@@ -32,13 +32,6 @@
 			remoteGlobalIDString = 344976FD234C289600D71628;
 			remoteInfo = SpotHeroEmailValidator;
 		};
-		34497786234C31FF00D71628 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34497781234C31FF00D71628 /* EmailValidatorDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5FD6D340180A401400C37742;
-			remoteInfo = EmailValidatorDemo;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +54,6 @@
 		3449775D234C2D9400D71628 /* LevenshteinDistanceTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevenshteinDistanceTestModel.h; sourceTree = "<group>"; };
 		3449775E234C2D9400D71628 /* ValidatorTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatorTestModel.h; sourceTree = "<group>"; };
 		34497762234C2FBC00D71628 /* DomainData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DomainData.plist; sourceTree = "<group>"; };
-		34497781234C31FF00D71628 /* EmailValidatorDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EmailValidatorDemo.xcodeproj; path = Demo/EmailValidatorDemo.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +78,6 @@
 		344976F4234C289600D71628 = {
 			isa = PBXGroup;
 			children = (
-				34497781234C31FF00D71628 /* EmailValidatorDemo.xcodeproj */,
 				34497730234C29F300D71628 /* Config */,
 				34497700234C289600D71628 /* SpotHeroEmailValidator */,
 				3449770B234C289600D71628 /* SpotHeroEmailValidatorTests */,
@@ -157,14 +148,6 @@
 				34497762234C2FBC00D71628 /* DomainData.plist */,
 			);
 			path = data;
-			sourceTree = "<group>";
-		};
-		34497782234C31FF00D71628 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				34497787234C31FF00D71628 /* EmailValidatorDemo.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,12 +232,6 @@
 			mainGroup = 344976F4234C289600D71628;
 			productRefGroup = 344976FF234C289600D71628 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 34497782234C31FF00D71628 /* Products */;
-					ProjectRef = 34497781234C31FF00D71628 /* EmailValidatorDemo.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				344976FD234C289600D71628 /* SpotHeroEmailValidator */,
@@ -262,16 +239,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		34497787234C31FF00D71628 /* EmailValidatorDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = EmailValidatorDemo.app;
-			remoteRef = 34497786234C31FF00D71628 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		344976FC234C289600D71628 /* Resources */ = {
@@ -377,10 +344,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -432,9 +401,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -460,7 +431,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.spothero.SpotHeroEmailValidator;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -483,7 +455,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.spothero.SpotHeroEmailValidator;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -500,7 +473,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.spothero.SpotHeroEmailValidatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -517,7 +489,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.spothero.SpotHeroEmailValidatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

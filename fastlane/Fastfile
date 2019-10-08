@@ -53,6 +53,7 @@ platform :ios do
     scan(
       clean: true,
       code_coverage: true,
+      devices: ['iPhone 8'],
       fail_build: true, # make false when danger is enabled
       output_directory: output_directory,
       output_types: 'html,junit',
