@@ -17,7 +17,7 @@ platform :ios do
   framework_scheme = 'SpotHeroEmailValidator'
 
   # The path to the .xcworkspace file
-  project_file = 'SpotHeroEmailValidator.xcworkspace'
+  workspace_file = 'SpotHeroEmailValidator.xcworkspace'
 
   ###########
   ## SETUP ##
