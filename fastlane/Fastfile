@@ -14,7 +14,7 @@ platform :ios do
   fastlane_folder = 'fastlane'
 
   # The build scheme to use when building this framework.
-  framework_scheme = 'SpotHeroEmailValidator'
+  framework_scheme = 'SpotHeroEmailValidatorDemo'
 
   # The path to the .xcworkspace file
   workspace_file = 'SpotHeroEmailValidator.xcworkspace'
