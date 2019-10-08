@@ -1,6 +1,15 @@
 # Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## Exclude OS X folder attributes
 .DS_Store
-*/build/*
+
+## Build generated
+build/
+DerivedData/
+
+## Various settings
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -9,13 +18,70 @@
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
-profile
-*.moved-aside
-DerivedData
-.idea/
-*.hmap
-*.xccheckout
+xcuserdata/
 
-#CocoaPods
-Pods
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+.build/
+
+# .swiftpm/ is generated when editing a Swift package in Xcode 11
+.swiftpm/
+
+# For SPM-only projects, .xcworkspace or .xcodeproj files should never be created or generated, except for use with versions earlier than Xcode 11
+# *.xcworkspace
+# *.xcodeproj
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+#
+# Pods/
+
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+Carthage/Build
+
+# jazzy
+undocumented.json
+*.tgz
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+fastlane/test_output
+fastlane/[Pp]rovisioning
+fastlane/report.xml
+fastlane/[Bb]uild
+fastlane/DerivedData
+fastlane/screenshots
+fastlane/[Pp]review.html
+
+# dotenv
+# A .env.local file contains keys that should never be checked into the repository
+.env.local
