@@ -1,5 +1,5 @@
-**JIRA URL**
-<!-- ex: https://spothero.atlassian.net/browse/IOS-#### -->
+**Issue Link**
+<!-- Link to the Jira ticket or GitHub issue -->
 
 **Description**
 <!-- Describe what items this PR changes. -->
