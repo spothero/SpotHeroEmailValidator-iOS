@@ -3,7 +3,7 @@
 Pod::Spec.new do |spec|
   # Root Specification
   spec.name            = 'SpotHeroEmailValidator'
-  spec.version         = '1.1.0'
+  spec.version         = '2.0.0'
 
   spec.author       = { 'SpotHero' => 'dev@spothero.com' }
   spec.homepage     = 'https://github.com/SpotHero/SpotHeroEmailValidator-iOS'
