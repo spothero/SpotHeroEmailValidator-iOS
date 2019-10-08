@@ -15,7 +15,7 @@ PLATFORMS
 
 DEPENDENCIES
   httparty (~> 0.17.1)
-  plist
+  plist (~> 3.5.0)
 
 BUNDLED WITH
    2.0.1

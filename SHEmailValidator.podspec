@@ -1,24 +1,33 @@
-Pod::Spec.new do |s|
+# frozen_string_literal: true
 
-  s.name         = "SHEmailValidator"
-  s.license      = 'Apache License, Version 2.0'
-  s.version      = "1.0.5"
-  s.summary      = "iOS Email Validator"
+Pod::Spec.new do |spec|
+  # Root Specification
+  s.name            = 'SpotHeroEmailValidator'
+  s.version         = '2.0.0'
 
-  s.description  = <<-DESC
-An iOS library that will provide basic email syntax validation as well as provide suggestions for possible typos (for example, test@gamil.con would be corrected to test@gmail.com).
-		   DESC
+  spec.author       = { 'SpotHero' => 'dev@spothero.com' }
+  spec.homepage     = 'https://github.com/SpotHero/SpotHeroEmailValidator-iOS'
+  spec.license      = { :type => 'Apache 2.0', :file => 'LICENSE' }
+  spec.source       = { :git => 'https://github.com/SpotHero/SpotHeroEmailValidator-iOS.git',
+                        :tag => spec.version.to_s }
+  spec.summary      = "An iOS email validator."
 
-  s.homepage     = "https://github.com/spothero/SHEmailValidator"
-  s.screenshots  = "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%201.png", "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%202.png", "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%203.png"
+  spec.description  = <<-DESC
+                        An iOS library that will provide basic email syntax validation as well as provide suggestions for possible typos 
+                        (for example, test@gamil.con would be corrected to test@gmail.com).
+                      DESC
 
-  s.authors      = { "spothero" => "admin@spothero.com", "EricKuck" => "eric@spothero.com" }
+  s.screenshots     = [
+                      "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%201.png", 
+                      "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%202.png", 
+                      "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%203.png"
+                    ]
 
-  s.platform     = :ios, '5.0'
+  # Platform
+  spec.ios.deployment_target = '8.0'
   s.requires_arc = true
 
-  s.source       = { :git => "https://github.com/spothero/SHEmailValidator.git", :tag => s.version.to_s }
-  s.source_files = 'SHEmailValidator', 'SHEmailValidator/*.{h,m}'
-  s.resources    = 'SHEmailValidator/DomainData.plist'
-
+  # File Patterns
+  s.source_files = 'Sources/SpotHeroEmailValidator/**/*.{h,m}'
+  s.resources    = 'Sources/SpotHeroEmailValidator/data/DomainData.plist'
 end
