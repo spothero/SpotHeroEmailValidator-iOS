@@ -66,7 +66,7 @@ The script requires the httparty and plist Ruby gems to be installed.
 SpotHeroEmailValidator uses ARC. If your project is not ARC-compliant, simply set the `-fobjc-arc` flag on all SpotHeroEmailValidator source files.
 
 ## Apps Using this Library
-This library is used in our own [SpotHero](https://itunes.apple.com/us/app/spothero-parking-best-parking/id499097243 "SpotHero") app. If you would like to see your app listed here as well, let us know you're using it!
+This library is used in our own [SpotHero](https://apps.apple.com/us/app/spothero-find-parking-nearby/id499097243) iOS app. If you would like to see your app listed here as well, let us know you're using it!
 
 ## License
 SpotHeroEmailValidator is released under the Apache 2.0 license.

@@ -1,5 +1,7 @@
 // swift-tools-version:5.0
 
+//  Copyright © 2019 SpotHero, Inc. All rights reserved.
+
 import PackageDescription
 
 let package = Package(
