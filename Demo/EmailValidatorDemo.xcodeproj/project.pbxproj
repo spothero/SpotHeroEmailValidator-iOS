@@ -11,7 +11,6 @@
 		5FD6D344180A401400C37742 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6D343180A401400C37742 /* Foundation.framework */; };
 		5FD6D346180A401400C37742 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6D345180A401400C37742 /* CoreGraphics.framework */; };
 		5FD6D348180A401400C37742 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6D347180A401400C37742 /* UIKit.framework */; };
-		5FD6D34E180A401400C37742 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FD6D34C180A401400C37742 /* InfoPlist.strings */; };
 		5FD6D350180A401400C37742 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D34F180A401400C37742 /* main.m */; };
 		5FD6D354180A401400C37742 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D353180A401400C37742 /* AppDelegate.m */; };
 		5FD6D35A180A401400C37742 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6D359180A401400C37742 /* DemoViewController.m */; };
@@ -25,7 +24,6 @@
 		5FD6D345180A401400C37742 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5FD6D347180A401400C37742 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5FD6D34B180A401400C37742 /* EmailValidatorDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EmailValidatorDemo-Info.plist"; sourceTree = "<group>"; };
-		5FD6D34D180A401400C37742 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5FD6D34F180A401400C37742 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5FD6D351180A401400C37742 /* EmailValidatorDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmailValidatorDemo-Prefix.pch"; sourceTree = "<group>"; };
 		5FD6D352180A401400C37742 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,24 +82,15 @@
 			isa = PBXGroup;
 			children = (
 				5FD6D352180A401400C37742 /* AppDelegate.h */,
-				5FD6D353180A401400C37742 /* AppDelegate.m */,
 				5FD6D358180A401400C37742 /* DemoViewController.h */,
+				5FD6D353180A401400C37742 /* AppDelegate.m */,
 				5FD6D359180A401400C37742 /* DemoViewController.m */,
-				5FD6D35B180A401500C37742 /* Images.xcassets */,
-				5FD6D34A180A401400C37742 /* Supporting Files */,
-			);
-			path = EmailValidatorDemo;
-			sourceTree = "<group>";
-		};
-		5FD6D34A180A401400C37742 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5FD6D34B180A401400C37742 /* EmailValidatorDemo-Info.plist */,
-				5FD6D34C180A401400C37742 /* InfoPlist.strings */,
 				5FD6D34F180A401400C37742 /* main.m */,
 				5FD6D351180A401400C37742 /* EmailValidatorDemo-Prefix.pch */,
+				5FD6D34B180A401400C37742 /* EmailValidatorDemo-Info.plist */,
+				5FD6D35B180A401500C37742 /* Images.xcassets */,
 			);
-			name = "Supporting Files";
+			path = EmailValidatorDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +148,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FD6D35C180A401500C37742 /* Images.xcassets in Resources */,
-				5FD6D34E180A401400C37742 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,17 +165,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		5FD6D34C180A401400C37742 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5FD6D34D180A401400C37742 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5FD6D370180A401500C37742 /* Debug */ = {
