@@ -18,9 +18,9 @@ Pod::Spec.new do |spec|
                       DESC
 
   s.screenshots     = [
-                      "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%201.png", 
-                      "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%202.png", 
-                      "https://raw.githubusercontent.com/spothero/SHEmailValidator/master/Screenshots/Screenshot%203.png"
+                      "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator/master/Screenshots/Screenshot%201.png", 
+                      "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator/master/Screenshots/Screenshot%202.png", 
+                      "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator/master/Screenshots/Screenshot%203.png"
                     ]
 
   # Platform

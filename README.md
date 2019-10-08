@@ -1,4 +1,4 @@
-# SHEmailValidator
+# SpotHeroEmailValidator
 
 An iOS library that will provide basic email syntax validation as well as provide suggestions for possible typos (for example, test@gamil.con would be corrected to test@gmail.com).
 
@@ -18,7 +18,7 @@ To customize the look and feel of the popup window that appears, the `fillColor`
 
 ### Basic syntax checking
 	NSError *error = nil;
-	[[[SHEmailValidator] validator] validateSyntaxOfEmailAddress:emailAddress withError:&error];
+	[[[SpotHeroEmailValidator] validator] validateSyntaxOfEmailAddress:emailAddress withError:&error];
 
 	if (error) {
 		// An error occurred
@@ -45,7 +45,7 @@ To customize the look and feel of the popup window that appears, the `fillColor`
 
 ### Get typo correction suggestion
 	NSError *error = nil;
-	NSString *suggestion = [[[SHEmailValidator] validator] autocorrectSuggestionForEmailAddress:emailAddress withError:&error];
+	NSString *suggestion = [[[SpotHeroEmailValidator] validator] autocorrectSuggestionForEmailAddress:emailAddress withError:&error];
 
 	if (error) {
 		// The syntax check failed, so no suggestions could be generated
@@ -59,14 +59,14 @@ To customize the look and feel of the popup window that appears, the `fillColor`
 To fetch the latest IANA TLDs, run the following script included in the root directory:
   fetch_iana_list.rb
 
-This will update the plist under SHEmailValidator/DomainData.plist
+This will update the plist under SpotHeroEmailValidator/DomainData.plist
 The script requires the httparty and plist Ruby gems to be installed.
 
 ## ARC
-SHEmailValidator uses ARC. If your project is not ARC-compliant, simply set the `-fobjc-arc` flag on all SHEmailValidator source files.
+SpotHeroEmailValidator uses ARC. If your project is not ARC-compliant, simply set the `-fobjc-arc` flag on all SpotHeroEmailValidator source files.
 
 ## Apps Using this Library
 This library is used in our own [SpotHero](https://itunes.apple.com/us/app/spothero-parking-best-parking/id499097243 "SpotHero") app. If you would like to see your app listed here as well, let us know you're using it!
 
 ## License
-SHEmailValidator is released under the Apache 2.0 license.
+SpotHeroEmailValidator is released under the Apache 2.0 license.

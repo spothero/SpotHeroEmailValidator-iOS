@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3449779A234C337B00D71628 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34497799234C337B00D71628 /* AppDelegate.m */; };
 		344977A5234C337B00D71628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 344977A4234C337B00D71628 /* Assets.xcassets */; };
-		344977A8234C337B00D71628 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344977A6234C337B00D71628 /* LaunchScreen.storyboard */; };
 		344977AB234C337B00D71628 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 344977AA234C337B00D71628 /* main.m */; };
 		344977B2234C33D900D71628 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344977B1234C33D900D71628 /* DemoViewController.m */; };
 		344977B6234C344E00D71628 /* SpotHeroEmailValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344977B5234C344E00D71628 /* SpotHeroEmailValidator.framework */; };
@@ -35,7 +34,6 @@
 		34497798234C337B00D71628 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34497799234C337B00D71628 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		344977A4234C337B00D71628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		344977A7234C337B00D71628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		344977A9234C337B00D71628 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		344977AA234C337B00D71628 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		344977B1234C33D900D71628 /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 				344977B3234C33FE00D71628 /* DemoViewController.h */,
 				344977B1234C33D900D71628 /* DemoViewController.m */,
 				344977A9234C337B00D71628 /* Info.plist */,
-				344977A6234C337B00D71628 /* LaunchScreen.storyboard */,
 				344977AA234C337B00D71628 /* main.m */,
 			);
 			path = SpotHeroEmailValidatorDemo;
@@ -153,7 +150,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				344977A8234C337B00D71628 /* LaunchScreen.storyboard in Resources */,
 				344977A5234C337B00D71628 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,17 +168,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		344977A6234C337B00D71628 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				344977A7234C337B00D71628 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		344977AC234C337B00D71628 /* Debug */ = {

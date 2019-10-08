@@ -1,6 +1,6 @@
 //
-//  SHEmailValidationDemoViewController.m
-//  SHEmailValidator
+//  DemoViewController.m
+//  SpotHeromailValidator
 //
 //  Created by Eric Kuck on 10/12/13.
 //  Copyright (c) 2013 SpotHero.
