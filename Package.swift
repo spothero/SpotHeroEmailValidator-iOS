@@ -1,3 +1,6 @@
+// Until Swift Package Manager has Resource Bundle support, Package.swift cannot be supported properly.
+
+
 // // swift-tools-version:5.0
 
 // //  Copyright © 2019 SpotHero, Inc. All rights reserved.
