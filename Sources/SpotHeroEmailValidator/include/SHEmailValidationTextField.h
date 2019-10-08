@@ -18,6 +18,10 @@
 //  limitations under the License.
 //
 
+#include <TargetConditionals.h>
+
+#if TARGET_OS_UIKITFORMAC || !TARGET_OS_OSX
+
 @import UIKit;
 
 @interface SHEmailValidationTextField : UITextField
@@ -31,7 +35,12 @@
 
 - (void)dismissSuggestionView;
 - (void)validateInput;
-- (void)hostWillAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 - (void)setMessage:(NSString *)message forErrorCode:(NSInteger)errorCode;
 
+#if !TARGET_OS_TV
+- (void)hostWillAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+#endif
+
 @end
+
+#endif

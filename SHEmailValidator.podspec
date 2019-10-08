@@ -25,6 +25,8 @@ Pod::Spec.new do |spec|
 
   # Platform
   spec.ios.deployment_target = '8.0'
+  spec.osx.deployment_target = '10.10'
+  spec.tvos.deployment_target = '9.0'
   s.requires_arc = true
 
   # File Patterns

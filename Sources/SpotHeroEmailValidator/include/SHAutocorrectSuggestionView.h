@@ -18,6 +18,10 @@
 //  limitations under the License.
 //
 
+#include <TargetConditionals.h>
+
+#if TARGET_OS_UIKITFORMAC || !TARGET_OS_OSX
+
 @import UIKit;
 
 @class SHAutocorrectSuggestionView;
@@ -46,3 +50,5 @@ typedef void (^SetupBlock)(SHAutocorrectSuggestionView *view);
 - (void)dismiss;
 
 @end
+
+#endif

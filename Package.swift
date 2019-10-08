@@ -4,6 +4,12 @@ import PackageDescription
 
 let package = Package(
     name: "SpotHeroEmailValidator",
+    platforms: [
+        .iOS(.v8),          // minimum supported version via SPM
+        .macOS(.v10_10),    // minimum supported version via SPM
+        .tvOS(.v9),         // minimum supported version via SPM
+        // watchOS is unsupported
+    ],
     products: [
         .library(name: "SpotHeroEmailValidator", targets: ["SpotHeroEmailValidator"]),
     ],

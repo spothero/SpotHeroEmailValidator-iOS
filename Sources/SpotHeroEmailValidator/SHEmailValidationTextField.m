@@ -18,6 +18,10 @@
 //  limitations under the License.
 //
 
+#include <TargetConditionals.h>
+
+#if TARGET_OS_UIKITFORMAC || !TARGET_OS_OSX
+
 #if ! __has_feature(objc_arc)
 #error This file must be compiled with ARC. Either turn on ARC for the project or use -fobjc-arc flag
 #endif
@@ -207,10 +211,12 @@
     }
 }
 
+#if !TARGET_OS_TV
 - (void)hostWillAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     [self.suggestionView updatePosition];
 }
+#endif
 
 - (void)dismissSuggestionView
 {
@@ -250,3 +256,5 @@
 }
 
 @end
+
+#endif
