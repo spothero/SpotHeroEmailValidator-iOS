@@ -1,5 +1,7 @@
 # SpotHeroEmailValidator
 
+[![Build Status](https://app.bitrise.io/app/91f2b85cb4d90b8a/status.svg?token=4HzphDQRkMkQ4mcdtTubbA)](https://app.bitrise.io/app/91f2b85cb4d90b8a)
+
 An iOS library that will provide basic email syntax validation as well as provide suggestions for possible typos (for example, test@gamil.con would be corrected to test@gmail.com).
 
 ## Screenshots
