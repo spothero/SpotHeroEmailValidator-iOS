@@ -2,8 +2,8 @@
 
 Pod::Spec.new do |spec|
   # Root Specification
-  s.name            = 'SpotHeroEmailValidator'
-  s.version         = '2.0.0'
+  spec.name            = 'SpotHeroEmailValidator'
+  spec.version         = '1.1.0'
 
   spec.author       = { 'SpotHero' => 'dev@spothero.com' }
   spec.homepage     = 'https://github.com/SpotHero/SpotHeroEmailValidator-iOS'
@@ -20,16 +20,16 @@ Pod::Spec.new do |spec|
   s.screenshots     = [
                       "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator/master/Screenshots/Screenshot%201.png", 
                       "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator/master/Screenshots/Screenshot%202.png", 
-                      "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator/master/Screenshots/Screenshot%203.png"
+                      "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator/master/Screenshots/Screenshot%203.png",
                     ]
 
   # Platform
   spec.ios.deployment_target = '8.0'
   spec.osx.deployment_target = '10.10'
   spec.tvos.deployment_target = '9.0'
-  s.requires_arc = true
+  spec.requires_arc = true
 
   # File Patterns
-  s.source_files = 'Sources/SpotHeroEmailValidator/**/*.{h,m}'
-  s.resources    = 'Sources/SpotHeroEmailValidator/data/DomainData.plist'
+  spec.source_files = 'Sources/SpotHeroEmailValidator/**/*.{h,m}'
+  spec.resources    = 'Sources/SpotHeroEmailValidator/data/DomainData.plist'
 end
