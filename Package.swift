@@ -12,5 +12,11 @@ let package = Package(
             name: "SpotHeroEmailValidator",
             dependencies: []
         ),
+        .testTarget(
+            name: "SpotHeroEmailValidatorTests",
+            dependencies: [
+                .target(name: "SpotHeroEmailValidator"),
+            ]
+        ),
     ]
 )

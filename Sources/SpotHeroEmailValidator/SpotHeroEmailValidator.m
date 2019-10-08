@@ -1,6 +1,6 @@
 //
-//  SHEmailValidator.m
-//  SHEmailValidator
+//  SpotHeroEmailValidator.m
+//  SpotHeroEmailValidator
 //
 //  Created by Eric Kuck on 10/12/13.
 //  Copyright (c) 2013 SpotHero.
@@ -22,12 +22,12 @@
 #error This file must be compiled with ARC. Either turn on ARC for the project or use -fobjc-arc flag
 #endif
 
-#import "include/SHEmailValidator.h"
+#import "include/SpotHeroEmailValidator.h"
 #import "include/NSString+LevenshteinDistance.h"
 
-NSString *const SHValidatorErrorDomain = @"com.spothero.SHEmailValidator";
+NSString *const SHValidatorErrorDomain = @"com.spothero.SpotHeroEmailValidator";
 
-@interface SHEmailValidator ()
+@interface SpotHeroEmailValidator ()
 
 @property (nonatomic, strong, readonly) NSArray *ianaRegisteredTLDs;
 @property (nonatomic, strong, readonly) NSArray *commonTLDs;
@@ -35,11 +35,11 @@ NSString *const SHValidatorErrorDomain = @"com.spothero.SHEmailValidator";
 
 @end
 
-@implementation SHEmailValidator
+@implementation SpotHeroEmailValidator
 
 + (instancetype)validator
 {
-    return [[SHEmailValidator alloc] init];
+    return [[SpotHeroEmailValidator alloc] init];
 }
 
 - (instancetype)init

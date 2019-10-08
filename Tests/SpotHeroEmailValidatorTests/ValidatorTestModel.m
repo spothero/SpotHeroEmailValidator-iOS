@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 SpotHero. All rights reserved.
 //
 
-#import "ValidatorTestModel.h"
+#import "include/ValidatorTestModel.h"
 
 @implementation ValidatorTestModel
 

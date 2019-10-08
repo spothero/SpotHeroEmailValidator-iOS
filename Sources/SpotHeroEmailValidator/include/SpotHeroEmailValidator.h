@@ -1,6 +1,6 @@
 //
-//  SHEmailValidator.h
-//  SHEmailValidator
+//  SpotHeroEmailValidator.h
+//  SpotHeroEmailValidator
 //
 //  Created by Eric Kuck on 10/12/13.
 //  Copyright (c) 2013 SpotHero.
@@ -18,8 +18,12 @@
 //  limitations under the License.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
+@import CoreGraphics;
+
 #import "SHValidationResult.h"
+#import "NSString+LevenshteinDistance.h"
+#import "SHAutocorrectSuggestionView.h"
+#import "SHEmailValidationTextField.h"
 
 FOUNDATION_EXPORT NSString *const SHValidatorErrorDomain;
 
@@ -31,7 +35,7 @@ typedef enum {
     SHInvalidTLDError,
 } SHValidatorErrorCode;
 
-@interface SHEmailValidator : NSObject
+@interface SpotHeroEmailValidator : NSObject
 
 + (instancetype)validator;
 

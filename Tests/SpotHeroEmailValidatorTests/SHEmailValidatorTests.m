@@ -1,6 +1,6 @@
 //
-//  SHEmailValidatorTests.m
-//  SHEmailValidatorTests
+//  SpotHeroEmailValidatorTests.m
+//  SpotHeroEmailValidatorTests
 //
 //  Created by Eric Kuck on 10/12/13.
 //  Copyright (c) 2013 SpotHero.
@@ -18,17 +18,17 @@
 //  limitations under the License.
 //
 
-#import <XCTest/XCTest.h>
-#import "SHEmailValidator.h"
-#import "NSString+LevenshteinDistance.h"
-#import "LevenshteinDistanceTestModel.h"
-#import "ValidatorTestModel.h"
+@import SpotHeroEmailValidator;
+@import XCTest;
 
-@interface SHEmailValidatorTests : XCTestCase
+#import "include/LevenshteinDistanceTestModel.h"
+#import "include/ValidatorTestModel.h"
+
+@interface SpotHeroEmailValidatorTests : XCTestCase
 
 @end
 
-@implementation SHEmailValidatorTests
+@implementation SpotHeroEmailValidatorTests
 
 - (void)setUp
 {
@@ -70,7 +70,7 @@
                        [[ValidatorTestModel alloc] initWithEmailAddress:@"test&*\"@email.com" errorCode:SHInvalidUsernameError],
                        ];
     
-    SHEmailValidator *validator = [SHEmailValidator validator];
+    SpotHeroEmailValidator *validator = [SpotHeroEmailValidator validator];
     NSError *error = nil;
     
     for (ValidatorTestModel *test in tests) {
@@ -95,7 +95,7 @@
                        [[ValidatorTestModel alloc] initWithEmailAddress:@"test@goglemail.coj" suggestion:@"test@googlemail.com"],
                        [[ValidatorTestModel alloc] initWithEmailAddress:@"test@goglemail.com" suggestion:@"test@googlemail.com"]];
     
-    SHEmailValidator *validator = [SHEmailValidator validator];
+    SpotHeroEmailValidator *validator = [SpotHeroEmailValidator validator];
     NSError *error = nil;
     
     for (ValidatorTestModel *test in tests) {
@@ -112,7 +112,7 @@
 {
     NSString *invalidEmailAddress = @"foo";
     
-    SHEmailValidator *validator = [SHEmailValidator validator];
+    SpotHeroEmailValidator *validator = [SpotHeroEmailValidator validator];
     
     XCTAssertNoThrow([validator validateSyntaxOfEmailAddress:invalidEmailAddress
                                                    withError:NULL]);

@@ -1,6 +1,6 @@
 //
 //  SHAutocorrectSuggestionView.m
-//  SHEmailValidator
+//  SpotHeroEmailValidator
 //
 //  Created by Eric Kuck on 10/12/13.
 //  Copyright (c) 2013 SpotHero.
@@ -22,8 +22,9 @@
 #error This file must be compiled with ARC. Either turn on ARC for the project or use -fobjc-arc flag
 #endif
 
+@import QuartzCore;
+
 #import "include/SHAutocorrectSuggestionView.h"
-#import <QuartzCore/QuartzCore.h>
 
 static const NSInteger kCornerRadius = 6;
 static const NSInteger kArrowHeight = 12;

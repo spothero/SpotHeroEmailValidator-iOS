@@ -1,6 +1,6 @@
 //
 //  SHEmailValidationTextField.m
-//  SHEmailValidator
+//  SpotHeroEmailValidator
 //
 //  Created by Eric Kuck on 10/12/13.
 //  Copyright (c) 2013 SpotHero.
@@ -23,7 +23,7 @@
 #endif
 
 #import "include/SHEmailValidationTextField.h"
-#import "include/SHEmailValidator.h"
+#import "include/SpotHeroEmailValidator.h"
 #import "include/SHAutocorrectSuggestionView.h"
 
 @interface EmailTextFieldDelegate : NSObject <UITextFieldDelegate>
@@ -112,7 +112,7 @@
 @interface SHEmailValidationTextField () <AutocorrectSuggestionViewDelegate>
 
 @property (nonatomic, strong) SHAutocorrectSuggestionView *suggestionView;
-@property (nonatomic, strong) SHEmailValidator *emailValidator;
+@property (nonatomic, strong) SpotHeroEmailValidator *emailValidator;
 @property (nonatomic, strong) EmailTextFieldDelegate *delegateProxy;
 @property (nonatomic, strong) NSMutableDictionary *messageDictionary;
 
@@ -151,7 +151,7 @@
 {
     self.delegateProxy = [[EmailTextFieldDelegate alloc] initWithTarget:self];
     self.delegate = self.delegateProxy;
-    self.emailValidator = [SHEmailValidator validator];
+    self.emailValidator = [SpotHeroEmailValidator validator];
     self.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.keyboardType = UIKeyboardTypeEmailAddress;
     self.autocorrectionType = UITextAutocorrectionTypeNo;

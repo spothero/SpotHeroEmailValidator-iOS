@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 SpotHero. All rights reserved.
 //
 
-#import "LevenshteinDistanceTestModel.h"
+#import "include/LevenshteinDistanceTestModel.h"
 
 @implementation LevenshteinDistanceTestModel
 
