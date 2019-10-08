@@ -5,7 +5,10 @@ require 'httparty'
 
 puts("Updating IANA TLD list.")
 
-plistPath = "SHEmailValidator/DomainData.plist"
+# Call from the scripts directory, so it can be called from any location
+scripts_directory = File.dirname(__FILE__)
+
+plistPath = "#{scripts_directory}/../Sources/SpotHeroEmailValidator/data/DomainData.plist"
 domainDataPlist = Plist::parse_xml(plistPath)
 
 # Fetch latest IANA TLDs.

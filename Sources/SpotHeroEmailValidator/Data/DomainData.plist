@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>CommonDomains</key>
@@ -64,9 +64,12 @@
 	<array>
 		<string>aaa</string>
 		<string>aarp</string>
+		<string>abarth</string>
 		<string>abb</string>
 		<string>abbott</string>
 		<string>abbvie</string>
+		<string>abc</string>
+		<string>able</string>
 		<string>abogado</string>
 		<string>abudhabi</string>
 		<string>ac</string>
@@ -75,7 +78,6 @@
 		<string>accountant</string>
 		<string>accountants</string>
 		<string>aco</string>
-		<string>active</string>
 		<string>actor</string>
 		<string>ad</string>
 		<string>adac</string>
@@ -84,49 +86,69 @@
 		<string>ae</string>
 		<string>aeg</string>
 		<string>aero</string>
+		<string>aetna</string>
 		<string>af</string>
+		<string>afamilycompany</string>
 		<string>afl</string>
+		<string>africa</string>
 		<string>ag</string>
 		<string>agakhan</string>
 		<string>agency</string>
 		<string>ai</string>
 		<string>aig</string>
+		<string>aigo</string>
+		<string>airbus</string>
 		<string>airforce</string>
 		<string>airtel</string>
 		<string>akdn</string>
 		<string>al</string>
+		<string>alfaromeo</string>
 		<string>alibaba</string>
 		<string>alipay</string>
 		<string>allfinanz</string>
+		<string>allstate</string>
 		<string>ally</string>
 		<string>alsace</string>
+		<string>alstom</string>
 		<string>am</string>
+		<string>americanexpress</string>
+		<string>americanfamily</string>
+		<string>amex</string>
+		<string>amfam</string>
 		<string>amica</string>
 		<string>amsterdam</string>
 		<string>analytics</string>
 		<string>android</string>
 		<string>anquan</string>
+		<string>anz</string>
 		<string>ao</string>
+		<string>aol</string>
 		<string>apartments</string>
 		<string>app</string>
 		<string>apple</string>
 		<string>aq</string>
 		<string>aquarelle</string>
 		<string>ar</string>
+		<string>arab</string>
 		<string>aramco</string>
 		<string>archi</string>
 		<string>army</string>
 		<string>arpa</string>
+		<string>art</string>
 		<string>arte</string>
 		<string>as</string>
+		<string>asda</string>
 		<string>asia</string>
 		<string>associates</string>
 		<string>at</string>
+		<string>athleta</string>
 		<string>attorney</string>
 		<string>au</string>
 		<string>auction</string>
 		<string>audi</string>
+		<string>audible</string>
 		<string>audio</string>
+		<string>auspost</string>
 		<string>author</string>
 		<string>auto</string>
 		<string>autos</string>
@@ -140,6 +162,8 @@
 		<string>ba</string>
 		<string>baby</string>
 		<string>baidu</string>
+		<string>banamex</string>
+		<string>bananarepublic</string>
 		<string>band</string>
 		<string>bank</string>
 		<string>bar</string>
@@ -148,20 +172,25 @@
 		<string>barclays</string>
 		<string>barefoot</string>
 		<string>bargains</string>
+		<string>baseball</string>
+		<string>basketball</string>
 		<string>bauhaus</string>
 		<string>bayern</string>
 		<string>bb</string>
 		<string>bbc</string>
+		<string>bbt</string>
 		<string>bbva</string>
 		<string>bcg</string>
 		<string>bcn</string>
 		<string>bd</string>
 		<string>be</string>
 		<string>beats</string>
+		<string>beauty</string>
 		<string>beer</string>
 		<string>bentley</string>
 		<string>berlin</string>
 		<string>best</string>
+		<string>bestbuy</string>
 		<string>bet</string>
 		<string>bf</string>
 		<string>bg</string>
@@ -178,26 +207,30 @@
 		<string>bj</string>
 		<string>black</string>
 		<string>blackfriday</string>
+		<string>blockbuster</string>
+		<string>blog</string>
 		<string>bloomberg</string>
 		<string>blue</string>
 		<string>bm</string>
 		<string>bms</string>
 		<string>bmw</string>
 		<string>bn</string>
-		<string>bnl</string>
 		<string>bnpparibas</string>
 		<string>bo</string>
 		<string>boats</string>
 		<string>boehringer</string>
+		<string>bofa</string>
 		<string>bom</string>
 		<string>bond</string>
 		<string>boo</string>
 		<string>book</string>
-		<string>boots</string>
+		<string>booking</string>
 		<string>bosch</string>
 		<string>bostik</string>
+		<string>boston</string>
 		<string>bot</string>
 		<string>boutique</string>
+		<string>box</string>
 		<string>br</string>
 		<string>bradesco</string>
 		<string>bridgestone</string>
@@ -224,12 +257,15 @@
 		<string>cafe</string>
 		<string>cal</string>
 		<string>call</string>
+		<string>calvinklein</string>
+		<string>cam</string>
 		<string>camera</string>
 		<string>camp</string>
 		<string>cancerresearch</string>
 		<string>canon</string>
 		<string>capetown</string>
 		<string>capital</string>
+		<string>capitalone</string>
 		<string>car</string>
 		<string>caravan</string>
 		<string>cards</string>
@@ -239,12 +275,17 @@
 		<string>cars</string>
 		<string>cartier</string>
 		<string>casa</string>
+		<string>case</string>
+		<string>caseih</string>
 		<string>cash</string>
 		<string>casino</string>
 		<string>cat</string>
 		<string>catering</string>
+		<string>catholic</string>
 		<string>cba</string>
 		<string>cbn</string>
+		<string>cbre</string>
+		<string>cbs</string>
 		<string>cc</string>
 		<string>cd</string>
 		<string>ceb</string>
@@ -258,17 +299,21 @@
 		<string>ch</string>
 		<string>chanel</string>
 		<string>channel</string>
+		<string>charity</string>
 		<string>chase</string>
 		<string>chat</string>
 		<string>cheap</string>
-		<string>chloe</string>
+		<string>chintai</string>
 		<string>christmas</string>
 		<string>chrome</string>
+		<string>chrysler</string>
 		<string>church</string>
 		<string>ci</string>
 		<string>cipriani</string>
 		<string>circle</string>
 		<string>cisco</string>
+		<string>citadel</string>
+		<string>citi</string>
 		<string>citic</string>
 		<string>city</string>
 		<string>cityeats</string>
@@ -292,6 +337,7 @@
 		<string>college</string>
 		<string>cologne</string>
 		<string>com</string>
+		<string>comcast</string>
 		<string>commbank</string>
 		<string>community</string>
 		<string>company</string>
@@ -304,6 +350,7 @@
 		<string>contact</string>
 		<string>contractors</string>
 		<string>cooking</string>
+		<string>cookingchannel</string>
 		<string>cool</string>
 		<string>coop</string>
 		<string>corsica</string>
@@ -311,6 +358,7 @@
 		<string>coupon</string>
 		<string>coupons</string>
 		<string>courses</string>
+		<string>cpa</string>
 		<string>cr</string>
 		<string>credit</string>
 		<string>creditcard</string>
@@ -318,6 +366,7 @@
 		<string>cricket</string>
 		<string>crown</string>
 		<string>crs</string>
+		<string>cruise</string>
 		<string>cruises</string>
 		<string>csc</string>
 		<string>cu</string>
@@ -332,6 +381,7 @@
 		<string>dabur</string>
 		<string>dad</string>
 		<string>dance</string>
+		<string>data</string>
 		<string>date</string>
 		<string>dating</string>
 		<string>datsun</string>
@@ -339,6 +389,7 @@
 		<string>dclk</string>
 		<string>dds</string>
 		<string>de</string>
+		<string>deal</string>
 		<string>dealer</string>
 		<string>deals</string>
 		<string>degree</string>
@@ -352,30 +403,42 @@
 		<string>desi</string>
 		<string>design</string>
 		<string>dev</string>
+		<string>dhl</string>
 		<string>diamonds</string>
 		<string>diet</string>
 		<string>digital</string>
 		<string>direct</string>
 		<string>directory</string>
 		<string>discount</string>
+		<string>discover</string>
+		<string>dish</string>
+		<string>diy</string>
 		<string>dj</string>
 		<string>dk</string>
 		<string>dm</string>
 		<string>dnp</string>
 		<string>do</string>
 		<string>docs</string>
+		<string>doctor</string>
+		<string>dodge</string>
 		<string>dog</string>
-		<string>doha</string>
 		<string>domains</string>
+		<string>dot</string>
 		<string>download</string>
 		<string>drive</string>
+		<string>dtv</string>
 		<string>dubai</string>
+		<string>duck</string>
+		<string>dunlop</string>
+		<string>dupont</string>
 		<string>durban</string>
 		<string>dvag</string>
+		<string>dvr</string>
 		<string>dz</string>
 		<string>earth</string>
 		<string>eat</string>
 		<string>ec</string>
+		<string>eco</string>
 		<string>edeka</string>
 		<string>edu</string>
 		<string>education</string>
@@ -390,11 +453,14 @@
 		<string>epson</string>
 		<string>equipment</string>
 		<string>er</string>
+		<string>ericsson</string>
 		<string>erni</string>
 		<string>es</string>
 		<string>esq</string>
 		<string>estate</string>
+		<string>esurance</string>
 		<string>et</string>
+		<string>etisalat</string>
 		<string>eu</string>
 		<string>eurovision</string>
 		<string>eus</string>
@@ -413,15 +479,22 @@
 		<string>fan</string>
 		<string>fans</string>
 		<string>farm</string>
+		<string>farmers</string>
 		<string>fashion</string>
 		<string>fast</string>
+		<string>fedex</string>
 		<string>feedback</string>
+		<string>ferrari</string>
 		<string>ferrero</string>
 		<string>fi</string>
+		<string>fiat</string>
+		<string>fidelity</string>
+		<string>fido</string>
 		<string>film</string>
 		<string>final</string>
 		<string>finance</string>
 		<string>financial</string>
+		<string>fire</string>
 		<string>firestone</string>
 		<string>firmdale</string>
 		<string>fish</string>
@@ -435,11 +508,12 @@
 		<string>flir</string>
 		<string>florist</string>
 		<string>flowers</string>
-		<string>flsmidth</string>
 		<string>fly</string>
 		<string>fm</string>
 		<string>fo</string>
 		<string>foo</string>
+		<string>food</string>
+		<string>foodnetwork</string>
 		<string>football</string>
 		<string>ford</string>
 		<string>forex</string>
@@ -448,11 +522,16 @@
 		<string>foundation</string>
 		<string>fox</string>
 		<string>fr</string>
+		<string>free</string>
 		<string>fresenius</string>
 		<string>frl</string>
 		<string>frogans</string>
+		<string>frontdoor</string>
 		<string>frontier</string>
 		<string>ftr</string>
+		<string>fujitsu</string>
+		<string>fujixerox</string>
+		<string>fun</string>
 		<string>fund</string>
 		<string>furniture</string>
 		<string>futbol</string>
@@ -463,7 +542,10 @@
 		<string>gallo</string>
 		<string>gallup</string>
 		<string>game</string>
+		<string>games</string>
+		<string>gap</string>
 		<string>garden</string>
+		<string>gay</string>
 		<string>gb</string>
 		<string>gbiz</string>
 		<string>gd</string>
@@ -472,6 +554,7 @@
 		<string>gea</string>
 		<string>gent</string>
 		<string>genting</string>
+		<string>george</string>
 		<string>gf</string>
 		<string>gg</string>
 		<string>ggee</string>
@@ -482,6 +565,7 @@
 		<string>gives</string>
 		<string>giving</string>
 		<string>gl</string>
+		<string>glade</string>
 		<string>glass</string>
 		<string>gle</string>
 		<string>global</string>
@@ -492,10 +576,12 @@
 		<string>gmo</string>
 		<string>gmx</string>
 		<string>gn</string>
+		<string>godaddy</string>
 		<string>gold</string>
 		<string>goldpoint</string>
 		<string>golf</string>
 		<string>goo</string>
+		<string>goodyear</string>
 		<string>goog</string>
 		<string>google</string>
 		<string>gop</string>
@@ -509,6 +595,7 @@
 		<string>gratis</string>
 		<string>green</string>
 		<string>gripe</string>
+		<string>grocery</string>
 		<string>group</string>
 		<string>gs</string>
 		<string>gt</string>
@@ -521,9 +608,12 @@
 		<string>guru</string>
 		<string>gw</string>
 		<string>gy</string>
+		<string>hair</string>
 		<string>hamburg</string>
 		<string>hangout</string>
 		<string>haus</string>
+		<string>hbo</string>
+		<string>hdfc</string>
 		<string>hdfcbank</string>
 		<string>health</string>
 		<string>healthcare</string>
@@ -531,7 +621,9 @@
 		<string>helsinki</string>
 		<string>here</string>
 		<string>hermes</string>
+		<string>hgtv</string>
 		<string>hiphop</string>
+		<string>hisamitsu</string>
 		<string>hitachi</string>
 		<string>hiv</string>
 		<string>hk</string>
@@ -542,20 +634,26 @@
 		<string>holdings</string>
 		<string>holiday</string>
 		<string>homedepot</string>
+		<string>homegoods</string>
 		<string>homes</string>
+		<string>homesense</string>
 		<string>honda</string>
 		<string>horse</string>
+		<string>hospital</string>
 		<string>host</string>
 		<string>hosting</string>
+		<string>hot</string>
 		<string>hoteles</string>
+		<string>hotels</string>
 		<string>hotmail</string>
 		<string>house</string>
 		<string>how</string>
 		<string>hr</string>
 		<string>hsbc</string>
 		<string>ht</string>
-		<string>htc</string>
 		<string>hu</string>
+		<string>hughes</string>
+		<string>hyatt</string>
 		<string>hyundai</string>
 		<string>ibm</string>
 		<string>icbc</string>
@@ -563,14 +661,17 @@
 		<string>icu</string>
 		<string>id</string>
 		<string>ie</string>
+		<string>ieee</string>
 		<string>ifm</string>
-		<string>iinet</string>
+		<string>ikano</string>
 		<string>il</string>
 		<string>im</string>
 		<string>imamat</string>
+		<string>imdb</string>
 		<string>immo</string>
 		<string>immobilien</string>
 		<string>in</string>
+		<string>inc</string>
 		<string>industries</string>
 		<string>infiniti</string>
 		<string>info</string>
@@ -580,7 +681,9 @@
 		<string>insurance</string>
 		<string>insure</string>
 		<string>int</string>
+		<string>intel</string>
 		<string>international</string>
+		<string>intuit</string>
 		<string>investments</string>
 		<string>io</string>
 		<string>ipiranga</string>
@@ -588,21 +691,22 @@
 		<string>ir</string>
 		<string>irish</string>
 		<string>is</string>
-		<string>iselect</string>
 		<string>ismaili</string>
 		<string>ist</string>
 		<string>istanbul</string>
 		<string>it</string>
 		<string>itau</string>
-		<string>iwc</string>
+		<string>itv</string>
+		<string>iveco</string>
 		<string>jaguar</string>
 		<string>java</string>
 		<string>jcb</string>
 		<string>jcp</string>
 		<string>je</string>
+		<string>jeep</string>
 		<string>jetzt</string>
 		<string>jewelry</string>
-		<string>jlc</string>
+		<string>jio</string>
 		<string>jll</string>
 		<string>jm</string>
 		<string>jmp</string>
@@ -616,6 +720,7 @@
 		<string>jpmorgan</string>
 		<string>jprs</string>
 		<string>juegos</string>
+		<string>juniper</string>
 		<string>kaufen</string>
 		<string>kddi</string>
 		<string>ke</string>
@@ -629,12 +734,14 @@
 		<string>kia</string>
 		<string>kim</string>
 		<string>kinder</string>
+		<string>kindle</string>
 		<string>kitchen</string>
 		<string>kiwi</string>
 		<string>km</string>
 		<string>kn</string>
 		<string>koeln</string>
 		<string>komatsu</string>
+		<string>kosher</string>
 		<string>kp</string>
 		<string>kpmg</string>
 		<string>kpn</string>
@@ -648,14 +755,18 @@
 		<string>kz</string>
 		<string>la</string>
 		<string>lacaixa</string>
+		<string>ladbrokes</string>
 		<string>lamborghini</string>
 		<string>lamer</string>
 		<string>lancaster</string>
+		<string>lancia</string>
+		<string>lancome</string>
 		<string>land</string>
 		<string>landrover</string>
 		<string>lanxess</string>
 		<string>lasalle</string>
 		<string>lat</string>
+		<string>latino</string>
 		<string>latrobe</string>
 		<string>law</string>
 		<string>lawyer</string>
@@ -664,7 +775,9 @@
 		<string>lds</string>
 		<string>lease</string>
 		<string>leclerc</string>
+		<string>lefrak</string>
 		<string>legal</string>
+		<string>lego</string>
 		<string>lexus</string>
 		<string>lgbt</string>
 		<string>li</string>
@@ -675,6 +788,7 @@
 		<string>lifestyle</string>
 		<string>lighting</string>
 		<string>like</string>
+		<string>lilly</string>
 		<string>limited</string>
 		<string>limo</string>
 		<string>lincoln</string>
@@ -685,26 +799,33 @@
 		<string>living</string>
 		<string>lixil</string>
 		<string>lk</string>
+		<string>llc</string>
 		<string>loan</string>
 		<string>loans</string>
+		<string>locker</string>
 		<string>locus</string>
+		<string>loft</string>
 		<string>lol</string>
 		<string>london</string>
 		<string>lotte</string>
 		<string>lotto</string>
 		<string>love</string>
+		<string>lpl</string>
+		<string>lplfinancial</string>
 		<string>lr</string>
 		<string>ls</string>
 		<string>lt</string>
 		<string>ltd</string>
 		<string>ltda</string>
 		<string>lu</string>
+		<string>lundbeck</string>
 		<string>lupin</string>
 		<string>luxe</string>
 		<string>luxury</string>
 		<string>lv</string>
 		<string>ly</string>
 		<string>ma</string>
+		<string>macys</string>
 		<string>madrid</string>
 		<string>maif</string>
 		<string>maison</string>
@@ -712,12 +833,17 @@
 		<string>man</string>
 		<string>management</string>
 		<string>mango</string>
+		<string>map</string>
 		<string>market</string>
 		<string>marketing</string>
 		<string>markets</string>
 		<string>marriott</string>
+		<string>marshalls</string>
+		<string>maserati</string>
+		<string>mattel</string>
 		<string>mba</string>
 		<string>mc</string>
+		<string>mckinsey</string>
 		<string>md</string>
 		<string>me</string>
 		<string>med</string>
@@ -728,7 +854,7 @@
 		<string>memorial</string>
 		<string>men</string>
 		<string>menu</string>
-		<string>meo</string>
+		<string>merckmsd</string>
 		<string>metlife</string>
 		<string>mg</string>
 		<string>mh</string>
@@ -736,25 +862,31 @@
 		<string>microsoft</string>
 		<string>mil</string>
 		<string>mini</string>
+		<string>mint</string>
+		<string>mit</string>
+		<string>mitsubishi</string>
 		<string>mk</string>
 		<string>ml</string>
+		<string>mlb</string>
 		<string>mls</string>
 		<string>mm</string>
 		<string>mma</string>
 		<string>mn</string>
 		<string>mo</string>
 		<string>mobi</string>
-		<string>mobily</string>
+		<string>mobile</string>
 		<string>moda</string>
 		<string>moe</string>
 		<string>moi</string>
 		<string>mom</string>
 		<string>monash</string>
 		<string>money</string>
-		<string>montblanc</string>
+		<string>monster</string>
+		<string>mopar</string>
 		<string>mormon</string>
 		<string>mortgage</string>
 		<string>moscow</string>
+		<string>moto</string>
 		<string>motorcycles</string>
 		<string>mov</string>
 		<string>movie</string>
@@ -763,43 +895,49 @@
 		<string>mq</string>
 		<string>mr</string>
 		<string>ms</string>
+		<string>msd</string>
 		<string>mt</string>
 		<string>mtn</string>
-		<string>mtpc</string>
 		<string>mtr</string>
 		<string>mu</string>
 		<string>museum</string>
 		<string>mutual</string>
-		<string>mutuelle</string>
 		<string>mv</string>
 		<string>mw</string>
 		<string>mx</string>
 		<string>my</string>
 		<string>mz</string>
 		<string>na</string>
+		<string>nab</string>
 		<string>nadex</string>
 		<string>nagoya</string>
 		<string>name</string>
+		<string>nationwide</string>
 		<string>natura</string>
 		<string>navy</string>
+		<string>nba</string>
 		<string>nc</string>
 		<string>ne</string>
 		<string>nec</string>
 		<string>net</string>
 		<string>netbank</string>
+		<string>netflix</string>
 		<string>network</string>
 		<string>neustar</string>
 		<string>new</string>
+		<string>newholland</string>
 		<string>news</string>
 		<string>next</string>
 		<string>nextdirect</string>
 		<string>nexus</string>
 		<string>nf</string>
+		<string>nfl</string>
 		<string>ng</string>
 		<string>ngo</string>
 		<string>nhk</string>
 		<string>ni</string>
 		<string>nico</string>
+		<string>nike</string>
 		<string>nikon</string>
 		<string>ninja</string>
 		<string>nissan</string>
@@ -809,6 +947,7 @@
 		<string>nokia</string>
 		<string>northwesternmutual</string>
 		<string>norton</string>
+		<string>now</string>
 		<string>nowruz</string>
 		<string>nowtv</string>
 		<string>np</string>
@@ -820,17 +959,23 @@
 		<string>nyc</string>
 		<string>nz</string>
 		<string>obi</string>
+		<string>observer</string>
+		<string>off</string>
 		<string>office</string>
 		<string>okinawa</string>
 		<string>olayan</string>
 		<string>olayangroup</string>
+		<string>oldnavy</string>
+		<string>ollo</string>
 		<string>om</string>
 		<string>omega</string>
 		<string>one</string>
 		<string>ong</string>
 		<string>onl</string>
 		<string>online</string>
+		<string>onyourside</string>
 		<string>ooo</string>
+		<string>open</string>
 		<string>oracle</string>
 		<string>orange</string>
 		<string>org</string>
@@ -838,25 +983,29 @@
 		<string>origins</string>
 		<string>osaka</string>
 		<string>otsuka</string>
+		<string>ott</string>
 		<string>ovh</string>
 		<string>pa</string>
 		<string>page</string>
-		<string>pamperedchef</string>
-		<string>panerai</string>
+		<string>panasonic</string>
 		<string>paris</string>
 		<string>pars</string>
 		<string>partners</string>
 		<string>parts</string>
 		<string>party</string>
 		<string>passagens</string>
+		<string>pay</string>
 		<string>pccw</string>
 		<string>pe</string>
 		<string>pet</string>
 		<string>pf</string>
+		<string>pfizer</string>
 		<string>pg</string>
 		<string>ph</string>
 		<string>pharmacy</string>
+		<string>phd</string>
 		<string>philips</string>
+		<string>phone</string>
 		<string>photo</string>
 		<string>photography</string>
 		<string>photos</string>
@@ -869,6 +1018,7 @@
 		<string>pin</string>
 		<string>ping</string>
 		<string>pink</string>
+		<string>pioneer</string>
 		<string>pizza</string>
 		<string>pk</string>
 		<string>pl</string>
@@ -879,13 +1029,17 @@
 		<string>plus</string>
 		<string>pm</string>
 		<string>pn</string>
+		<string>pnc</string>
 		<string>pohl</string>
 		<string>poker</string>
+		<string>politie</string>
 		<string>porn</string>
 		<string>post</string>
 		<string>pr</string>
+		<string>pramerica</string>
 		<string>praxi</string>
 		<string>press</string>
+		<string>prime</string>
 		<string>pro</string>
 		<string>prod</string>
 		<string>productions</string>
@@ -895,6 +1049,8 @@
 		<string>properties</string>
 		<string>property</string>
 		<string>protection</string>
+		<string>pru</string>
+		<string>prudential</string>
 		<string>ps</string>
 		<string>pt</string>
 		<string>pub</string>
@@ -905,9 +1061,13 @@
 		<string>qpon</string>
 		<string>quebec</string>
 		<string>quest</string>
+		<string>qvc</string>
 		<string>racing</string>
+		<string>radio</string>
+		<string>raid</string>
 		<string>re</string>
 		<string>read</string>
+		<string>realestate</string>
 		<string>realtor</string>
 		<string>realty</string>
 		<string>recipes</string>
@@ -918,6 +1078,7 @@
 		<string>reise</string>
 		<string>reisen</string>
 		<string>reit</string>
+		<string>reliance</string>
 		<string>ren</string>
 		<string>rent</string>
 		<string>rentals</string>
@@ -932,16 +1093,21 @@
 		<string>rich</string>
 		<string>richardli</string>
 		<string>ricoh</string>
+		<string>rightathome</string>
+		<string>ril</string>
 		<string>rio</string>
 		<string>rip</string>
+		<string>rmit</string>
 		<string>ro</string>
 		<string>rocher</string>
 		<string>rocks</string>
 		<string>rodeo</string>
+		<string>rogers</string>
 		<string>room</string>
 		<string>rs</string>
 		<string>rsvp</string>
 		<string>ru</string>
+		<string>rugby</string>
 		<string>ruhr</string>
 		<string>run</string>
 		<string>rw</string>
@@ -954,14 +1120,15 @@
 		<string>sakura</string>
 		<string>sale</string>
 		<string>salon</string>
+		<string>samsclub</string>
 		<string>samsung</string>
 		<string>sandvik</string>
 		<string>sandvikcoromant</string>
 		<string>sanofi</string>
 		<string>sap</string>
-		<string>sapo</string>
 		<string>sarl</string>
 		<string>sas</string>
+		<string>save</string>
 		<string>saxo</string>
 		<string>sb</string>
 		<string>sbi</string>
@@ -976,16 +1143,20 @@
 		<string>schule</string>
 		<string>schwarz</string>
 		<string>science</string>
+		<string>scjohnson</string>
 		<string>scor</string>
 		<string>scot</string>
 		<string>sd</string>
 		<string>se</string>
+		<string>search</string>
 		<string>seat</string>
+		<string>secure</string>
 		<string>security</string>
 		<string>seek</string>
 		<string>select</string>
 		<string>sener</string>
 		<string>services</string>
+		<string>ses</string>
 		<string>seven</string>
 		<string>sew</string>
 		<string>sex</string>
@@ -993,16 +1164,21 @@
 		<string>sfr</string>
 		<string>sg</string>
 		<string>sh</string>
+		<string>shangrila</string>
 		<string>sharp</string>
 		<string>shaw</string>
 		<string>shell</string>
 		<string>shia</string>
 		<string>shiksha</string>
 		<string>shoes</string>
+		<string>shop</string>
+		<string>shopping</string>
 		<string>shouji</string>
 		<string>show</string>
+		<string>showtime</string>
 		<string>shriram</string>
 		<string>si</string>
+		<string>silk</string>
 		<string>sina</string>
 		<string>singles</string>
 		<string>site</string>
@@ -1013,7 +1189,9 @@
 		<string>sky</string>
 		<string>skype</string>
 		<string>sl</string>
+		<string>sling</string>
 		<string>sm</string>
+		<string>smart</string>
 		<string>smile</string>
 		<string>sn</string>
 		<string>sncf</string>
@@ -1029,18 +1207,19 @@
 		<string>sony</string>
 		<string>soy</string>
 		<string>space</string>
-		<string>spiegel</string>
+		<string>sport</string>
 		<string>spot</string>
 		<string>spreadbetting</string>
 		<string>sr</string>
 		<string>srl</string>
+		<string>srt</string>
+		<string>ss</string>
 		<string>st</string>
 		<string>stada</string>
+		<string>staples</string>
 		<string>star</string>
-		<string>starhub</string>
 		<string>statebank</string>
 		<string>statefarm</string>
-		<string>statoil</string>
 		<string>stc</string>
 		<string>stcgroup</string>
 		<string>stockholm</string>
@@ -1060,6 +1239,7 @@
 		<string>suzuki</string>
 		<string>sv</string>
 		<string>swatch</string>
+		<string>swiftcover</string>
 		<string>swiss</string>
 		<string>sx</string>
 		<string>sy</string>
@@ -1071,6 +1251,7 @@
 		<string>taipei</string>
 		<string>talk</string>
 		<string>taobao</string>
+		<string>target</string>
 		<string>tatamotors</string>
 		<string>tatar</string>
 		<string>tattoo</string>
@@ -1079,11 +1260,11 @@
 		<string>tc</string>
 		<string>tci</string>
 		<string>td</string>
+		<string>tdk</string>
 		<string>team</string>
 		<string>tech</string>
 		<string>technology</string>
 		<string>tel</string>
-		<string>telecity</string>
 		<string>telefonica</string>
 		<string>temasek</string>
 		<string>tennis</string>
@@ -1094,6 +1275,7 @@
 		<string>thd</string>
 		<string>theater</string>
 		<string>theatre</string>
+		<string>tiaa</string>
 		<string>tickets</string>
 		<string>tienda</string>
 		<string>tiffany</string>
@@ -1101,7 +1283,10 @@
 		<string>tires</string>
 		<string>tirol</string>
 		<string>tj</string>
+		<string>tjmaxx</string>
+		<string>tjx</string>
 		<string>tk</string>
+		<string>tkmaxx</string>
 		<string>tl</string>
 		<string>tm</string>
 		<string>tmall</string>
@@ -1123,6 +1308,7 @@
 		<string>trading</string>
 		<string>training</string>
 		<string>travel</string>
+		<string>travelchannel</string>
 		<string>travelers</string>
 		<string>travelersinsurance</string>
 		<string>trust</string>
@@ -1137,19 +1323,23 @@
 		<string>tw</string>
 		<string>tz</string>
 		<string>ua</string>
+		<string>ubank</string>
 		<string>ubs</string>
+		<string>uconnect</string>
 		<string>ug</string>
 		<string>uk</string>
 		<string>unicom</string>
 		<string>university</string>
 		<string>uno</string>
 		<string>uol</string>
+		<string>ups</string>
 		<string>us</string>
 		<string>uy</string>
 		<string>uz</string>
 		<string>va</string>
 		<string>vacations</string>
 		<string>vana</string>
+		<string>vanguard</string>
 		<string>vc</string>
 		<string>ve</string>
 		<string>vegas</string>
@@ -1167,14 +1357,16 @@
 		<string>vin</string>
 		<string>vip</string>
 		<string>virgin</string>
+		<string>visa</string>
 		<string>vision</string>
-		<string>vista</string>
 		<string>vistaprint</string>
 		<string>viva</string>
+		<string>vivo</string>
 		<string>vlaanderen</string>
 		<string>vn</string>
 		<string>vodka</string>
 		<string>volkswagen</string>
+		<string>volvo</string>
 		<string>vote</string>
 		<string>voting</string>
 		<string>voto</string>
@@ -1182,6 +1374,7 @@
 		<string>vu</string>
 		<string>vuelos</string>
 		<string>wales</string>
+		<string>walmart</string>
 		<string>walter</string>
 		<string>wang</string>
 		<string>wanggou</string>
@@ -1205,41 +1398,53 @@
 		<string>win</string>
 		<string>windows</string>
 		<string>wine</string>
+		<string>winners</string>
 		<string>wme</string>
 		<string>wolterskluwer</string>
+		<string>woodside</string>
 		<string>work</string>
 		<string>works</string>
 		<string>world</string>
+		<string>wow</string>
 		<string>ws</string>
 		<string>wtc</string>
 		<string>wtf</string>
 		<string>xbox</string>
 		<string>xerox</string>
+		<string>xfinity</string>
 		<string>xihuan</string>
 		<string>xin</string>
 		<string>xn--11b4c3d</string>
 		<string>xn--1ck2e1b</string>
 		<string>xn--1qqw23a</string>
+		<string>xn--2scrj9c</string>
 		<string>xn--30rr7y</string>
 		<string>xn--3bst00m</string>
 		<string>xn--3ds443g</string>
 		<string>xn--3e0b707e</string>
+		<string>xn--3hcrj9c</string>
+		<string>xn--3oq18vl8pn36a</string>
 		<string>xn--3pxu8k</string>
 		<string>xn--42c2d9a</string>
+		<string>xn--45br5cyl</string>
 		<string>xn--45brj9c</string>
 		<string>xn--45q11c</string>
 		<string>xn--4gbrim</string>
+		<string>xn--54b7fta0cc</string>
 		<string>xn--55qw42g</string>
 		<string>xn--55qx5d</string>
+		<string>xn--5su34j936bgsg</string>
 		<string>xn--5tzm5g</string>
 		<string>xn--6frz82g</string>
 		<string>xn--6qq986b3xl</string>
 		<string>xn--80adxhks</string>
 		<string>xn--80ao21a</string>
+		<string>xn--80aqecdr1a</string>
 		<string>xn--80asehdb</string>
 		<string>xn--80aswg</string>
 		<string>xn--8y0a063a</string>
 		<string>xn--90a3ac</string>
+		<string>xn--90ae</string>
 		<string>xn--90ais</string>
 		<string>xn--9dbq2a</string>
 		<string>xn--9et52u</string>
@@ -1274,7 +1479,10 @@
 		<string>xn--g2xx48c</string>
 		<string>xn--gckr3f0f</string>
 		<string>xn--gecrj9c</string>
+		<string>xn--gk3at1e</string>
+		<string>xn--h2breg3eve</string>
 		<string>xn--h2brj9c</string>
+		<string>xn--h2brj9c8c</string>
 		<string>xn--hxt814e</string>
 		<string>xn--i1b6b1a6a2e</string>
 		<string>xn--imr513n</string>
@@ -1295,14 +1503,19 @@
 		<string>xn--mgba3a3ejt</string>
 		<string>xn--mgba3a4f16a</string>
 		<string>xn--mgba7c0bbn0a</string>
+		<string>xn--mgbaakc7dvf</string>
 		<string>xn--mgbaam7a8h</string>
 		<string>xn--mgbab2bd</string>
+		<string>xn--mgbah1a3hjkrd</string>
+		<string>xn--mgbai9azgqp6j</string>
 		<string>xn--mgbayh7gpa</string>
-		<string>xn--mgbb9fbpob</string>
+		<string>xn--mgbbh1a</string>
 		<string>xn--mgbbh1a71e</string>
 		<string>xn--mgbc0a9azcg</string>
 		<string>xn--mgbca7dzdo</string>
 		<string>xn--mgberp4a5d4ar</string>
+		<string>xn--mgbgu82a</string>
+		<string>xn--mgbi4ecexp</string>
 		<string>xn--mgbpl2fh</string>
 		<string>xn--mgbt3dhd</string>
 		<string>xn--mgbtx2b</string>
@@ -1312,12 +1525,14 @@
 		<string>xn--mxtq1m</string>
 		<string>xn--ngbc5azd</string>
 		<string>xn--ngbe9e0a</string>
+		<string>xn--ngbrx</string>
 		<string>xn--node</string>
 		<string>xn--nqv7f</string>
 		<string>xn--nqv7fs00ema</string>
 		<string>xn--nyqy26a</string>
 		<string>xn--o3cw4h</string>
 		<string>xn--ogbpf8fl</string>
+		<string>xn--otu796d</string>
 		<string>xn--p1acf</string>
 		<string>xn--p1ai</string>
 		<string>xn--pbt977c</string>
@@ -1325,19 +1540,23 @@
 		<string>xn--pssy2u</string>
 		<string>xn--q9jyb4c</string>
 		<string>xn--qcka1pmc</string>
+		<string>xn--qxa6a</string>
 		<string>xn--qxam</string>
 		<string>xn--rhqv96g</string>
 		<string>xn--rovu88b</string>
+		<string>xn--rvc1e0am3e</string>
 		<string>xn--s9brj9c</string>
 		<string>xn--ses554g</string>
 		<string>xn--t60b56a</string>
 		<string>xn--tckwe</string>
+		<string>xn--tiq49xqyj</string>
 		<string>xn--unup4y</string>
 		<string>xn--vermgensberater-ctb</string>
 		<string>xn--vermgensberatung-pwb</string>
 		<string>xn--vhquv</string>
 		<string>xn--vuq861b</string>
 		<string>xn--w4r85el8fhu5dnra</string>
+		<string>xn--w4rs40l</string>
 		<string>xn--wgbh1c</string>
 		<string>xn--wgbl6a</string>
 		<string>xn--xhq521b</string>
@@ -1347,7 +1566,6 @@
 		<string>xn--yfro4i67o</string>
 		<string>xn--ygbi2ammx</string>
 		<string>xn--zfr164b</string>
-		<string>xperia</string>
 		<string>xxx</string>
 		<string>xyz</string>
 		<string>yachts</string>
@@ -1363,6 +1581,7 @@
 		<string>yt</string>
 		<string>yun</string>
 		<string>za</string>
+		<string>zappos</string>
 		<string>zara</string>
 		<string>zero</string>
 		<string>zip</string>
