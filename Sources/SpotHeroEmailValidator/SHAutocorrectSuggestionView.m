@@ -22,7 +22,7 @@
 #error This file must be compiled with ARC. Either turn on ARC for the project or use -fobjc-arc flag
 #endif
 
-#import "SHAutocorrectSuggestionView.h"
+#import "include/SHAutocorrectSuggestionView.h"
 #import <QuartzCore/QuartzCore.h>
 
 static const NSInteger kCornerRadius = 6;

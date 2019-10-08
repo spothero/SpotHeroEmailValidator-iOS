@@ -22,8 +22,8 @@
 #error This file must be compiled with ARC. Either turn on ARC for the project or use -fobjc-arc flag
 #endif
 
-#import "SHEmailValidator.h"
-#import "NSString+LevenshteinDistance.h"
+#import "include/SHEmailValidator.h"
+#import "include/NSString+LevenshteinDistance.h"
 
 NSString *const SHValidatorErrorDomain = @"com.spothero.SHEmailValidator";
 

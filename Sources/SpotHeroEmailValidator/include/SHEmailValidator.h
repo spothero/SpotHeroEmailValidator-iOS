@@ -18,6 +18,7 @@
 //  limitations under the License.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "SHValidationResult.h"
 
 FOUNDATION_EXPORT NSString *const SHValidatorErrorDomain;

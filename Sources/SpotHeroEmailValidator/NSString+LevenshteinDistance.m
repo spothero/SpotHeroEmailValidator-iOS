@@ -22,7 +22,7 @@
 #error This file must be compiled with ARC. Either turn on ARC for the project or use -fobjc-arc flag
 #endif
 
-#import "NSString+LevenshteinDistance.h"
+#import "include/NSString+LevenshteinDistance.h"
 
 @implementation NSString (LevenshteinDistance)
 
