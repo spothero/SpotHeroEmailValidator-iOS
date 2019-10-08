@@ -22,6 +22,13 @@
 		3449775A234C2D6A00D71628 /* SHValidationResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 34497755234C2D6A00D71628 /* SHValidationResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3449775B234C2D6A00D71628 /* NSString+LevenshteinDistance.h in Headers */ = {isa = PBXBuildFile; fileRef = 34497756234C2D6A00D71628 /* NSString+LevenshteinDistance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34497763234C2FBC00D71628 /* DomainData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34497762234C2FBC00D71628 /* DomainData.plist */; };
+		3449776C234C31D100D71628 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3449776B234C31D100D71628 /* AppDelegate.m */; };
+		3449776F234C31D100D71628 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3449776E234C31D100D71628 /* SceneDelegate.m */; };
+		34497772234C31D100D71628 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34497771234C31D100D71628 /* ViewController.m */; };
+		34497775234C31D100D71628 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34497773234C31D100D71628 /* Main.storyboard */; };
+		34497777234C31D200D71628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34497776234C31D200D71628 /* Assets.xcassets */; };
+		3449777A234C31D200D71628 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34497778234C31D200D71628 /* LaunchScreen.storyboard */; };
+		3449777D234C31D200D71628 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3449777C234C31D200D71628 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +38,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 344976FD234C289600D71628;
 			remoteInfo = SpotHeroEmailValidator;
+		};
+		34497786234C31FF00D71628 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34497781234C31FF00D71628 /* EmailValidatorDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5FD6D340180A401400C37742;
+			remoteInfo = EmailValidatorDemo;
+		};
+		34497788234C31FF00D71628 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34497781234C31FF00D71628 /* EmailValidatorDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5FD6D361180A401500C37742;
+			remoteInfo = EmailValidatorDemoTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -54,6 +75,19 @@
 		3449775D234C2D9400D71628 /* LevenshteinDistanceTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevenshteinDistanceTestModel.h; sourceTree = "<group>"; };
 		3449775E234C2D9400D71628 /* ValidatorTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatorTestModel.h; sourceTree = "<group>"; };
 		34497762234C2FBC00D71628 /* DomainData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DomainData.plist; sourceTree = "<group>"; };
+		34497768234C31D100D71628 /* SpotHeroEmailValidatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotHeroEmailValidatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3449776A234C31D100D71628 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3449776B234C31D100D71628 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3449776D234C31D100D71628 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		3449776E234C31D100D71628 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		34497770234C31D100D71628 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		34497771234C31D100D71628 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		34497774234C31D100D71628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		34497776234C31D200D71628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34497779234C31D200D71628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3449777B234C31D200D71628 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3449777C234C31D200D71628 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		34497781234C31FF00D71628 /* EmailValidatorDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EmailValidatorDemo.xcodeproj; path = Demo/EmailValidatorDemo.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,15 +106,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34497765234C31D100D71628 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		344976F4234C289600D71628 = {
 			isa = PBXGroup;
 			children = (
+				34497781234C31FF00D71628 /* EmailValidatorDemo.xcodeproj */,
 				34497730234C29F300D71628 /* Config */,
 				34497700234C289600D71628 /* SpotHeroEmailValidator */,
 				3449770B234C289600D71628 /* SpotHeroEmailValidatorTests */,
+				34497769234C31D100D71628 /* SpotHeroEmailValidatorDemo */,
 				344976FF234C289600D71628 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +133,7 @@
 			children = (
 				344976FE234C289600D71628 /* SpotHeroEmailValidator.framework */,
 				34497707234C289600D71628 /* SpotHeroEmailValidatorTests.xctest */,
+				34497768234C31D100D71628 /* SpotHeroEmailValidatorDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +194,33 @@
 			path = data;
 			sourceTree = "<group>";
 		};
+		34497769234C31D100D71628 /* SpotHeroEmailValidatorDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3449776A234C31D100D71628 /* AppDelegate.h */,
+				3449776B234C31D100D71628 /* AppDelegate.m */,
+				3449776D234C31D100D71628 /* SceneDelegate.h */,
+				3449776E234C31D100D71628 /* SceneDelegate.m */,
+				34497770234C31D100D71628 /* ViewController.h */,
+				34497771234C31D100D71628 /* ViewController.m */,
+				34497773234C31D100D71628 /* Main.storyboard */,
+				34497776234C31D200D71628 /* Assets.xcassets */,
+				34497778234C31D200D71628 /* LaunchScreen.storyboard */,
+				3449777B234C31D200D71628 /* Info.plist */,
+				3449777C234C31D200D71628 /* main.m */,
+			);
+			path = SpotHeroEmailValidatorDemo;
+			sourceTree = "<group>";
+		};
+		34497782234C31FF00D71628 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34497787234C31FF00D71628 /* EmailValidatorDemo.app */,
+				34497789234C31FF00D71628 /* EmailValidatorDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -204,6 +275,23 @@
 			productReference = 34497707234C289600D71628 /* SpotHeroEmailValidatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		34497767234C31D100D71628 /* SpotHeroEmailValidatorDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3449777E234C31D200D71628 /* Build configuration list for PBXNativeTarget "SpotHeroEmailValidatorDemo" */;
+			buildPhases = (
+				34497764234C31D100D71628 /* Sources */,
+				34497765234C31D100D71628 /* Frameworks */,
+				34497766234C31D100D71628 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpotHeroEmailValidatorDemo;
+			productName = SpotHeroEmailValidatorDemo;
+			productReference = 34497768234C31D100D71628 /* SpotHeroEmailValidatorDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,6 +307,9 @@
 					34497706234C289600D71628 = {
 						CreatedOnToolsVersion = 11.1;
 					};
+					34497767234C31D100D71628 = {
+						CreatedOnToolsVersion = 11.1;
+					};
 				};
 			};
 			buildConfigurationList = 344976F8234C289600D71628 /* Build configuration list for PBXProject "SpotHeroEmailValidator" */;
@@ -232,13 +323,37 @@
 			mainGroup = 344976F4234C289600D71628;
 			productRefGroup = 344976FF234C289600D71628 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 34497782234C31FF00D71628 /* Products */;
+					ProjectRef = 34497781234C31FF00D71628 /* EmailValidatorDemo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				344976FD234C289600D71628 /* SpotHeroEmailValidator */,
 				34497706234C289600D71628 /* SpotHeroEmailValidatorTests */,
+				34497767234C31D100D71628 /* SpotHeroEmailValidatorDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		34497787234C31FF00D71628 /* EmailValidatorDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = EmailValidatorDemo.app;
+			remoteRef = 34497786234C31FF00D71628 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		34497789234C31FF00D71628 /* EmailValidatorDemoTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EmailValidatorDemoTests.xctest;
+			remoteRef = 34497788234C31FF00D71628 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		344976FC234C289600D71628 /* Resources */ = {
@@ -253,6 +368,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34497766234C31D100D71628 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3449777A234C31D200D71628 /* LaunchScreen.storyboard in Resources */,
+				34497777234C31D200D71628 /* Assets.xcassets in Resources */,
+				34497775234C31D100D71628 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +406,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34497764234C31D100D71628 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34497772234C31D100D71628 /* ViewController.m in Sources */,
+				3449776C234C31D100D71628 /* AppDelegate.m in Sources */,
+				3449777D234C31D200D71628 /* main.m in Sources */,
+				3449776F234C31D100D71628 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -290,6 +426,25 @@
 			targetProxy = 3449774D234C2CA800D71628 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		34497773234C31D100D71628 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34497774234C31D100D71628 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		34497778234C31D200D71628 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34497779234C31D200D71628 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		34497710234C289600D71628 /* Debug */ = {
@@ -488,6 +643,40 @@
 			};
 			name = Release;
 		};
+		3449777F234C31D200D71628 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZW7QWR628D;
+				INFOPLIST_FILE = SpotHeroEmailValidatorDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.spothero.SpotHeroEmailValidatorDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		34497780234C31D200D71628 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZW7QWR628D;
+				INFOPLIST_FILE = SpotHeroEmailValidatorDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.spothero.SpotHeroEmailValidatorDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -514,6 +703,15 @@
 			buildConfigurations = (
 				34497716234C289600D71628 /* Debug */,
 				34497717234C289600D71628 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3449777E234C31D200D71628 /* Build configuration list for PBXNativeTarget "SpotHeroEmailValidatorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3449777F234C31D200D71628 /* Debug */,
+				34497780234C31D200D71628 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

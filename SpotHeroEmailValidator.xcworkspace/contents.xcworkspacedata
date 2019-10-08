@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Demo/EmailValidatorDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SpotHeroEmailValidator.xcodeproj">
    </FileRef>
 </Workspace>

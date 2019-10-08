@@ -19,8 +19,7 @@
 //
 
 #import "DemoViewController.h"
-#import "SHEmailValidationTextField.h"
-#import "SHEmailValidator.h"
+@import SpotHeroEmailValidator;
 
 @interface DemoViewController () <UITextFieldDelegate>
 
