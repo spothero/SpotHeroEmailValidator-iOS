@@ -17,10 +17,10 @@ Pod::Spec.new do |spec|
                         (for example, test@gamil.con would be corrected to test@gmail.com).
                       DESC
 
-  s.screenshots     = [
-                      "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator/master/Screenshots/Screenshot%201.png", 
-                      "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator/master/Screenshots/Screenshot%202.png", 
-                      "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator/master/Screenshots/Screenshot%203.png",
+  spec.screenshots  = [
+                      "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator-iOS/master/Screenshots/Screenshot%201.png", 
+                      "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator-iOS/master/Screenshots/Screenshot%202.png", 
+                      "https://raw.githubusercontent.com/spothero/SpotHeroEmailValidator-iOS/master/Screenshots/Screenshot%203.png",
                     ]
 
   # Platform
