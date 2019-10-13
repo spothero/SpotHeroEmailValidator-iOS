@@ -48,8 +48,8 @@
                        [[LevenshteinDistanceTestModel alloc] initWithA:@"same" B:@"same" distance:0]];
     
     for (LevenshteinDistanceTestModel *test in tests) {
-        XCTAssertEqual([test.stringA levenshteinDistanceFromString:test.stringB], test.distance, @"Unit test failed for \"%s\"", __PRETTY_FUNCTION__);
-        XCTAssertEqual([test.stringB levenshteinDistanceFromString:test.stringA], test.distance, @"Unit test failed for \"%s\"", __PRETTY_FUNCTION__);
+        XCTAssertEqual([test.stringA levenshteinDistanceFrom:test.stringB], test.distance, @"Unit test failed for \"%s\"", __PRETTY_FUNCTION__);
+        XCTAssertEqual([test.stringB levenshteinDistanceFrom:test.stringA], test.distance, @"Unit test failed for \"%s\"", __PRETTY_FUNCTION__);
     }
 }
 
