@@ -15,8 +15,7 @@
 
 @import CoreGraphics;
 
-#import "SHValidationResult.h"
-#import "NSString+LevenshteinDistance.h"
+#import "SpotHeroEmailValidator-Swift.h"
 #import "SHAutocorrectSuggestionView.h"
 #import "SHEmailValidationTextField.h"
 
