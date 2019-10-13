@@ -15,12 +15,8 @@
 
 import Foundation
 
-public class SHValidationResult: NSObject {
-    @objc public let passedValidation: Bool
-    @objc public let autocorrectSuggestion: String?
-    
-    @objc public init(passedValidation: Bool, autocorrectSuggestion: String?) {
-        self.passedValidation = passedValidation
-        self.autocorrectSuggestion = autocorrectSuggestion
+public extension NSString {
+    @objc func levenshteinDistance(from other: NSString) -> Int {
+        return (self as String).levenshteinDistance(from: other as String)
     }
 }

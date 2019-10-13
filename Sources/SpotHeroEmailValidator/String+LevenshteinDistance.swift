@@ -15,14 +15,7 @@
 
 import Foundation
 
-public extension NSString {
-    @objc func levenshteinDistance(from other: NSString) -> Int {
-        return (self as String).levenshteinDistance(from: other as String)
-    }
-}
-
 public extension String {
-    
     /// Returns the minimum number of operations to edit this string into another string.
     ///
     /// Source: [Minimum Edit Distance - Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Minimum%20Edit%20Distance)
