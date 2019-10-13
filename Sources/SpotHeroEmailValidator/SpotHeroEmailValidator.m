@@ -18,6 +18,7 @@
 #endif
 
 #import "include/SpotHeroEmailValidator.h"
+#import <SpotheroEmailValidator/SpotHeroEmailValidator-Swift.h>
 
 NSString *const SHValidatorErrorDomain = @"com.spothero.SpotHeroEmailValidator";
 
@@ -39,7 +40,6 @@ NSString *const SHValidatorErrorDomain = @"com.spothero.SpotHeroEmailValidator";
 - (instancetype)init
 {
     if ((self = [super init])) {
-        
         NSString *plistPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"DomainData" ofType:@"plist"];
         NSDictionary *dataDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
         

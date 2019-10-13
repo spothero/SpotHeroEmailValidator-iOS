@@ -15,7 +15,8 @@
 
 @import CoreGraphics;
 
-#import "SpotHeroEmailValidator-Swift.h"
+@class SHValidationResult;
+
 #import "SHAutocorrectSuggestionView.h"
 #import "SHEmailValidationTextField.h"
 

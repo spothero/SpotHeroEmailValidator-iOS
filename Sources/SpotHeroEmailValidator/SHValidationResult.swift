@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public class SHValidationResult: NSObject {
+public class SHValidationResult: NSObject {
     @objc public let passedValidation: Bool
     @objc public let autocorrectSuggestion: String?
     

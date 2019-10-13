@@ -24,6 +24,7 @@
 @import UIKit;
 
 #import "include/SHAutocorrectSuggestionView.h"
+#import <SpotHeroEmailValidator/SpotHeroEmailValidator-Swift.h>
 
 static const NSInteger kCornerRadius = 6;
 static const NSInteger kArrowHeight = 12;
