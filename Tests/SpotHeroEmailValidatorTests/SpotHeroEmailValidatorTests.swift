@@ -25,14 +25,22 @@ class SpotHeroEmailValidatorTests: XCTestCase {
     
     func testSyntaxValidator() {
         let tests = [
+            // Successful Examples
             ValidatorTestModel(emailAddress: "test@email.com", error: nil),
             ValidatorTestModel(emailAddress: "test+-.test@email.com", error: nil),
+            ValidatorTestModel(emailAddress: #""JohnDoe"@email.com"#, error: nil),
+            // General Syntax Tests
             ValidatorTestModel(emailAddress: "test.com", error: .invalidSyntax),
+            ValidatorTestModel(emailAddress: #"test&*\"@email.com"#, error: .invalidSyntax),
+            ValidatorTestModel(emailAddress: #"test&*\@email.com"#, error: .invalidSyntax),
+            // Username Tests
+            ValidatorTestModel(emailAddress: #"John..Doe@email.com"#, error: .invalidUsername),
+            ValidatorTestModel(emailAddress: #".JohnDoe@email.com"#, error: .invalidUsername),
+            ValidatorTestModel(emailAddress: #"JohnDoe.@email.com"#, error: .invalidUsername),
+            // Domain Tests
             ValidatorTestModel(emailAddress: "test@.com", error: .invalidDomain),
             ValidatorTestModel(emailAddress: "test@com", error: .invalidDomain),
-            ValidatorTestModel(emailAddress: "test@email.c", error: .invalidTLD),
             ValidatorTestModel(emailAddress: "test@email+.com", error: .invalidDomain),
-            ValidatorTestModel(emailAddress: "test&*\"@email.com", error: .invalidUsername),
         ]
         
         let validator = SpotHeroEmailValidator.shared
@@ -43,7 +51,7 @@ class SpotHeroEmailValidatorTests: XCTestCase {
                     XCTAssertEqual(error.localizedDescription, testError.localizedDescription, "Test failed for email address: \(test.emailAddress)")
                 }
             } else {
-                XCTAssertNoThrow(try validator.validateSyntax(of: test.emailAddress))
+                XCTAssertNoThrow(try validator.validateSyntax(of: test.emailAddress), "Test failed for email address: \(test.emailAddress)")
             }
         }
     }
@@ -65,9 +73,9 @@ class SpotHeroEmailValidatorTests: XCTestCase {
         
         for test in tests {
             if let suggestion = test.suggestion {
-                XCTAssertEqual(validator.autocorrectSuggestion(for: test.emailAddress), suggestion)
+                XCTAssertEqual(validator.autocorrectSuggestion(for: test.emailAddress), suggestion, "Test failed for email address: \(test.emailAddress)")
             } else {
-                XCTAssertNil(validator.autocorrectSuggestion(for: test.emailAddress))
+                XCTAssertNil(validator.autocorrectSuggestion(for: test.emailAddress), "Test failed for email address: \(test.emailAddress)")
             }
         }
     }

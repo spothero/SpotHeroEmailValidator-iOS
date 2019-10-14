@@ -17,7 +17,7 @@ import Foundation
 
 // TODO: Remove NSObject when entirely converted into Swift
 public class SpotHeroEmailValidator: NSObject {
-    private typealias EmailParts = (username: String, domain: String, tld: String)
+    private typealias EmailParts = (username: String, hostname: String, tld: String)
 
     // TODO: Remove @objc when entirely converted into Swift
     @objc public static let shared = SpotHeroEmailValidator()
@@ -60,15 +60,16 @@ public class SpotHeroEmailValidator: NSObject {
         
         var suggestedTLD = emailParts.tld
         
-        if !self.ianaRegisteredTLDs.contains(emailParts.tld) {
-            suggestedTLD = self.closestString(for: emailParts.tld, fromArray: self.commonTLDs, withTolerance: 0.5) ?? emailParts.tld
+        if !self.ianaRegisteredTLDs.contains(emailParts.tld),
+            let closestTLD = self.closestString(for: emailParts.tld, fromArray: self.commonTLDs, withTolerance: 0.5) {
+            suggestedTLD = closestTLD
         }
-
-        let fullDomain = "\(emailParts.domain).\(suggestedTLD)"
-        var suggestedDomain = fullDomain
         
-        if !self.commonDomains.contains(fullDomain) {
-            suggestedDomain = self.closestString(for: fullDomain, fromArray: self.commonDomains, withTolerance: 0.25) ?? fullDomain
+        var suggestedDomain = "\(emailParts.hostname).\(suggestedTLD)"
+        
+        if !self.commonDomains.contains(suggestedDomain),
+            let closestDomain = self.closestString(for: suggestedDomain, fromArray: self.commonDomains, withTolerance: 0.25) {
+            suggestedDomain = closestDomain
         }
         
         let suggestedEmailAddress = "\(emailParts.username)@\(suggestedDomain)"
@@ -80,39 +81,29 @@ public class SpotHeroEmailValidator: NSObject {
         return suggestedEmailAddress
     }
     
-    public func validateSyntax(of emailAddress: String) -> Bool {
-        return emailAddress.isValidEmail()
-//        guard !emailAddress.isEmpty else {
-//            throw Error.blankAddress
-//        }
-//
-//        let emailParts = try self.splitEmailAddress(emailAddress)
-//
-//        #warning("TODO: Replace with regex match, use proper email address checking.")
-//        let fullEmailPredicate = NSPredicate(format: "SELF MATCHES %@", "^\\b.+@.+\\..+\\b$")
-//
-//        if !fullEmailPredicate.evaluate(with: emailAddress) {
-//            throw Error.invalidSyntax
-//        }
-//
-//        let username = emailParts.username
-//        let domain = emailParts.domain
-//        let tld = emailParts.tld
-//
-//        #warning("TODO: Replace with regex matches.")
-//        let usernamePredicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z.!#$%&'*+-/=?^_`{|}~]+")
-//        let domainPredicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z.-]+")
-//        let tldPredicate = NSPredicate(format: "SELF MATCHES %@", "[A-Za-z][A-Z0-9a-z-]{0,22}[A-Z0-9a-z]")
-//
-//        if username.isEmpty || !usernamePredicate.evaluate(with: username) || username.hasPrefix(".") || username.hasSuffix(".") || (username as NSString).range(of: "..").location != NSNotFound {
-//            throw Error.invalidUsername
-//        } else if domain.isEmpty || !domainPredicate.evaluate(with: domain) {
-//            throw Error.invalidDomain
-//        } else if tld.isEmpty || !tldPredicate.evaluate(with: tld) {
-//            throw Error.invalidTLD
-//        }
-//
-//        return true
+    public func validateSyntax(of emailAddress: String) throws -> Bool {
+        // Split the email address into parts
+        let emailParts = try self.splitEmailAddress(emailAddress)
+        
+        // Ensure the username is valid by itself
+        guard emailParts.username.isValidEmailUsername() else {
+            throw Error.invalidUsername
+        }
+        
+        // Combine the hostname and TLD into the domain"
+        let domain = "\(emailParts.hostname).\(emailParts.tld)"
+        
+        // Ensure the domain is valid
+        guard domain.isValidEmailDomain() else {
+            throw Error.invalidDomain
+        }
+        
+        // Ensure that the entire email forms a syntactically valid email
+        guard emailAddress.isValidEmail() else {
+            throw Error.invalidSyntax
+        }
+        
+        return true
     }
 
     // TODO: Use better name for array parameter
@@ -147,8 +138,9 @@ public class SpotHeroEmailValidator: NSObject {
         
         // Extract the username from the email address parts
         let username = String(emailAddressParts.first ?? "")
+        // Extract the full domain (including TLD) from the email address parts
         let fullDomain = String(emailAddressParts.last ?? "")
-        
+        // Split the domain parts for evaluation
         let domainParts = fullDomain.split(separator: ".")
         
         guard domainParts.count >= 2 else {
@@ -177,7 +169,6 @@ public extension SpotHeroEmailValidator {
         case blankAddress
         case invalidDomain
         case invalidSyntax
-        case invalidTLD
         case invalidUsername
 
         public var errorDescription: String? {
@@ -188,8 +179,6 @@ public extension SpotHeroEmailValidator {
                 return "The domain name section of the entered email address is invalid."
             case .invalidSyntax:
                 return "The syntax of the entered email address is invalid."
-            case .invalidTLD:
-                return "The TLD section of the entered email address is invalid."
             case .invalidUsername:
                 return "The username section of the entered email address is invalid."
             }
@@ -199,9 +188,27 @@ public extension SpotHeroEmailValidator {
 
 private extension String {
     /// RFC 5322 Official Standard Email Regex Pattern
-    private static let emailRegexPattern = #"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"#
+    ///
+    /// Sources:
+    ///   - [How to validate an email address using a regular expression? (Stack Overflow)](https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression)
+    ///   - [What characters are allowed in an email address? (Stack Overflow](https://stackoverflow.com/questions/2049502/what-characters-are-allowed-in-an-email-address)
+    private static let emailRegexPattern = "\(Self.emailUsernameRegexPattern)@\(Self.emailDomainRegexPattern)"
+    
+    private static let emailUsernameRegexPattern = #"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")"#
+    private static let emailDomainRegexPattern = #"(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"#
     
     func isValidEmail() -> Bool {
         return self.range(of: Self.emailRegexPattern, options: .regularExpression) != nil
+    }
+    
+    func isValidEmailUsername() -> Bool {
+        return !self.hasPrefix(".")
+            && !self.hasSuffix(".")
+            && (self as NSString).range(of: "..").location == NSNotFound
+            && self.range(of: Self.emailUsernameRegexPattern, options: .regularExpression) != nil
+    }
+    
+    func isValidEmailDomain() -> Bool {
+        return self.range(of: Self.emailDomainRegexPattern, options: .regularExpression) != nil
     }
 }
