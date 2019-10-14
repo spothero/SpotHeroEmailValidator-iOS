@@ -148,7 +148,7 @@ public class SpotHeroEmailValidator: NSObject {
             throw Error.invalidDomain
         }
         
-        #warning("TODO: This logic is wrong and doesn't take subdomains into account. We should compare TLDs against the commonTLDs list.")
+        // TODO: This logic is wrong and doesn't take subdomains into account. We should compare TLDs against the commonTLDs list."
         
         // Extract the domain from the domain parts
         let domain = domainParts.first?.lowercased() ?? ""
