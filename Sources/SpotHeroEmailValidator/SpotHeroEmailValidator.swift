@@ -47,6 +47,7 @@ public class SpotHeroEmailValidator: NSObject {
                                   autocorrectSuggestion: autocorrectSuggestion)
     }
     
+    // TODO: Remove @objc when entirely converted into Swift
     @objc public func autocorrectSuggestion(for emailAddress: String) throws -> String {
         guard try self.validateSyntax(of: emailAddress) else {
             throw Error.invalidSyntax
