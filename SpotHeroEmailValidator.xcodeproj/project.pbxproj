@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		34121DCC2355121E005393F2 /* SpotHeroEmailValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34121DC92355121E005393F2 /* SpotHeroEmailValidatorTests.swift */; };
-		34121DCD2355121E005393F2 /* ValidatorTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34121DCA2355121E005393F2 /* ValidatorTestModel.swift */; };
-		34121DCE2355121E005393F2 /* LevenshteinDistanceTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34121DCB2355121E005393F2 /* LevenshteinDistanceTestModel.swift */; };
 		342A1B172352A7EA00070FCD /* String+LevenshteinDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342A1B162352A7EA00070FCD /* String+LevenshteinDistance.swift */; };
 		342A1B1A2352AE1B00070FCD /* SHValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342A1B192352AE1B00070FCD /* SHValidationResult.swift */; };
 		342A1B1F2352BE4F00070FCD /* NSString+LevenshteinDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342A1B1E2352BE4F00070FCD /* NSString+LevenshteinDistance.swift */; };
@@ -21,6 +19,7 @@
 		34497758234C2D6A00D71628 /* SpotHeroEmailValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 34497753234C2D6A00D71628 /* SpotHeroEmailValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34497759234C2D6A00D71628 /* SHAutocorrectSuggestionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 34497754234C2D6A00D71628 /* SHAutocorrectSuggestionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34497763234C2FBC00D71628 /* DomainData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34497762234C2FBC00D71628 /* DomainData.plist */; };
+		349AD60023551977008BF413 /* LevenshteinDistanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349AD5FF23551977008BF413 /* LevenshteinDistanceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +34,6 @@
 
 /* Begin PBXFileReference section */
 		34121DC92355121E005393F2 /* SpotHeroEmailValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotHeroEmailValidatorTests.swift; sourceTree = "<group>"; };
-		34121DCA2355121E005393F2 /* ValidatorTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorTestModel.swift; sourceTree = "<group>"; };
-		34121DCB2355121E005393F2 /* LevenshteinDistanceTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevenshteinDistanceTestModel.swift; sourceTree = "<group>"; };
 		342A1B162352A7EA00070FCD /* String+LevenshteinDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LevenshteinDistance.swift"; sourceTree = "<group>"; };
 		342A1B192352AE1B00070FCD /* SHValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHValidationResult.swift; sourceTree = "<group>"; };
 		342A1B1E2352BE4F00070FCD /* NSString+LevenshteinDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+LevenshteinDistance.swift"; sourceTree = "<group>"; };
@@ -50,6 +47,7 @@
 		34497753234C2D6A00D71628 /* SpotHeroEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotHeroEmailValidator.h; sourceTree = "<group>"; };
 		34497754234C2D6A00D71628 /* SHAutocorrectSuggestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAutocorrectSuggestionView.h; sourceTree = "<group>"; };
 		34497762234C2FBC00D71628 /* DomainData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DomainData.plist; sourceTree = "<group>"; };
+		349AD5FF23551977008BF413 /* LevenshteinDistanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevenshteinDistanceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +107,8 @@
 		3449770B234C289600D71628 /* SpotHeroEmailValidatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				34121DCB2355121E005393F2 /* LevenshteinDistanceTestModel.swift */,
 				34121DC92355121E005393F2 /* SpotHeroEmailValidatorTests.swift */,
-				34121DCA2355121E005393F2 /* ValidatorTestModel.swift */,
+				349AD5FF23551977008BF413 /* LevenshteinDistanceTests.swift */,
 			);
 			name = SpotHeroEmailValidatorTests;
 			path = Tests/SpotHeroEmailValidatorTests;
@@ -261,9 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34121DCD2355121E005393F2 /* ValidatorTestModel.swift in Sources */,
+				349AD60023551977008BF413 /* LevenshteinDistanceTests.swift in Sources */,
 				34121DCC2355121E005393F2 /* SpotHeroEmailValidatorTests.swift in Sources */,
-				34121DCE2355121E005393F2 /* LevenshteinDistanceTestModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
