@@ -19,14 +19,8 @@ import XCTest
 class SpotHeroEmailValidatorTests: XCTestCase {
     struct ValidatorTestModel {
         var emailAddress: String
-        var errorCode: UInt32
+        var errorCode: UInt32 = 0
         var suggestion: String?
-        
-        init(emailAddress: String, errorCode: UInt32 = 0, suggestion: String? = nil) {
-            self.emailAddress = emailAddress
-            self.errorCode = errorCode
-            self.suggestion = suggestion
-        }
     }
     
     func testSyntaxValidator() {
