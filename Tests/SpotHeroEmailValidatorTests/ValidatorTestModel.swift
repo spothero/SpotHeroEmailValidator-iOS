@@ -13,15 +13,16 @@
 //  limitations under the License.
 //
 
-@import Foundation;
+import Foundation
 
-@interface ValidatorTestModel : NSObject
-
-@property (nonatomic, strong) NSString *emailAddress;
-@property (nonatomic) NSInteger errorCode;
-@property (nonatomic, strong) NSString *suggestion;
-
-- (instancetype)initWithEmailAddress:(NSString *)emailAddress errorCode:(NSInteger)errorCode;
-- (instancetype)initWithEmailAddress:(NSString *)emailAddress suggestion:(NSString *)suggestion;
-
-@end
+struct ValidatorTestModel {
+    var emailAddress: String
+    var errorCode: UInt32
+    var suggestion: String?
+    
+    init(emailAddress: String, errorCode: UInt32 = 0, suggestion: String? = nil) {
+        self.emailAddress = emailAddress
+        self.errorCode = errorCode
+        self.suggestion = suggestion
+    }
+}

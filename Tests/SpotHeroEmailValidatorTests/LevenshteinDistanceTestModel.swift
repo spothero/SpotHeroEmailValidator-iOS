@@ -13,26 +13,10 @@
 //  limitations under the License.
 //
 
-#import "include/ValidatorTestModel.h"
+import Foundation
 
-@implementation ValidatorTestModel
-
-- (instancetype)initWithEmailAddress:(NSString *)emailAddress errorCode:(NSInteger)errorCode
-{
-    if (self = [super init]) {
-        self.emailAddress = emailAddress;
-        self.errorCode = errorCode;
-    }
-    return self;
+struct LevenshteinDistanceTestModel {
+    var stringA: String
+    var stringB: String
+    var distance: Int
 }
-
-- (instancetype)initWithEmailAddress:(NSString *)emailAddress suggestion:(NSString *)suggestion
-{
-    if (self = [super init]) {
-        self.emailAddress = emailAddress;
-        self.suggestion = suggestion;
-    }
-    return self;
-}
-
-@end
