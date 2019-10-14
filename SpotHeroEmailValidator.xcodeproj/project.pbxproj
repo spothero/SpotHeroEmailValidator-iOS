@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -109,10 +109,10 @@
 		3449770B234C289600D71628 /* SpotHeroEmailValidatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				3449775C234C2D7E00D71628 /* include */,
 				3449772B234C298000D71628 /* LevenshteinDistanceTestModel.m */,
 				34497728234C298000D71628 /* SpotHeroEmailValidatorTests.m */,
 				34497729234C298000D71628 /* ValidatorTestModel.m */,
+				3449775C234C2D7E00D71628 /* include */,
 			);
 			name = SpotHeroEmailValidatorTests;
 			path = Tests/SpotHeroEmailValidatorTests;
@@ -214,7 +214,7 @@
 				};
 			};
 			buildConfigurationList = 344976F8234C289600D71628 /* Build configuration list for PBXProject "SpotHeroEmailValidator" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
