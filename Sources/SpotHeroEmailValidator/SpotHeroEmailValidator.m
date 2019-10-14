@@ -18,7 +18,7 @@
 #endif
 
 #import "include/SpotHeroEmailValidator.h"
-#import "include/NSString+LevenshteinDistance.h"
+#import <SpotheroEmailValidator/SpotHeroEmailValidator-Swift.h>
 
 NSString *const SHValidatorErrorDomain = @"com.spothero.SpotHeroEmailValidator";
 
@@ -40,7 +40,6 @@ NSString *const SHValidatorErrorDomain = @"com.spothero.SpotHeroEmailValidator";
 - (instancetype)init
 {
     if ((self = [super init])) {
-        
         NSString *plistPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"DomainData" ofType:@"plist"];
         NSDictionary *dataDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
         
@@ -139,7 +138,7 @@ NSString *const SHValidatorErrorDomain = @"com.spothero.SpotHeroEmailValidator";
         CGFloat closestDistance = MAXFLOAT;
 
         for (NSString *arrayString in array) {
-            CGFloat distance = [string levenshteinDistanceFromString:arrayString];
+            CGFloat distance = [string levenshteinDistanceFrom:arrayString];
             if (distance < closestDistance && ((distance / string.length) < tolerance)) {
                 closestDistance = distance;
                 closestString = arrayString;

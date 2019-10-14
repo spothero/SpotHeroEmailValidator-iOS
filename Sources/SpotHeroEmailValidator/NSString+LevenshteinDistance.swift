@@ -13,10 +13,10 @@
 //  limitations under the License.
 //
 
-@import Foundation;
+import Foundation
 
-@interface NSString (LevenshteinDistance)
-
-- (NSUInteger)levenshteinDistanceFromString:(NSString *)otherString;
-
-@end
+public extension NSString {
+    @objc func levenshteinDistance(from other: NSString) -> Int {
+        return (self as String).levenshteinDistance(from: other as String)
+    }
+}

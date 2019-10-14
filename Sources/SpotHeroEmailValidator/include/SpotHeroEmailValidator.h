@@ -15,8 +15,8 @@
 
 @import CoreGraphics;
 
-#import "SHValidationResult.h"
-#import "NSString+LevenshteinDistance.h"
+@class SHValidationResult;
+
 #import "SHAutocorrectSuggestionView.h"
 #import "SHEmailValidationTextField.h"
 

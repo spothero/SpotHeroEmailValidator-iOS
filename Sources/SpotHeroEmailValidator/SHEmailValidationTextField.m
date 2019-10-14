@@ -24,6 +24,7 @@
 #import "include/SHEmailValidationTextField.h"
 #import "include/SpotHeroEmailValidator.h"
 #import "include/SHAutocorrectSuggestionView.h"
+#import <SpotHeroEmailValidator/SpotHeroEmailValidator-Swift.h>
 
 @interface EmailTextFieldDelegate : NSObject <UITextFieldDelegate>
 

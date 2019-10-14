@@ -13,21 +13,14 @@
 //  limitations under the License.
 //
 
-#if ! __has_feature(objc_arc)
-#error This file must be compiled with ARC. Either turn on ARC for the project or use -fobjc-arc flag
-#endif
+import Foundation
 
-#import "include/SHValidationResult.h"
-
-@implementation SHValidationResult
-
-- (instancetype)initWithPassedValidation:(BOOL)passed autocorrectSuggestion:(NSString *)suggestion
-{
-    if ((self = [super init])) {
-        _passedValidation = passed;
-        _autocorrectSuggestion = suggestion;
+public class SHValidationResult: NSObject {
+    @objc public let passedValidation: Bool
+    @objc public let autocorrectSuggestion: String?
+    
+    @objc public init(passedValidation: Bool, autocorrectSuggestion: String?) {
+        self.passedValidation = passedValidation
+        self.autocorrectSuggestion = autocorrectSuggestion
     }
-    return self;
 }
-
-@end
