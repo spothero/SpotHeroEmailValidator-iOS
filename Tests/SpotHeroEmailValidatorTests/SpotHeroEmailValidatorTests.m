@@ -13,11 +13,12 @@
 //  limitations under the License.
 //
 
-@import SpotHeroEmailValidator;
 @import XCTest;
 
 #import "include/LevenshteinDistanceTestModel.h"
 #import "include/ValidatorTestModel.h"
+
+#import <SpotHeroEmailValidator/SpotHeroEmailValidator-Swift.h>
 
 @interface SpotHeroEmailValidatorTests : XCTestCase
 

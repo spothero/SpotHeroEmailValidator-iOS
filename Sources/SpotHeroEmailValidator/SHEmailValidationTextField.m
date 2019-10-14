@@ -22,7 +22,6 @@
 #endif
 
 #import "include/SHEmailValidationTextField.h"
-#import "include/SpotHeroEmailValidator.h"
 #import "include/SHAutocorrectSuggestionView.h"
 #import <SpotHeroEmailValidator/SpotHeroEmailValidator-Swift.h>
 
@@ -151,7 +150,7 @@
 {
     self.delegateProxy = [[EmailTextFieldDelegate alloc] initWithTarget:self];
     self.delegate = self.delegateProxy;
-    self.emailValidator = [SpotHeroEmailValidator validator];
+    self.emailValidator = [SpotHeroEmailValidator shared];
     self.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.keyboardType = UIKeyboardTypeEmailAddress;
     self.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -177,7 +176,8 @@
 {
     if (self.text.length > 0) {
         NSError *error;
-        SHValidationResult *validationResult = [self.emailValidator validateAndAutocorrectEmailAddress:self.text withError:&error];
+        
+        SHValidationResult *validationResult = [self.emailValidator validateAndAutocorrectWithEmailAddress:self.text error:&error];
 
         if (error) {
             self.validationError = error;
