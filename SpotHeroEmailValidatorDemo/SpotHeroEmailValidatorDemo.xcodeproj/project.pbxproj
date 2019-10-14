@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3449779A234C337B00D71628 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34497799234C337B00D71628 /* AppDelegate.m */; };
-		344977A5234C337B00D71628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 344977A4234C337B00D71628 /* Assets.xcassets */; };
-		344977AB234C337B00D71628 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 344977AA234C337B00D71628 /* main.m */; };
-		344977B2234C33D900D71628 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344977B1234C33D900D71628 /* DemoViewController.m */; };
-		344977B6234C344E00D71628 /* SpotHeroEmailValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344977B5234C344E00D71628 /* SpotHeroEmailValidator.framework */; };
-		344977B7234C344E00D71628 /* SpotHeroEmailValidator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 344977B5234C344E00D71628 /* SpotHeroEmailValidator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		34954FC5235431A800C8580B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34954FC4235431A800C8580B /* AppDelegate.swift */; };
+		34954FC7235431A800C8580B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34954FC6235431A800C8580B /* SceneDelegate.swift */; };
+		34954FC9235431A800C8580B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34954FC8235431A800C8580B /* ViewController.swift */; };
+		34954FCC235431A800C8580B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34954FCA235431A800C8580B /* Main.storyboard */; };
+		34954FCE235431A800C8580B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34954FCD235431A800C8580B /* Assets.xcassets */; };
+		34954FD1235431A800C8580B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34954FCF235431A800C8580B /* LaunchScreen.storyboard */; };
+		34954FD92354366600C8580B /* SpotHeroEmailValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34954FD82354366600C8580B /* SpotHeroEmailValidator.framework */; };
+		34954FDA2354366600C8580B /* SpotHeroEmailValidator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34954FD82354366600C8580B /* SpotHeroEmailValidator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		344977B8234C344E00D71628 /* Embed Frameworks */ = {
+		34954FDB2354366600C8580B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				344977B7234C344E00D71628 /* SpotHeroEmailValidator.framework in Embed Frameworks */,
+				34954FDA2354366600C8580B /* SpotHeroEmailValidator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,23 +32,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		34497795234C337B00D71628 /* SpotHeroEmailValidatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotHeroEmailValidatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		34497798234C337B00D71628 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		34497799234C337B00D71628 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		344977A4234C337B00D71628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		344977A9234C337B00D71628 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		344977AA234C337B00D71628 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		344977B1234C33D900D71628 /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
-		344977B3234C33FE00D71628 /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		344977B5234C344E00D71628 /* SpotHeroEmailValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotHeroEmailValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34954FC2235431A800C8580B /* SpotHeroEmailValidatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotHeroEmailValidatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34954FC4235431A800C8580B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		34954FC6235431A800C8580B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		34954FC8235431A800C8580B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		34954FCB235431A800C8580B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		34954FCD235431A800C8580B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34954FD0235431A800C8580B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		34954FD2235431A800C8580B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34954FD82354366600C8580B /* SpotHeroEmailValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotHeroEmailValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		34497792234C337B00D71628 /* Frameworks */ = {
+		34954FBF235431A800C8580B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				344977B6234C344E00D71628 /* SpotHeroEmailValidator.framework in Frameworks */,
+				34954FD92354366600C8580B /* SpotHeroEmailValidator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +59,7 @@
 		3449778C234C337B00D71628 = {
 			isa = PBXGroup;
 			children = (
-				34497797234C337B00D71628 /* SpotHeroEmailValidatorDemo */,
+				34954FC3235431A800C8580B /* SpotHeroEmailValidatorDemo */,
 				34497796234C337B00D71628 /* Products */,
 				344977B4234C344E00D71628 /* Frameworks */,
 			);
@@ -65,52 +68,61 @@
 		34497796234C337B00D71628 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				34497795234C337B00D71628 /* SpotHeroEmailValidatorDemo.app */,
+				34954FC2235431A800C8580B /* SpotHeroEmailValidatorDemo.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		34497797234C337B00D71628 /* SpotHeroEmailValidatorDemo */ = {
-			isa = PBXGroup;
-			children = (
-				34497798234C337B00D71628 /* AppDelegate.h */,
-				34497799234C337B00D71628 /* AppDelegate.m */,
-				344977A4234C337B00D71628 /* Assets.xcassets */,
-				344977B3234C33FE00D71628 /* DemoViewController.h */,
-				344977B1234C33D900D71628 /* DemoViewController.m */,
-				344977A9234C337B00D71628 /* Info.plist */,
-				344977AA234C337B00D71628 /* main.m */,
-			);
-			path = SpotHeroEmailValidatorDemo;
 			sourceTree = "<group>";
 		};
 		344977B4234C344E00D71628 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34954FD82354366600C8580B /* SpotHeroEmailValidator.framework */,
 				344977B5234C344E00D71628 /* SpotHeroEmailValidator.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		34954FC3235431A800C8580B /* SpotHeroEmailValidatorDemo */ = {
+			isa = PBXGroup;
+			children = (
+				34954FD2235431A800C8580B /* Info.plist */,
+				34954FC4235431A800C8580B /* AppDelegate.swift */,
+				34954FC6235431A800C8580B /* SceneDelegate.swift */,
+				34954FC8235431A800C8580B /* ViewController.swift */,
+				34954FCA235431A800C8580B /* Main.storyboard */,
+				34954FD62354320200C8580B /* Resources */,
+			);
+			path = SpotHeroEmailValidatorDemo;
+			sourceTree = "<group>";
+		};
+		34954FD62354320200C8580B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34954FCD235431A800C8580B /* Assets.xcassets */,
+				34954FCF235431A800C8580B /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		34497794234C337B00D71628 /* SpotHeroEmailValidatorDemo */ = {
+		34954FC1235431A800C8580B /* SpotHeroEmailValidatorDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 344977AE234C337B00D71628 /* Build configuration list for PBXNativeTarget "SpotHeroEmailValidatorDemo" */;
+			buildConfigurationList = 34954FD5235431A800C8580B /* Build configuration list for PBXNativeTarget "SpotHeroEmailValidatorDemo" */;
 			buildPhases = (
-				34497791234C337B00D71628 /* Sources */,
-				34497792234C337B00D71628 /* Frameworks */,
-				34497793234C337B00D71628 /* Resources */,
-				344977B8234C344E00D71628 /* Embed Frameworks */,
+				34954FBE235431A800C8580B /* Sources */,
+				34954FBF235431A800C8580B /* Frameworks */,
+				34954FC0235431A800C8580B /* Resources */,
+				34954FDB2354366600C8580B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SpotHeroEmailValidatorDemo;
-			productName = SpotHeroEmailValidatorDemo;
-			productReference = 34497795234C337B00D71628 /* SpotHeroEmailValidatorDemo.app */;
+			productName = SpotHeroEmailValidatorSwiftDemo;
+			productReference = 34954FC2235431A800C8580B /* SpotHeroEmailValidatorDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -119,10 +131,11 @@
 		3449778D234C337B00D71628 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "SpotHero, Inc.";
 				TargetAttributes = {
-					34497794234C337B00D71628 = {
+					34954FC1235431A800C8580B = {
 						CreatedOnToolsVersion = 11.1;
 					};
 				};
@@ -140,34 +153,55 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				34497794234C337B00D71628 /* SpotHeroEmailValidatorDemo */,
+				34954FC1235431A800C8580B /* SpotHeroEmailValidatorDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		34497793234C337B00D71628 /* Resources */ = {
+		34954FC0235431A800C8580B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				344977A5234C337B00D71628 /* Assets.xcassets in Resources */,
+				34954FD1235431A800C8580B /* LaunchScreen.storyboard in Resources */,
+				34954FCE235431A800C8580B /* Assets.xcassets in Resources */,
+				34954FCC235431A800C8580B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		34497791234C337B00D71628 /* Sources */ = {
+		34954FBE235431A800C8580B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3449779A234C337B00D71628 /* AppDelegate.m in Sources */,
-				344977AB234C337B00D71628 /* main.m in Sources */,
-				344977B2234C33D900D71628 /* DemoViewController.m in Sources */,
+				34954FC9235431A800C8580B /* ViewController.swift in Sources */,
+				34954FC5235431A800C8580B /* AppDelegate.swift in Sources */,
+				34954FC7235431A800C8580B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		34954FCA235431A800C8580B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34954FCB235431A800C8580B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		34954FCF235431A800C8580B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34954FD0235431A800C8580B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		344977AC234C337B00D71628 /* Debug */ = {
@@ -280,35 +314,45 @@
 			};
 			name = Release;
 		};
-		344977AF234C337B00D71628 /* Debug */ = {
+		34954FD3235431A800C8580B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZW7QWR628D;
 				INFOPLIST_FILE = SpotHeroEmailValidatorDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.spothero.SpotHeroEmailValidatorDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SpotHeroEmailValidatorDemo;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		344977B0234C337B00D71628 /* Release */ = {
+		34954FD4235431A800C8580B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZW7QWR628D;
 				INFOPLIST_FILE = SpotHeroEmailValidatorDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.spothero.SpotHeroEmailValidatorDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SpotHeroEmailValidatorDemo;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -324,11 +368,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		344977AE234C337B00D71628 /* Build configuration list for PBXNativeTarget "SpotHeroEmailValidatorDemo" */ = {
+		34954FD5235431A800C8580B /* Build configuration list for PBXNativeTarget "SpotHeroEmailValidatorDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				344977AF234C337B00D71628 /* Debug */,
-				344977B0234C337B00D71628 /* Release */,
+				34954FD3235431A800C8580B /* Debug */,
+				34954FD4235431A800C8580B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
