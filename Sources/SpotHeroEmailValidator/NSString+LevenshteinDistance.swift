@@ -15,6 +15,7 @@
 
 import Foundation
 
+// TODO: Remove extension when entirely converted into Swift
 public extension NSString {
     @objc func levenshteinDistance(from other: NSString) -> Int {
         return (self as String).levenshteinDistance(from: other as String)
