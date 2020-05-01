@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         self.explanationLabel.text = "Enter an email address into the UITextField, then proceed to the password field for validation. Addresses such as test@gamil.con will produce an autocorrect suggestion."
         
         self.emailTextField.delegate = self
-        self.emailTextField.setMessage("Email address syntax is invalid.", forErrorCode: Int(SHInvalidSyntaxError.rawValue))
+        self.emailTextField.setMessage("Email address syntax is invalid.", forErrorCode: Int(SpotHeroEmailValidator.Error.invalidSyntax.rawValue))
         
         // Uncomment these lines to configure the look and feel of the suggestion popup
 //        self.emailTextField.bubbleFillColor = .white
