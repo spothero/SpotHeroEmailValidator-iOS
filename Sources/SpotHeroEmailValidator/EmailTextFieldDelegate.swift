@@ -16,45 +16,45 @@
 import Foundation
 import UIKit
 
-public class EmailTextFieldDelegate: NSObject {
-    public weak var target: SHEmailValidationTextField?
-    public weak var subDelegate: UITextFieldDelegate?
+class EmailTextFieldDelegate: NSObject {
+    weak var target: SHEmailValidationTextField?
+    weak var subDelegate: UITextFieldDelegate?
     
-    public init(with target: SHEmailValidationTextField) {
+    init(with target: SHEmailValidationTextField) {
         self.target = target
     }
 }
 
 extension EmailTextFieldDelegate: UITextFieldDelegate {
-    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         self.target?.dismissSuggestionView()
         
         return self.subDelegate?.textFieldShouldBeginEditing?(textField) ?? true
     }
     
-    public func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         self.subDelegate?.textFieldDidBeginEditing?(textField)
     }
     
-    public func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         self.subDelegate?.textFieldShouldEndEditing?(textField) ?? true
     }
     
-    public func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         self.subDelegate?.textFieldDidEndEditing?(textField)
     }
     
-    public func textField(_ textField: UITextField,
+    func textField(_ textField: UITextField,
                           shouldChangeCharactersIn range: NSRange,
                           replacementString string: String) -> Bool {
         self.subDelegate?.textField?(textField, shouldChangeCharactersIn: range, replacementString: string) ?? true
     }
     
-    public func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
         return self.subDelegate?.textFieldShouldClear?(textField) ?? true
     }
     
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return self.subDelegate?.textFieldShouldReturn?(textField) ?? true
     }
 }
