@@ -20,20 +20,6 @@
                ReferencedContainer = "container:SpotHeroEmailValidatorDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "344976FD234C289600D71628"
-               BuildableName = "SpotHeroEmailValidator.framework"
-               BlueprintName = "SpotHeroEmailValidator"
-               ReferencedContainer = "container:../SpotHeroEmailValidator.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
