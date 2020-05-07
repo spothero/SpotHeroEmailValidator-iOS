@@ -165,11 +165,11 @@ public class SpotHeroEmailValidator: NSObject {
 // MARK: - Extensions
 
 public extension SpotHeroEmailValidator {
-    enum Error: LocalizedError {
-        case blankAddress
-        case invalidDomain
-        case invalidSyntax
-        case invalidUsername
+    enum Error: Int, LocalizedError {
+        case blankAddress = 1000
+        case invalidSyntax = 1001
+        case invalidUsername = 1002
+        case invalidDomain = 1003
 
         public var errorDescription: String? {
             switch self {
