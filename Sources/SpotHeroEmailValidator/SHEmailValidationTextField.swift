@@ -71,7 +71,7 @@ public class SHEmailValidationTextField: UITextField {
     }
     
     private func initialize() {
-        self.delegateProxy = EmailTextFieldDelegate(with: self)
+        self.delegateProxy = EmailTextFieldDelegate(target: self)
         self.delegate = self.delegateProxy
         self.emailValidator = SpotHeroEmailValidator.shared
         self.autocapitalizationType = .none
