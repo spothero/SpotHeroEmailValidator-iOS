@@ -144,7 +144,7 @@ public class SHEmailValidationTextField: UITextField {
 }
 
 extension SHEmailValidationTextField: AutocorrectSuggestionViewDelegate {
-    public func suggestionView(_ suggestionView: SHAutocorrectSuggestionView!, wasDismissedWithAccepted accepted: Bool) {
+    public func suggestionView(_ suggestionView: SHAutocorrectSuggestionView, wasDismissedWithAccepted accepted: Bool) {
         if accepted {
             self.text = suggestionView.suggestedText
         }
