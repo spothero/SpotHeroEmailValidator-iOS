@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Work In Progress -- This is a boilerplate file for Swift conversion. It is not included in the target.
 protocol AutocorrectSuggestionViewDelegate: AnyObject {
     func suggestionView(_ suggestionView: SHAutocorrectSuggestionView, wasDismissedWithAccepted accepted: Bool)
 }

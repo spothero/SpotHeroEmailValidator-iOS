@@ -11,6 +11,7 @@ import UIKit
 
 public typealias SetupBlock = (SHAutocorrectSuggestionView?) -> Void
 
+// Work In Progress -- This is a boilerplate file for Swift conversion. It is not included in the target.
 public class SHAutocorrectSuggestionView {
     weak var delegate: AutocorrectSuggestionViewDelegate?
 
