@@ -37,7 +37,9 @@ extension EmailTextFieldDelegate: UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        self.subDelegate?.textFieldShouldEndEditing?(textField) ?? true
+        self.target?.validateInput()
+        
+       return  self.subDelegate?.textFieldShouldEndEditing?(textField) ?? true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -47,7 +49,7 @@ extension EmailTextFieldDelegate: UITextFieldDelegate {
     func textField(_ textField: UITextField,
                           shouldChangeCharactersIn range: NSRange,
                           replacementString string: String) -> Bool {
-        self.subDelegate?.textField?(textField, shouldChangeCharactersIn: range, replacementString: string) ?? true
+        return self.subDelegate?.textField?(textField, shouldChangeCharactersIn: range, replacementString: string) ?? true
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
