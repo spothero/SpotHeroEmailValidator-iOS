@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1110"
+   LastUpgradeVersion = "1140"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "34497794234C337B00D71628"
+               BlueprintIdentifier = "34954FC1235431A800C8580B"
                BuildableName = "SpotHeroEmailValidatorDemo.app"
                BlueprintName = "SpotHeroEmailValidatorDemo"
                ReferencedContainer = "container:SpotHeroEmailValidatorDemo.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34497794234C337B00D71628"
+            BlueprintIdentifier = "34954FC1235431A800C8580B"
             BuildableName = "SpotHeroEmailValidatorDemo.app"
             BlueprintName = "SpotHeroEmailValidatorDemo"
             ReferencedContainer = "container:SpotHeroEmailValidatorDemo.xcodeproj">
@@ -72,7 +72,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34497794234C337B00D71628"
+            BlueprintIdentifier = "34954FC1235431A800C8580B"
             BuildableName = "SpotHeroEmailValidatorDemo.app"
             BlueprintName = "SpotHeroEmailValidatorDemo"
             ReferencedContainer = "container:SpotHeroEmailValidatorDemo.xcodeproj">

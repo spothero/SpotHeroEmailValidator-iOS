@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34121DCC2355121E005393F2 /* SpotHeroEmailValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34121DC92355121E005393F2 /* SpotHeroEmailValidatorTests.swift */; };
+		3422112C24647AFF0002E7C6 /* EmailTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3422112B24647AFF0002E7C6 /* EmailTextFieldDelegate.swift */; };
 		342A1B172352A7EA00070FCD /* String+LevenshteinDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342A1B162352A7EA00070FCD /* String+LevenshteinDistance.swift */; };
 		342A1B1A2352AE1B00070FCD /* SHValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342A1B192352AE1B00070FCD /* SHValidationResult.swift */; };
 		342A1B1F2352BE4F00070FCD /* NSString+LevenshteinDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342A1B1E2352BE4F00070FCD /* NSString+LevenshteinDistance.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		34121DC92355121E005393F2 /* SpotHeroEmailValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotHeroEmailValidatorTests.swift; sourceTree = "<group>"; };
+		3422112B24647AFF0002E7C6 /* EmailTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTextFieldDelegate.swift; sourceTree = "<group>"; };
 		342A1B162352A7EA00070FCD /* String+LevenshteinDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LevenshteinDistance.swift"; sourceTree = "<group>"; };
 		342A1B192352AE1B00070FCD /* SHValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHValidationResult.swift; sourceTree = "<group>"; };
 		342A1B1E2352BE4F00070FCD /* NSString+LevenshteinDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+LevenshteinDistance.swift"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		34497700234C289600D71628 /* SpotHeroEmailValidator */ = {
 			isa = PBXGroup;
 			children = (
+				3422112B24647AFF0002E7C6 /* EmailTextFieldDelegate.swift */,
 				3449771B234C295E00D71628 /* SHAutocorrectSuggestionView.m */,
 				3449771C234C295E00D71628 /* SHEmailValidationTextField.m */,
 				342A1B1E2352BE4F00070FCD /* NSString+LevenshteinDistance.swift */,
@@ -186,7 +189,7 @@
 		344976F5234C289600D71628 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "SpotHero, Inc.";
 				TargetAttributes = {
 					344976FD234C289600D71628 = {
@@ -241,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3422112C24647AFF0002E7C6 /* EmailTextFieldDelegate.swift in Sources */,
 				342A1B172352A7EA00070FCD /* String+LevenshteinDistance.swift in Sources */,
 				342A1B1A2352AE1B00070FCD /* SHValidationResult.swift in Sources */,
 				342A1B1F2352BE4F00070FCD /* NSString+LevenshteinDistance.swift in Sources */,
@@ -383,6 +387,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -411,6 +416,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Config/SpotHeroEmailValidator-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -437,6 +443,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Config/SpotHeroEmailValidator-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
