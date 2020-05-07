@@ -45,11 +45,14 @@ public class SHEmailValidationTextField: UITextField {
     }
     
     override public var delegate: UITextFieldDelegate? {
-        didSet {
-            if self.delegate is EmailTextFieldDelegate {
-                super.delegate = self.delegate
+        get {
+            return super.delegate
+        }
+        set {
+            if newValue is EmailTextFieldDelegate {
+                super.delegate = newValue
             } else {
-                self.delegateProxy?.subDelegate = self.delegate
+                self.delegateProxy?.subDelegate = newValue
             }
         }
     }
