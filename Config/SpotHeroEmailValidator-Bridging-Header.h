@@ -10,6 +10,5 @@
 #define SpotHeroEmailValidator_Bridging_Header_h
 
 #import "../Sources/SpotHeroEmailValidator/include/SHAutocorrectSuggestionView.h"
-#import "../Sources/SpotHeroEmailValidator/include/SHEmailValidationTextField.h"
 
 #endif /* SpotHeroEmailValidator_Bridging_Header_h */
