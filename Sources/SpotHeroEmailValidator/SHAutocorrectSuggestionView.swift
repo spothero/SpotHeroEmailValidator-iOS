@@ -214,52 +214,65 @@ public class SHAutocorrectSuggestionView: UIView {
     }
     
     public func show(from target: UIView, inContainerView container: UIView?) {
-//        self.target = target;
-//
-//        self.alpha = 0.2;
-//        self.transform = CGAffineTransformMakeScale(0.6, 0.6);
-//
-//        // Frame is in target.superview coordinates
-//        self.frame = [target.superview convertRect:self.frame toView:container];
-//        [container addSubview:self];
-//
-//        [UIView animateWithDuration:0.2
-//                         animations:^{
-//                             self.alpha = 1;
-//                             self.transform = CGAffineTransformMakeScale(1.1, 1.1);
-//                         }
-//                         completion:^(BOOL finished) {
-//                             [UIView animateWithDuration:0.1
-//                                              animations:^{
-//                                                  self.transform = CGAffineTransformIdentity;
-//                                              }];
-//                         }];
-    }
+        self.target = target
+        
+        self.alpha = 0.2
+        self.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
 
-    public func updatePosition() {
-//         CGFloat width = self.bounds.size.width;
-//         CGFloat height = self.bounds.size.height;
-//         CGFloat left = MAX(10, self.target.center.x - width / 2);
-//         CGFloat top = self.target.frame.origin.y - height;
-//
-//         self.frame = CGRectIntegral([self.target.superview convertRect:CGRectMake(left, top, width, height) toView:self.superview]);
+        // Frame is in target.superview coordinates
+        self.frame = target.superview?.convert(self.frame, to: container) ?? .zero
+        container?.addSubview(self)
+        
+        UIView.animate(
+            withDuration: 0.2,
+            animations: {
+                self.alpha = 1
+                self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            },
+            completion: { _ in
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.transform = .identity
+                })
+            }
+        )
     }
 
     public func dismiss() {
-//        [UIView animateWithDuration:0.1
-//                         animations:^{
-//                             self.transform = CGAffineTransformMakeScale(1.1, 1.1);
-//                         }
-//                         completion:^(BOOL finished) {
-//                             [UIView animateWithDuration:0.2
-//                                              animations:^{
-//                                                  self.alpha = 0.2;
-//                                                  self.transform = CGAffineTransformMakeScale(0.6, 0.6);
-//                                              }
-//                                              completion:^(BOOL innerFinished) {
-//                                                  [self removeFromSuperview];
-//                                                  self.target = nil;
-//                                              }];
-//                         }];
+        UIView.animate(
+            withDuration: 0.1,
+            animations: {
+                self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            },
+            completion: { _ in
+                UIView.animate(
+                    withDuration: 0.2,
+                    animations: {
+                        self.alpha = 0.2
+                        self.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+                    },
+                    completion: { _ in
+                        self.removeFromSuperview()
+                        self.target = nil
+                    }
+                )
+            }
+        )
+    }
+
+    public func updatePosition() {
+        guard
+            let target = self.target,
+            let targetSuperview = target.superview else {
+                return
+        }
+        
+        let width = self.bounds.size.width
+        let height = self.bounds.size.height
+        
+        
+        let left = max(10, target.center.x - (width / 2))
+        let top = target.frame.origin.y - height
+        
+        self.frame = targetSuperview.convert(CGRect(x: left, y: top, width: width, height: height), to: self.superview).integral
     }
 }
