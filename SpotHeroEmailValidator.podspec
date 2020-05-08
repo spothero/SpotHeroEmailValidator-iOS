@@ -30,6 +30,6 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   # File Patterns
-  spec.source_files = 'Sources/SpotHeroEmailValidator/**/*.{h,m}'
+  spec.source_files = 'Sources/SpotHeroEmailValidator/**/*.{h,m,swift}'
   spec.resources    = 'Sources/SpotHeroEmailValidator/data/DomainData.plist'
 end
