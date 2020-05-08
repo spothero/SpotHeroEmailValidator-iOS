@@ -18,12 +18,12 @@ import UIKit
 
 public typealias SetupBlock = (SHAutocorrectSuggestionView?) -> Void
 
-public class SHAutocorrectSuggestionView {
-    static let cornerRadius = 6
-    static let arrowHeight = 12
-    static let arrowWidth = 8
-    static let maxWidth = 240
-    static let dismissButtonWidth = 30
+public class SHAutocorrectSuggestionView: UIView {
+    static let cornerRadius: CGFloat = 6
+    static let arrowHeight: CGFloat = 12
+    static let arrowWidth: CGFloat = 8
+    static let maxWidth: CGFloat = 240
+    static let dismissButtonWidth: CGFloat = 30
     
     weak var delegate: AutocorrectSuggestionViewDelegate?
 
@@ -43,10 +43,7 @@ public class SHAutocorrectSuggestionView {
     public static func defaultTitleColor() -> UIColor { return .white }
     public static func defaultSuggestionColor() -> UIColor { return UIColor(red: 0.5, green: 0.5, blue: 1.0, alpha: 1.0) }
     
-    // TO BE DELETED
-    private init() { }
-    
-    public init(target: UIView, title: String, autocorrectSuggestion suggestion: String, withSetupBlock block: SetupBlock) {
+    public init(target: UIView, title: String?, autocorrectSuggestion suggestion: String?, withSetupBlock block: SetupBlock) {
 //        if ((self = [super init])) {
 //                self.title = title;
 //                self.suggestedText = suggestion;
@@ -98,30 +95,40 @@ public class SHAutocorrectSuggestionView {
 //                }
 //            }
 //            return self;
-        
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     public static func show(from target: UIView,
                             title: String?,
                             autocorrectSuggestion suggestion: String?,
                             withSetupBlock block: SetupBlock) -> SHAutocorrectSuggestionView {
-//        return [SHAutocorrectSuggestionView showFromView:target inContainerView:target.superview title:title autocorrectSuggestion:suggestion withSetupBlock:block];
-        return SHAutocorrectSuggestionView()
+        return SHAutocorrectSuggestionView.show(from: target,
+                                                inContainerView: target.superview,
+                                                title: title,
+                                                autocorrectSuggestion: suggestion,
+                                                withSetupBlock: block)
     }
 
     public static func show(from target: UIView,
-                            inContainerView container: UIView,
+                            inContainerView container: UIView?,
                             title: String?,
                             autocorrectSuggestion suggestion: String?,
                             withSetupBlock block: SetupBlock) -> SHAutocorrectSuggestionView {
-//        SHAutocorrectSuggestionView *suggestionView = [[SHAutocorrectSuggestionView alloc] initWithTarget:target title:title autocorrectSuggestion:suggestion withSetupBlock:block];
-//
-//        [suggestionView showFromView:target inContainerView:container];
-//        return suggestionView;
-        return SHAutocorrectSuggestionView()
+        let suggestionView = SHAutocorrectSuggestionView(target: target,
+                                                         title: title,
+                                                         autocorrectSuggestion: suggestion,
+                                                         withSetupBlock: block)
+        
+        suggestionView.show(from: target, inContainerView: container)
+        
+        return suggestionView
     }
     
-    public func drawRect(_ rect: CGRect) {
+    public override func draw(_ rect: CGRect) {
 //        CGSize contentSize = CGSizeMake(self.bounds.size.width, self.bounds.size.height - kArrowHeight);
 //            CGPoint arrowBottom = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height);
 //
@@ -185,25 +192,28 @@ public class SHAutocorrectSuggestionView {
 //        #endif
     }
     
-    public func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-//        if (touches.count == 1) {
-//             UITouch *touch = [touches anyObject];
-//             CGPoint touchPoint = [touch locationInView:self];
-//
-//             CGSize viewSize = self.bounds.size;
-//             if (touchPoint.x >= 0 && touchPoint.x < viewSize.width && touchPoint.y >= 0 && touchPoint.y < viewSize.height - kArrowHeight) {
-//                 if (touchPoint.x <= viewSize.width - kDismissButtonWidth && self.suggestedText) {
-//                     [self.delegate suggestionView:self wasDismissedWithAccepted:YES];
-//                     [self dismiss];
-//                 } else {
-//                     [self.delegate suggestionView:self wasDismissedWithAccepted:NO];
-//                     [self dismiss];
-//                 }
-//             }
-//         }
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard !touches.isEmpty else {
+            return
+        }
+        
+        guard let touchPoint = touches.first?.location(in: self) else {
+            return
+        }
+        
+        let viewSize = self.bounds.size
+        
+        guard touchPoint.x >= 0 && touchPoint.x < viewSize.width && touchPoint.y >= 0 && touchPoint.y < viewSize.height - Self.arrowHeight else {
+            return
+        }
+        
+        let wasDismissedWithAccepted = touchPoint.x <= viewSize.width - Self.dismissButtonWidth && self.suggestedText != nil
+        
+        self.delegate?.suggestionView(self, wasDismissedWithAccepted: wasDismissedWithAccepted)
+        self.dismiss()
     }
     
-    public func show(from target: UIView, inContainerView container: UIView) {
+    public func show(from target: UIView, inContainerView container: UIView?) {
 //        self.target = target;
 //
 //        self.alpha = 0.2;
