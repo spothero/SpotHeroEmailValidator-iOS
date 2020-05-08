@@ -133,67 +133,95 @@ public class SHAutocorrectSuggestionView: UIView {
     }
     
     public override func draw(_ rect: CGRect) {
-//        CGSize contentSize = CGSizeMake(self.bounds.size.width, self.bounds.size.height - kArrowHeight);
-//            CGPoint arrowBottom = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height);
-//
-//            CGMutablePathRef path = CGPathCreateMutable();
-//
-//            CGPathMoveToPoint(path, NULL, arrowBottom.x, arrowBottom.y);
-//            CGPathAddLineToPoint(path, NULL, arrowBottom.x - kArrowWidth, arrowBottom.y - kArrowHeight);
-//
-//            CGPathAddArcToPoint(path, NULL, 0, contentSize.height, 0, contentSize.height - kCornerRadius, kCornerRadius);
-//            CGPathAddArcToPoint(path, NULL, 0, 0, kCornerRadius, 0, kCornerRadius);
-//            CGPathAddArcToPoint(path, NULL, contentSize.width, 0, contentSize.width, kCornerRadius, kCornerRadius);
-//            CGPathAddArcToPoint(path, NULL, contentSize.width, contentSize.height, contentSize.width - kCornerRadius, contentSize.height, kCornerRadius);
-//
-//            CGPathAddLineToPoint(path, NULL, arrowBottom.x + kArrowWidth, arrowBottom.y - kArrowHeight);
-//
-//            CGPathCloseSubpath(path);
-//
-//            CGContextRef context = UIGraphicsGetCurrentContext();
-//
-//            CGContextSaveGState(context);
-//
-//            CGContextAddPath(context, path);
-//            CGContextClip(context);
-//            CGContextSetFillColorWithColor(context, self.fillColor.CGColor);
-//            CGContextFillRect(context, self.bounds);
-//
-//            CGContextRestoreGState(context);
-//            CGPathRelease(path);
-//
-//            CGFloat separatorX = contentSize.width - kDismissButtonWidth;
-//            CGContextSetStrokeColorWithColor(context, [UIColor grayColor].CGColor);
-//            CGContextSetLineWidth(context, 1);
-//            CGContextMoveToPoint(context, separatorX, 0);
-//            CGContextAddLineToPoint(context, separatorX, contentSize.height);
-//            CGContextStrokePath(context);
-//
-//            CGFloat xSize = 12;
-//            CGContextSetLineWidth(context, 4);
-//            CGContextMoveToPoint(context, separatorX + (kDismissButtonWidth - xSize) / 2, (contentSize.height - xSize) / 2);
-//            CGContextAddLineToPoint(context, separatorX + (kDismissButtonWidth + xSize) / 2, (contentSize.height + xSize) / 2);
-//            CGContextStrokePath(context);
-//            CGContextMoveToPoint(context, separatorX + (kDismissButtonWidth - xSize) / 2, (contentSize.height + xSize) / 2);
-//            CGContextAddLineToPoint(context, separatorX + (kDismissButtonWidth + xSize) / 2, (contentSize.height - xSize) / 2);
-//            CGContextStrokePath(context);
-//
-//            [self.titleColor set];
-//        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-//            NSMutableParagraphStyle * paragraphTitleStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-//            paragraphTitleStyle.lineBreakMode = NSLineBreakByWordWrapping;
-//            paragraphTitleStyle.alignment = NSTextAlignmentCenter;
-//            NSMutableParagraphStyle * paragraphSuggestedStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-//            paragraphSuggestedStyle.lineBreakMode = NSLineBreakByCharWrapping;
-//            paragraphSuggestedStyle.alignment = NSTextAlignmentLeft;
-//            [self.title drawInRect:self.titleRect withAttributes:@{NSFontAttributeName:self.titleFont, NSParagraphStyleAttributeName:paragraphTitleStyle, NSForegroundColorAttributeName:[UIColor whiteColor]}];
-//            [self.suggestionColor set];
-//            [self.suggestedText drawInRect:self.suggestionRect withAttributes:@{NSFontAttributeName:self.suggestionFont, NSParagraphStyleAttributeName:paragraphSuggestedStyle, NSForegroundColorAttributeName:[SHAutocorrectSuggestionView defaultSuggestionColor]}];
-//        #else
-//            [self.title drawInRect:self.titleRect withFont:self.titleFont lineBreakMode:NSLineBreakByWordWrapping alignment:NSTextAlignmentCenter];
-//            [self.suggestionColor set];
-//            [self.suggestedText drawInRect:self.suggestionRect withFont:self.suggestionFont lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentLeft];
-//        #endif
+        
+        let contentSize = CGSize(width: self.bounds.size.width, height: self.bounds.size.height - Self.arrowHeight)
+        let arrowBottom = CGPoint(x: self.bounds.size.width / 2, y: self.bounds.size.height)
+
+        let path = CGMutablePath()
+
+        path.move(to: CGPoint(x: arrowBottom.x, y: arrowBottom.y))
+        path.addLine(to: CGPoint(x: arrowBottom.x - Self.arrowWidth, y: arrowBottom.y - Self.arrowHeight))
+
+        path.addArc(tangent1End: CGPoint(x: 0, y: contentSize.height),
+                    tangent2End: CGPoint(x: 0, y: contentSize.height - Self.cornerRadius),
+                    radius: Self.cornerRadius)
+        path.addArc(tangent1End: CGPoint(x: 0, y: 0),
+                    tangent2End: CGPoint(x: Self.cornerRadius, y: 0),
+                    radius: Self.cornerRadius)
+        path.addArc(tangent1End: CGPoint(x: contentSize.width, y: 0),
+                    tangent2End: CGPoint(x: contentSize.width, y: Self.cornerRadius),
+                    radius: Self.cornerRadius)
+        path.addArc(tangent1End: CGPoint(x: contentSize.width, y: contentSize.height),
+                    tangent2End: CGPoint(x: contentSize.width - Self.cornerRadius, y: contentSize.height),
+                    radius: Self.cornerRadius)
+        
+
+        path.addLine(to: CGPoint(x: arrowBottom.x + Self.arrowWidth, y: arrowBottom.y - Self.arrowHeight))
+
+        path.closeSubpath()
+
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+
+        context.saveGState()
+
+        context.addPath(path)
+        context.clip()
+        
+        let fillColor = self.fillColor ?? Self.defaultFillColor()
+        
+        context.setFillColor(fillColor.cgColor)
+        context.fill(bounds)
+
+        context.restoreGState()
+
+        let separatorX: CGFloat = contentSize.width - Self.dismissButtonWidth
+        context.setStrokeColor(UIColor.gray.cgColor)
+        context.setLineWidth(1)
+        context.move(to: CGPoint(x: separatorX, y: 0))
+        context.addLine(to: CGPoint(x: separatorX, y: contentSize.height))
+        context.strokePath()
+        
+        let xSize: CGFloat = 12
+        
+        context.setLineWidth(4)
+        
+        context.move(to: CGPoint(x: separatorX + (Self.dismissButtonWidth - xSize) / 2, y: (contentSize.height - xSize) / 2))
+        context.addLine(to: CGPoint(x: separatorX + (Self.dismissButtonWidth + xSize) / 2, y: (contentSize.height + xSize) / 2))
+        context.strokePath()
+        
+        context.move(to: CGPoint(x: separatorX + (Self.dismissButtonWidth - xSize) / 2, y: (contentSize.height + xSize) / 2))
+        context.addLine(to: CGPoint(x: separatorX + (Self.dismissButtonWidth + xSize) / 2, y: (contentSize.height - xSize) / 2))
+        context.strokePath()
+
+        let paragraphTitleStyle = NSMutableParagraphStyle()
+        paragraphTitleStyle.lineBreakMode = .byWordWrapping
+        paragraphTitleStyle.alignment = .center
+        
+        let paragraphSuggestedStyle = NSMutableParagraphStyle()
+        paragraphSuggestedStyle.lineBreakMode = .byCharWrapping
+        paragraphSuggestedStyle.alignment = .left
+        
+        if let title = self.title, let titleRect = self.titleRect {
+            self.titleColor?.set()
+            
+            title.draw(in: titleRect, withAttributes: [
+                .font: self.titleFont,
+                .paragraphStyle: paragraphTitleStyle,
+                .foregroundColor: UIColor.white
+            ])
+        }
+        
+        if let suggestedText = self.suggestedText, let suggestionRect = self.suggestionRect {
+            self.suggestionColor?.set()
+            
+            suggestedText.draw(in: suggestionRect, withAttributes: [
+                .font: self.suggestionFont,
+                .paragraphStyle: paragraphSuggestedStyle,
+                .foregroundColor: Self.defaultSuggestionColor()
+            ])
+        }
     }
     
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
