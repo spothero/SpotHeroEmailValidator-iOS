@@ -367,19 +367,40 @@ public class SHAutocorrectSuggestionView: UIView {
     
     // - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard !touches.isEmpty else {
+        // if (touches.count == 1) {
+            //     <converted to guard to remove nesting>
+        // }
+        
+        guard touches.count == 1 else {
             return
         }
+        
+        // UITouch *touch = [touches anyObject];
+        // CGPoint touchPoint = [touch locationInView:self];
         
         guard let touchPoint = touches.first?.location(in: self) else {
             return
         }
         
+        // CGSize viewSize = self.bounds.size;
+        
         let viewSize = self.bounds.size
+        
+        // if (touchPoint.x >= 0 && touchPoint.x < viewSize.width && touchPoint.y >= 0 && touchPoint.y < viewSize.height - kArrowHeight) {
+        //     <converted to guard to remove nesting>
+        // }
         
         guard touchPoint.x >= 0 && touchPoint.x < viewSize.width && touchPoint.y >= 0 && touchPoint.y < viewSize.height - Self.arrowHeight else {
             return
         }
+        
+        // if (touchPoint.x <= viewSize.width - kDismissButtonWidth && self.suggestedText) {
+        //     [self.delegate suggestionView:self wasDismissedWithAccepted:YES];
+        //     [self dismiss];
+        // } else {
+        //     [self.delegate suggestionView:self wasDismissedWithAccepted:NO];
+        //     [self dismiss];
+        // }
         
         let wasDismissedWithAccepted = touchPoint.x <= viewSize.width - Self.dismissButtonWidth && self.suggestedText != nil
         
@@ -389,14 +410,36 @@ public class SHAutocorrectSuggestionView: UIView {
     
     // - (void)showFromView:(UIView *)target inContainerView:(UIView *)container
     public func show(from target: UIView, inContainerView container: UIView?) {
+        
+        // self.target = target;
+        
         self.target = target
+        
+        // self.alpha = 0.2;
+        // self.transform = CGAffineTransformMakeScale(0.6, 0.6);
         
         self.alpha = 0.2
         self.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
 
         // Frame is in target.superview coordinates
+        
+        // self.frame = [target.superview convertRect:self.frame toView:container];
+        // [container addSubview:self];
+        
         self.frame = target.superview?.convert(self.frame, to: container) ?? .zero
         container?.addSubview(self)
+        
+        // [UIView animateWithDuration:0.2
+        //                  animations:^{
+        //                      self.alpha = 1;
+        //                      self.transform = CGAffineTransformMakeScale(1.1, 1.1);
+        //                  }
+        //                  completion:^(BOOL finished) {
+        //                      [UIView animateWithDuration:0.1
+        //                                       animations:^{
+        //                                           self.transform = CGAffineTransformIdentity;
+        //                                       }];
+        //                  }];
         
         UIView.animate(
             withDuration: 0.2,
@@ -420,18 +463,39 @@ public class SHAutocorrectSuggestionView: UIView {
                 return
         }
         
+        // CGFloat width = self.bounds.size.width;
+        // CGFloat height = self.bounds.size.height;
+        // CGFloat left = MAX(10, self.target.center.x - width / 2);
+        // CGFloat top = self.target.frame.origin.y - height;
+        
         let width = self.bounds.size.width
         let height = self.bounds.size.height
-        
-        
         let left = max(10, target.center.x - (width / 2))
         let top = target.frame.origin.y - height
+        
+        // self.frame = CGRectIntegral([self.target.superview convertRect:CGRectMake(left, top, width, height) toView:self.superview]);
         
         self.frame = targetSuperview.convert(CGRect(x: left, y: top, width: width, height: height), to: self.superview).integral
     }
 
     // - (void)dismiss
     public func dismiss() {
+        // [UIView animateWithDuration:0.1
+        //                  animations:^{
+        //                      self.transform = CGAffineTransformMakeScale(1.1, 1.1);
+        //                }
+        //                completion:^(BOOL finished) {
+        //                    [UIView animateWithDuration:0.2
+        //                                     animations:^{
+        //                                         self.alpha = 0.2;
+        //                                         self.transform = CGAffineTransformMakeScale(0.6, 0.6);
+        //                                     }
+        //                                     completion:^(BOOL innerFinished) {
+        //                                         [self removeFromSuperview];
+        //                                         self.target = nil;
+        //                                     }];
+        //                }];
+        
         UIView.animate(
             withDuration: 0.1,
             animations: {
