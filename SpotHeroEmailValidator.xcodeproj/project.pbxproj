@@ -35,6 +35,8 @@
 		34121DC92355121E005393F2 /* SpotHeroEmailValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotHeroEmailValidatorTests.swift; sourceTree = "<group>"; };
 		3422112B24647AFF0002E7C6 /* EmailTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTextFieldDelegate.swift; sourceTree = "<group>"; };
 		342211372464AED90002E7C6 /* SHEmailValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHEmailValidationTextField.swift; sourceTree = "<group>"; };
+		342211392464BAA80002E7C6 /* SHAutocorrectSuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAutocorrectSuggestionView.swift; sourceTree = "<group>"; };
+		3422113B2464BB390002E7C6 /* AutocorrectSuggestionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocorrectSuggestionViewDelegate.swift; sourceTree = "<group>"; };
 		342A1B162352A7EA00070FCD /* String+LevenshteinDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LevenshteinDistance.swift"; sourceTree = "<group>"; };
 		342A1B192352AE1B00070FCD /* SHValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHValidationResult.swift; sourceTree = "<group>"; };
 		342A1B1E2352BE4F00070FCD /* NSString+LevenshteinDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+LevenshteinDistance.swift"; sourceTree = "<group>"; };
@@ -89,10 +91,12 @@
 		34497700234C289600D71628 /* SpotHeroEmailValidator */ = {
 			isa = PBXGroup;
 			children = (
-				342211372464AED90002E7C6 /* SHEmailValidationTextField.swift */,
-				3422112B24647AFF0002E7C6 /* EmailTextFieldDelegate.swift */,
 				3449771B234C295E00D71628 /* SHAutocorrectSuggestionView.m */,
+				3422113B2464BB390002E7C6 /* AutocorrectSuggestionViewDelegate.swift */,
+				3422112B24647AFF0002E7C6 /* EmailTextFieldDelegate.swift */,
 				342A1B1E2352BE4F00070FCD /* NSString+LevenshteinDistance.swift */,
+				342211392464BAA80002E7C6 /* SHAutocorrectSuggestionView.swift */,
+				342211372464AED90002E7C6 /* SHEmailValidationTextField.swift */,
 				342A1B192352AE1B00070FCD /* SHValidationResult.swift */,
 				349AD60123551C4D008BF413 /* SpotHeroEmailValidator.swift */,
 				342A1B162352A7EA00070FCD /* String+LevenshteinDistance.swift */,
