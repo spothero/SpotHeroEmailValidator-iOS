@@ -5,6 +5,8 @@ Pod::Spec.new do |spec|
   spec.name            = 'SpotHeroEmailValidator'
   spec.version         = '2.0.1'
 
+  spec.swift_versions = ['5.1', '5.2']
+
   spec.author       = { 'SpotHero' => 'ios@spothero.com' }
   spec.homepage     = 'https://github.com/SpotHero/SpotHeroEmailValidator-iOS'
   spec.license      = { :type => 'Apache 2.0', :file => 'LICENSE' }
