@@ -18,6 +18,9 @@ import UIKit
 
 public typealias SetupBlock = (SHAutocorrectSuggestionView?) -> Void
 
+// Obj-C code is documented above every call or signature for ease of maintenance and identifying any escaped defects.
+// As we refactor the behavior and logic and feel more confident in the translation to Swift, we'll remove the commented code blocks.
+
 public class SHAutocorrectSuggestionView: UIView {
     private static let cornerRadius: CGFloat = 6
     private static let arrowHeight: CGFloat = 12
@@ -41,6 +44,7 @@ public class SHAutocorrectSuggestionView: UIView {
     private let title: String?
 
     // + (instancetype)showFromView:(UIView *)target inContainerView:(UIView *)container title:(NSString *)title autocorrectSuggestion:(NSString *)suggestion withSetupBlock:(SetupBlock)block
+    
     public static func show(from target: UIView,
                             inContainerView container: UIView?,
                             title: String?,
@@ -61,6 +65,7 @@ public class SHAutocorrectSuggestionView: UIView {
     }
     
     // + (instancetype)showFromView:(UIView *)target title:(NSString *)title autocorrectSuggestion:(NSString *)suggestion withSetupBlock:(SetupBlock)block
+    
     public static func show(from target: UIView,
                             title: String?,
                             autocorrectSuggestion suggestion: String?,
@@ -75,12 +80,14 @@ public class SHAutocorrectSuggestionView: UIView {
     }
 
     // + (UIColor *)defaultFillColor
+    
     public static func defaultFillColor() -> UIColor {
         // return [UIColor blackColor];
         return .black
     }
     
     // + (UIColor *)defaultTitleColor
+    
     public static func defaultTitleColor() -> UIColor {
         // return [UIColor whiteColor];
         return .white
@@ -88,12 +95,14 @@ public class SHAutocorrectSuggestionView: UIView {
     }
     
     // + (UIColor *)defaultSuggestionColor
+    
     public static func defaultSuggestionColor() -> UIColor {
         // return [UIColor colorWithRed:0.5f green:0.5f blue:1.0f alpha:1.0f];
         return UIColor(red: 0.5, green: 0.5, blue: 1.0, alpha: 1.0)
     }
     
     // - (instancetype)initWithTarget:(UIView *)target title:(NSString *)title autocorrectSuggestion:(NSString *)suggestion withSetupBlock:(SetupBlock)block
+    
     public init(target: UIView, title: String?, autocorrectSuggestion suggestion: String?, withSetupBlock block: SetupBlock?) {
         // self.title = title;
         // self.suggestedText = suggestion;
@@ -136,14 +145,14 @@ public class SHAutocorrectSuggestionView: UIView {
         
         // CGRect suggestionSizeRect = [suggestion boundingRectWithSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.suggestionFont, NSParagraphStyleAttributeName:paragraphSuggestedStyle, NSForegroundColorAttributeName:[SHAutocorrectSuggestionView defaultSuggestionColor]} context:nil];
         
-        let suggestionSizeRect = title?.boundingRect(with: CGSize(width: Self.maxWidth - Self.dismissButtonWidth, height: CGFloat.greatestFiniteMagnitude),
-                                                     options: .usesLineFragmentOrigin,
-                                                     attributes: [
-                                                        .font: self.suggestionFont,
-                                                        .paragraphStyle: paragraphSuggestedStyle,
-                                                        .foregroundColor: Self.defaultSuggestionColor(),
-                                                     ],
-                                                     context: nil)
+        let suggestionSizeRect = suggestion?.boundingRect(with: CGSize(width: Self.maxWidth - Self.dismissButtonWidth, height: CGFloat.greatestFiniteMagnitude),
+                                                          options: .usesLineFragmentOrigin,
+                                                          attributes: [
+                                                            .font: self.suggestionFont,
+                                                            .paragraphStyle: paragraphSuggestedStyle,
+                                                            .foregroundColor: Self.defaultSuggestionColor(),
+                                                          ],
+                                                          context: nil)
         
         // CGSize titleSize = titleSizeRect.size;
         // CGSize suggestionSize = suggestionSizeRect.size;
@@ -208,6 +217,7 @@ public class SHAutocorrectSuggestionView: UIView {
     }
     
     // - (void)drawRect:(CGRect)rect
+    
     public override func draw(_ rect: CGRect) {
         // CGSize contentSize = CGSizeMake(self.bounds.size.width, self.bounds.size.height - kArrowHeight);
         // CGPoint arrowBottom = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height);
@@ -366,6 +376,7 @@ public class SHAutocorrectSuggestionView: UIView {
     }
     
     // - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+    
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         // if (touches.count == 1) {
             //     <converted to guard to remove nesting>
@@ -409,6 +420,7 @@ public class SHAutocorrectSuggestionView: UIView {
     }
     
     // - (void)showFromView:(UIView *)target inContainerView:(UIView *)container
+    
     public func show(from target: UIView, inContainerView container: UIView?) {
         
         // self.target = target;
@@ -456,6 +468,7 @@ public class SHAutocorrectSuggestionView: UIView {
     }
 
     // - (void)updatePosition
+    
     public func updatePosition() {
         guard
             let target = self.target,
@@ -477,8 +490,9 @@ public class SHAutocorrectSuggestionView: UIView {
         
         self.frame = targetSuperview.convert(CGRect(x: left, y: top, width: width, height: height), to: self.superview).integral
     }
-
+    
     // - (void)dismiss
+    
     public func dismiss() {
         // [UIView animateWithDuration:0.1
         //                  animations:^{
