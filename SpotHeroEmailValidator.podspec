@@ -4,6 +4,8 @@ Pod::Spec.new do |spec|
   # Root Specification
   spec.name            = 'SpotHeroEmailValidator'
   spec.version         = '2.0.1'
+  
+  spec.swift_versions = ['5.1', '5.2']
 
   spec.author       = { 'SpotHero' => 'ios@spothero.com' }
   spec.homepage     = 'https://github.com/SpotHero/SpotHeroEmailValidator-iOS'
@@ -30,6 +32,6 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   # File Patterns
-  spec.source_files = 'Sources/SpotHeroEmailValidator/**/*.{h,m}'
+  spec.source_files = 'Sources/SpotHeroEmailValidator/**/*.{h,m,swift}'
   spec.resources    = 'Sources/SpotHeroEmailValidator/data/DomainData.plist'
 end
