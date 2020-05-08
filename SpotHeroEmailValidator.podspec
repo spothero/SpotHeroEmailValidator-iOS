@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
   # Root Specification
   spec.name            = 'SpotHeroEmailValidator'
   spec.version         = '2.0.1'
-
+  
   spec.swift_versions = ['5.1', '5.2']
 
   spec.author       = { 'SpotHero' => 'ios@spothero.com' }
