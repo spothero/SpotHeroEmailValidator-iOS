@@ -33,69 +33,73 @@ public class SHAutocorrectSuggestionView: UIView {
     public var suggestionColor: UIColor?
     
     private var target: UIView?
-    private var titleFront: UIFont?
-    private var suggestionFont: UIFont?
-    private var title: String?
     private var titleRect: CGRect?
     private var suggestionRect: CGRect?
+    
+    private let titleFont: UIFont
+    private let suggestionFont: UIFont
+    private let title: String?
 
     public static func defaultFillColor() -> UIColor { return .black }
     public static func defaultTitleColor() -> UIColor { return .white }
     public static func defaultSuggestionColor() -> UIColor { return UIColor(red: 0.5, green: 0.5, blue: 1.0, alpha: 1.0) }
     
-    public init(target: UIView, title: String?, autocorrectSuggestion suggestion: String?, withSetupBlock block: SetupBlock) {
-//        if ((self = [super init])) {
-//                self.title = title;
-//                self.suggestedText = suggestion;
-//                self.titleFont = [UIFont boldSystemFontOfSize:13];
-//                self.suggestionFont = [UIFont boldSystemFontOfSize:13];
-//        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-//                NSMutableParagraphStyle * paragraphTitleStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-//                paragraphTitleStyle.lineBreakMode = NSLineBreakByWordWrapping;
-//                paragraphTitleStyle.alignment = NSTextAlignmentLeft;
-//
-//                NSMutableParagraphStyle * paragraphSuggestedStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-//                paragraphSuggestedStyle.lineBreakMode = NSLineBreakByCharWrapping;
-//                paragraphSuggestedStyle.alignment = NSTextAlignmentLeft;
-//
-//                CGRect titleSizeRect = [title boundingRectWithSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.titleFont, NSParagraphStyleAttributeName:paragraphTitleStyle, NSForegroundColorAttributeName:[UIColor whiteColor]} context:nil];
-//                CGSize titleSize = titleSizeRect.size;
-//
-//                CGRect suggestionSizeRect = [suggestion boundingRectWithSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.suggestionFont, NSParagraphStyleAttributeName:paragraphSuggestedStyle, NSForegroundColorAttributeName:[SHAutocorrectSuggestionView defaultSuggestionColor]} context:nil];
-//                CGSize suggestionSize = suggestionSizeRect.size;
-//        #else
-//                CGSize titleSize = [title sizeWithFont:self.titleFont constrainedToSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-//                CGSize suggestionSize = [suggestion sizeWithFont:self.suggestionFont constrainedToSize:CGSizeMake(kMaxWidth - kDismissButtonWidth, MAXFLOAT) lineBreakMode:NSLineBreakByCharWrapping];
-//        #endif
-//                CGFloat width = MAX(titleSize.width, suggestionSize.width) + kDismissButtonWidth + kCornerRadius * 2;
-//                CGFloat height = titleSize.height + suggestionSize.height + kArrowHeight + kCornerRadius * 2;
-//                CGFloat left = MAX(10, target.center.x - width / 2);
-//                CGFloat top = target.frame.origin.y - height + 4;
-//
-//                self.frame = CGRectIntegral(CGRectMake(left, top, width, height));
-//                self.opaque = NO;
-//
-//                self.titleRect = CGRectMake((width - kDismissButtonWidth - titleSize.width) / 2, kCornerRadius, titleSize.width, titleSize.height);
-//                self.suggestionRect = CGRectMake(kCornerRadius, kCornerRadius + titleSize.height, suggestionSize.width, suggestionSize.height);
-//
-//                if (block) {
-//                    block(self);
-//                }
-//
-//                if (!self.fillColor) {
-//                    self.fillColor = [SHAutocorrectSuggestionView defaultFillColor];
-//                }
-//
-//                if (!self.titleColor) {
-//                    self.titleColor = [SHAutocorrectSuggestionView defaultTitleColor];
-//                }
-//
-//                if (!self.suggestionColor) {
-//                    self.suggestionColor = [SHAutocorrectSuggestionView defaultSuggestionColor];
-//                }
-//            }
-//            return self;
+    public init(target: UIView, title: String?, autocorrectSuggestion suggestion: String?, withSetupBlock block: SetupBlock?) {
+        self.title = title
+        self.suggestedText = suggestion
+        self.titleFont = UIFont.boldSystemFont(ofSize: 13)
+        self.suggestionFont = UIFont.boldSystemFont(ofSize: 13)
+        
         super.init(frame: .zero)
+        
+        let paragraphTitleStyle = NSMutableParagraphStyle()
+        paragraphTitleStyle.lineBreakMode = .byWordWrapping
+        paragraphTitleStyle.alignment = .left
+        
+        let paragraphSuggestedStyle = NSMutableParagraphStyle()
+        paragraphSuggestedStyle.lineBreakMode = .byWordWrapping
+        paragraphSuggestedStyle.alignment = .left
+        
+        let titleSizeRect = title?.boundingRect(with: CGSize(width: Self.maxWidth - Self.dismissButtonWidth, height: CGFloat.greatestFiniteMagnitude),
+                                                options: .usesLineFragmentOrigin,
+                                                attributes: [
+                                                    .font: self.titleFont,
+                                                    .paragraphStyle: paragraphTitleStyle,
+                                                    .foregroundColor: UIColor.white,
+                                                ],
+                                                context: nil)
+        
+        let suggestionSizeRect = title?.boundingRect(with: CGSize(width: Self.maxWidth - Self.dismissButtonWidth, height: CGFloat.greatestFiniteMagnitude),
+                                                     options: .usesLineFragmentOrigin,
+                                                     attributes: [
+                                                        .font: self.suggestionFont,
+                                                        .paragraphStyle: paragraphSuggestedStyle,
+                                                        .foregroundColor: Self.defaultSuggestionColor(),
+                                                     ],
+                                                     context: nil)
+                                                     
+        guard
+            let titleSize = titleSizeRect?.size,
+            let suggestionSize = suggestionSizeRect?.size else {
+                return
+        }
+        
+        let width = max(titleSize.width, suggestionSize.width) + Self.dismissButtonWidth + (Self.cornerRadius * 2)
+        let height = titleSize.height + suggestionSize.height + Self.arrowHeight + (Self.cornerRadius * 2)
+        let left = max(10, target.center.x - (width / 2))
+        let top = target.frame.origin.y - height + 4
+        
+        self.frame = CGRect(x: left, y: top, width: width, height: height).integral
+        self.isOpaque = false
+        
+        self.titleRect = CGRect(x: (width - Self.dismissButtonWidth - titleSize.width) / 2, y: Self.cornerRadius, width: titleSize.width, height: titleSize.height)
+        self.suggestionRect = CGRect(x: Self.cornerRadius, y: Self.cornerRadius + titleSize.height, width: suggestionSize.width, height: suggestionSize.height)
+        
+        block?(self)
+        
+        self.fillColor = self.fillColor ?? Self.defaultFillColor()
+        self.titleColor = self.titleColor ?? Self.defaultTitleColor()
+        self.suggestionColor = self.suggestionColor ?? Self.defaultSuggestionColor()
     }
     
     required init?(coder: NSCoder) {
@@ -105,7 +109,7 @@ public class SHAutocorrectSuggestionView: UIView {
     public static func show(from target: UIView,
                             title: String?,
                             autocorrectSuggestion suggestion: String?,
-                            withSetupBlock block: SetupBlock) -> SHAutocorrectSuggestionView {
+                            withSetupBlock block: SetupBlock?) -> SHAutocorrectSuggestionView {
         return SHAutocorrectSuggestionView.show(from: target,
                                                 inContainerView: target.superview,
                                                 title: title,
@@ -117,7 +121,7 @@ public class SHAutocorrectSuggestionView: UIView {
                             inContainerView container: UIView?,
                             title: String?,
                             autocorrectSuggestion suggestion: String?,
-                            withSetupBlock block: SetupBlock) -> SHAutocorrectSuggestionView {
+                            withSetupBlock block: SetupBlock?) -> SHAutocorrectSuggestionView {
         let suggestionView = SHAutocorrectSuggestionView(target: target,
                                                          title: title,
                                                          autocorrectSuggestion: suggestion,
