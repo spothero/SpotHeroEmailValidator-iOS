@@ -30,7 +30,7 @@ public class SpotHeroEmailValidator: NSObject {
         var dataDictionary: NSDictionary?
         
         // All TLDs registered with IANA as of October 8th, 2019 at 11:28 AM CST (latest list at: http://data.iana.org/TLD/tlds-alpha-by-domain.txt)
-        if let plistPath = Bundle(for: SpotHeroEmailValidator.self).path(forResource: "DomainData", ofType: "plist") {
+        if let plistPath = Bundle.module.path(forResource: "DomainData", ofType: "plist") {
             dataDictionary = NSDictionary(contentsOfFile: plistPath)
         }
         
