@@ -1,0 +1,105 @@
+# Updated for v8.0.0
+
+# frozen_string_literal: true
+
+# ============= #
+#   Constants   #
+# ============= #
+
+SWIFTLINT_INLINE_MODE = true
+IS_DEBUGGING = false
+
+# ======================= #
+#   Convenience Methods   #
+# ======================= #
+
+def pr_title_tickets
+  title_ticket_regex = /([A-Z0-9]{2,3}-[0-9]+)/
+  github.pr_title.scan(title_ticket_regex).flatten || []
+end
+
+def pr_description_tickets
+  description_ticket_regex = /([A-Z0-9]{2,3}-[0-9]+)/
+  github.pr_body.scan(description_ticket_regex).flatten || []
+end
+
+def validate_pull_request
+  # TODO: Validate that the right branch is being merged, etc.
+  # if branch_for_base == 'master' && branch_for_head != 'develop'
+  #   fail ''
+  # end
+
+  # TODO: Update the title or description with appropriate tickets? Do we want to do this? If so, which is source of truth?
+
+  # get tickets in the PR title
+  title_tickets = pr_title_tickets
+
+  # get tickets in the PR description
+  description_tickets = pr_description_tickets
+
+  # validate that either the PR title or description contain JIRA tickets
+  if title_tickets.empty? && description_tickets.empty?
+    return
+  end
+
+  # validate that the same tickets are in the PR title and description
+  if title_tickets.sort == description_tickets.sort
+    return
+  end
+
+  # since we know the tickets in the title and description don't match,
+  # we need to get the difference of both ticket arrays and evaluate them
+  missing_title_tickets = (description_tickets - title_tickets).join(', ')
+  missing_description_tickets = (title_tickets - description_tickets).join(', ')
+
+  # if there are any tickets that are in the description but not in the title, warn
+  warn "PR title is missing JIRA tickets: #{missing_title_tickets}" unless missing_title_tickets.empty?
+
+  # if there are any tickets that are in the title but not in the description, warn
+  warn "PR description is missing JIRA tickets: #{missing_description_tickets}" unless missing_description_tickets.empty?
+end
+
+# =========== #
+#   Linting   #
+# =========== #
+
+# Validate that the Pull Request has a valid title and body
+validate_pull_request if defined?(github)
+
+# Sources for all third-party tools can be found here:
+# https://danger.systems/ruby/
+# Scroll down and select the bubble that has the tool you're looking for
+
+# Runs the Danger-SwiftFormat plugin and fail the build if there are pending formatting changes
+if defined?(swiftformat) && File.exist?('.swiftformat') 
+  # Gets the version of SwiftFormat used by Danger
+  swiftformat_version = ENV['SWIFTFORMAT_VERSION'] || `swiftformat --version`
+
+  # Prints the version of SwiftFormat used to help with debugging violations and keeping our projects in sync.
+  message "Formatted with SwiftFormat v#{swiftformat_version.strip}."
+
+  # Sets the path of the SwiftFormat binary if the env var has been set
+  swiftformat.binary_path = ENV['SWIFTFORMAT_PATH'] if ENV.key?('SWIFTFORMAT_PATH')
+
+  # Run SwiftFormat
+  swiftformat.check_format(fail_on_error: true) 
+end
+
+# Runs the Danger-SwiftLint plugin and make inline comments with any warnings or errors
+if defined?(swiftlint) && File.exist?('.swiftlint.yml')
+  # Gets the version of SwiftLint used by Danger
+  swiftlint_version = ENV['SWIFTLINT_VERSION'] || `danger-swiftlint swiftlint_version`
+
+  # Prints the version of SwiftLint used to help with debugging violations and keeping our projects in sync.
+  message "Linted with SwiftLint v#{swiftlint_version.strip}."
+
+  swiftlint.verbose = IS_DEBUGGING
+
+  # Run SwiftLint
+  swiftlint.lint_files(inline_mode: SWIFTLINT_INLINE_MODE) 
+
+  fail "SwiftLint found #{swiftlint.issues.length} violations." if swiftlint.issues.length > 0
+end
+
+# We need a pat on the back sometimes!
+message '👋 👋 Great job!' if status_report[:errors].empty? && status_report[:warnings].empty?

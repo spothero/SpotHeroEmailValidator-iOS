@@ -1,6 +1,10 @@
 # SpotHeroEmailValidator
 
-[![Build Status](https://app.bitrise.io/app/91f2b85cb4d90b8a/status.svg?token=4HzphDQRkMkQ4mcdtTubbA)](https://app.bitrise.io/app/91f2b85cb4d90b8a)
+[![CI Status](https://github.com/spothero/SpotHeroEmailValidator-iOS/workflows/CI/badge.svg)](https://github.com/spothero/SpotHeroEmailValidator-iOS/actions?query=workflow%3A%22CI%22)
+[![Latest Release](https://img.shields.io/github/v/tag/spothero/SpotHeroEmailValidator-iOS?color=blue&label=latest)](https://github.com/spothero/SpotHeroEmailValidator-iOS/releases)
+[![Swift Version](https://img.shields.io/static/v1?label=swift&message=5.3&color=red&logo=swift&logoColor=white)](https://developer.apple.com/swift)
+[![Platform Support](https://img.shields.io/static/v1?label=platform&message=iOS%20|%20macOS&color=darkgray)](https://github.com/spothero/SpotHeroEmailValidator-iOS/blob/master/Package.swift)
+[![License](https://img.shields.io/github/license/spothero/SpotHeroEmailValidator-iOS)](https://github.com/spothero/SpotHeroEmailValidator-iOS/blob/master/LICENSE)
 
 An iOS library that will provide basic email syntax validation as well as provide suggestions for possible typos (for example, test@gamil.con would be corrected to test@gmail.com).
 
