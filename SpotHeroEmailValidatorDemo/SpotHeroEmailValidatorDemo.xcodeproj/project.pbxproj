@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,23 +13,8 @@
 		34954FCC235431A800C8580B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34954FCA235431A800C8580B /* Main.storyboard */; };
 		34954FCE235431A800C8580B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34954FCD235431A800C8580B /* Assets.xcassets */; };
 		34954FD1235431A800C8580B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34954FCF235431A800C8580B /* LaunchScreen.storyboard */; };
-		34954FD92354366600C8580B /* SpotHeroEmailValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34954FD82354366600C8580B /* SpotHeroEmailValidator.framework */; };
-		34954FDA2354366600C8580B /* SpotHeroEmailValidator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34954FD82354366600C8580B /* SpotHeroEmailValidator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		34C967FD258169BD009DDF4B /* SpotHeroEmailValidator in Frameworks */ = {isa = PBXBuildFile; productRef = 34C967FC258169BD009DDF4B /* SpotHeroEmailValidator */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		34954FDB2354366600C8580B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				34954FDA2354366600C8580B /* SpotHeroEmailValidator.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		344977B5234C344E00D71628 /* SpotHeroEmailValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpotHeroEmailValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34954FD92354366600C8580B /* SpotHeroEmailValidator.framework in Frameworks */,
+				34C967FD258169BD009DDF4B /* SpotHeroEmailValidator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,13 +99,15 @@
 				34954FBE235431A800C8580B /* Sources */,
 				34954FBF235431A800C8580B /* Frameworks */,
 				34954FC0235431A800C8580B /* Resources */,
-				34954FDB2354366600C8580B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SpotHeroEmailValidatorDemo;
+			packageProductDependencies = (
+				34C967FC258169BD009DDF4B /* SpotHeroEmailValidator */,
+			);
 			productName = SpotHeroEmailValidatorSwiftDemo;
 			productReference = 34954FC2235431A800C8580B /* SpotHeroEmailValidatorDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -132,7 +119,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "SpotHero, Inc.";
 				TargetAttributes = {
 					34954FC1235431A800C8580B = {
@@ -230,6 +217,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -254,7 +242,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -288,6 +276,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -306,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -378,6 +367,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		34C967FC258169BD009DDF4B /* SpotHeroEmailValidator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpotHeroEmailValidator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3449778D234C337B00D71628 /* Project object */;
 }

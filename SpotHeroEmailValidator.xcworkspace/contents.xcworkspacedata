@@ -5,6 +5,6 @@
       location = "group:SpotHeroEmailValidatorDemo/SpotHeroEmailValidatorDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SpotHeroEmailValidator.xcodeproj">
+      location = "container:">
    </FileRef>
 </Workspace>
