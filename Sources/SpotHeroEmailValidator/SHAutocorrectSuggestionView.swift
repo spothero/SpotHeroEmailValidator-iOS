@@ -13,6 +13,8 @@
 //  limitations under the License.
 //
 
+#if canImport(UIKit)
+
 import Foundation
 import UIKit
 
@@ -531,3 +533,5 @@ public class SHAutocorrectSuggestionView: UIView {
         )
     }
 }
+
+#endif
