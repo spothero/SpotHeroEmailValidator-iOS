@@ -13,6 +13,8 @@
 //  limitations under the License.
 //
 
+#if canImport(UIKit)
+
 import Foundation
 import UIKit
 
@@ -158,5 +160,7 @@ extension SHEmailValidationTextField {
         self.suggestionView?.updatePosition()
     }
 }
+
+#endif
 
 #endif

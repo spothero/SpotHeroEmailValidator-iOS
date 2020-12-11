@@ -1,0 +1,52 @@
+# Updated for v8.0.0
+
+# frozen_string_literal: true
+
+# ============= #
+#   Constants   #
+# ============= #
+
+SWIFTLINT_INLINE_MODE = true
+IS_DEBUGGING = false
+
+# =========== #
+#   Linting   #
+# =========== #
+
+# Sources for all third-party tools can be found here:
+# https://danger.systems/ruby/
+# Scroll down and select the bubble that has the tool you're looking for
+
+# Runs the Danger-SwiftFormat plugin and fail the build if there are pending formatting changes
+if defined?(swiftformat) && File.exist?('.swiftformat') 
+  # Gets the version of SwiftFormat used by Danger
+  swiftformat_version = ENV['SWIFTFORMAT_VERSION'] || `swiftformat --version`
+
+  # Prints the version of SwiftFormat used to help with debugging violations and keeping our projects in sync.
+  message "Formatted with SwiftFormat v#{swiftformat_version.strip}."
+
+  # Sets the path of the SwiftFormat binary if the env var has been set
+  swiftformat.binary_path = ENV['SWIFTFORMAT_PATH'] if ENV.key?('SWIFTFORMAT_PATH')
+
+  # Run SwiftFormat
+  swiftformat.check_format(fail_on_error: true) 
+end
+
+# Runs the Danger-SwiftLint plugin and make inline comments with any warnings or errors
+if defined?(swiftlint) && File.exist?('.swiftlint.yml')
+  # Gets the version of SwiftLint used by Danger
+  swiftlint_version = ENV['SWIFTLINT_VERSION'] || `danger-swiftlint swiftlint_version`
+
+  # Prints the version of SwiftLint used to help with debugging violations and keeping our projects in sync.
+  message "Linted with SwiftLint v#{swiftlint_version.strip}."
+
+  swiftlint.verbose = IS_DEBUGGING
+
+  # Run SwiftLint
+  swiftlint.lint_files(inline_mode: SWIFTLINT_INLINE_MODE) 
+
+  fail "SwiftLint found #{swiftlint.issues.length} violations." if swiftlint.issues.length > 0
+end
+
+# We need a pat on the back sometimes!
+message '👋 👋 Great job!' if status_report[:errors].empty? && status_report[:warnings].empty?
