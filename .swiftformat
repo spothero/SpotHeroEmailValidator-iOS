@@ -1,0 +1,70 @@
+# Updated for v0.40.11
+
+#---------------------#
+# SwiftFormat Options #
+#---------------------#
+
+--swiftversion 5.3
+
+#-------------------#
+# Whitelisted Rules #
+#-------------------#
+
+# Use this section to opt-in to rules explicitly
+# When rules in this list are enabled, no other rules will be run
+
+# --rules redundantSelf
+# --rules trailingSpace
+
+#--------------------#
+# Rule Configuration #
+#--------------------#
+
+# makes sure the self. prefix is added where appropriate
+--self insert 
+
+# only strips unused arguments (replacing with _) in closures, not methods
+--stripunusedargs closure-only 
+
+# sets the header block to supplied text
+--header "Copyright © {year} SpotHero, Inc. All rights reserved."
+
+# only trims whitespace on nonblank-lines to avoid xcode inconsistencies
+--trimwhitespace nonblank-lines
+
+# this removes the underscore (_) separation in large numbers
+--binarygrouping none
+--decimalgrouping none
+--hexgrouping none
+--octalgrouping none
+--exponentgrouping disabled
+--fractiongrouping disabled
+
+#----------------#
+# Disabled Rules #
+#----------------#
+
+# Enforces consistent ordering for member specifiers
+# Disabled because this rule is non-configurable
+--disable specifiers 
+
+# Removes return within closures as well as the new Swift 5 implicit return 
+# Disabled because this rule is non-configurable
+--disable redundantReturn 
+
+# Wrap the opening brace of multiline statements
+# Disabled because this rule is non-configurable
+--disable wrapMultilineStatementBraces
+
+#-----------------#
+# File Exclusions #
+#-----------------#
+
+--exclude Pods
+--exclude .build
+--exclude .swiftpm
+--exclude Package.swift
+--exclude */Package.swift
+--exclude Tests/LinuxMain.swift
+--exclude "Tests/*/XCTestManifests.swift"
+--exclude "**/*/*+CoreDataProperties.swift"
