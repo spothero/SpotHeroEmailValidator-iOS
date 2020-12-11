@@ -1,0 +1,125 @@
+# Updated for v0.34.0
+
+# Disabled Rules
+disabled_rules:
+  - number_separator # Underscores should be used as thousand separator in large decimal numbers.
+  - todo # TODOs and FIXMEs should be resolved.
+  - trailing_closure # Trailing closure syntax should be used whenever possible.
+
+# Enabled Rules
+opt_in_rules:
+  - anyobject_protocol # Prefer using AnyObject over class for class-only protocols.
+  - array_init # Prefer using Array(seq) over seq.map { $0 } to convert a sequence into an Array.
+  - attributes # Attributes should be on their own lines in functions and types, but on the same line as variables and imports.
+  - closure_end_indentation # Closure end should have the same indentation as the line that started it.
+  - closure_spacing # Closure expressions should have a single space inside each brace.
+  - collection_alignment # All elements in a collection literal should be vertically aligned
+  - conditional_returns_on_newline # Conditional statements should always return on the next line
+  - contains_over_first_not_nil # Prefer contains over first(where:) != nil
+  - explicit_init # Explicitly calling .init() should be avoided.
+  - empty_count # Prefer checking `isEmpty` over comparing `count` to zero.
+  - empty_string # Prefer checking isEmpty over comparing string to an empty string literal.
+  - empty_xctest_method # Empty XCTest method should be avoided.
+  - fatal_error_message # A fatalError call should have a message.
+  - file_header # Header comments should be consistent with project patterns. The SWIFTLINT_CURRENT_FILENAME placeholder can optionally be used in the required and forbidden patterns. It will be replaced by the real file name.
+  - file_name # File name should match a type or extension declared in the file (if any).
+  - first_where # "Prefer using `.first(where:)` over `.filter { }.first` in collections.
+  - force_unwrapping # Force unwrapping should be avoided.
+  - function_default_parameter_at_end # Prefer to locate parameters with defaults toward the end of the parameter list.
+  - function_parameter_count # Number of function parameters should be low.
+  - identical_operands # Comparing two identical operands is likely a mistake.
+  - implicitly_unwrapped_optional # Implicitly unwrapped optionals should be avoided when possible.
+  - joined_default_parameter # Discouraged explicit usage of the default separator.
+  - last_where # Prefer using .last(where:) over .filter { }.last in collections.
+  - let_var_whitespace # Let and var should be separated from other statements by a blank line.
+  - literal_expression_end_indentation # Array and dictionary literal end should have the same indentation as the line that started it.
+  - lower_acl_than_parent # Ensure definitions have a lower access control level than their enclosing parent
+  - missing_docs # Declarations should be documented.
+  - modifier_order # Modifier order should be consistent.
+  - multiline_arguments # Arguments should be either on the same line, or one per line.
+  - multiline_function_chains # Chained function calls should be either on the same line, or one per line.
+  - multiline_parameters # Functions and methods parameters should be either on the same line, or one per line.
+  - operator_usage_whitespace # Operators should be surrounded by a single whitespace
+  - overridden_super_call # Some overridden methods should always call super" eg: viewDidLoad
+  - private_action # IBActions should be private.
+  - private_outlet # IBOutlets should be private to avoid leaking UIKit to higher layers.
+  - prohibited_super_call # Some methods should not call super" eg: loadView
+  - redundant_nil_coalescing # Using nil coalescing operator with nil as rhs is redundant
+  - redundant_type_annotation # Variables should not have redundant type annotation
+  - sorted_first_last # Prefer using min() or max() over sorted().first or sorted().last
+  - sorted_imports # Imports should be sorted
+  - switch_case_on_newline # Cases inside a switch should always end on a newline
+  - toggle_bool # Prefer `someBool.toggle()` over `someBool = !someBool`.
+  - trailing_closure # Trailing closure syntax should be used whenever possible.
+  - unneeded_parentheses_in_closure_argument # Parentheses are not needed when declaring closure arguments.
+  - untyped_error_in_catch # Catch statements should not declare error variables without type casting.
+  - unused_import # All imported modules should be required to make the file compile.
+  - vertical_parameter_alignment_on_call # Function parameters should be aligned vertically if they're in multiple lines in a method call.
+
+# Rules run by `swiftlint analyze` (experimental)
+analyzer_rules:
+  - explicit_self # Instance variables and functions should be explicitly accessed with 'self.'.
+  - unused_declaration # Declarations should be referenced at least once within all files linted.
+
+# Rule Configurations
+colon:
+  apply_to_dictionaries: false
+cyclomatic_complexity:
+  ignores_case_statements: true # ignores switch statements
+empty_count:
+  severity: warning
+file_header:
+  required_pattern: |
+    \/\/ Copyright © \d{4} SpotHero, Inc\. All rights reserved\.
+file_name:
+  excluded: ["Enums.swift"]
+file_length:
+  warning: 1000
+  error: 2000
+force_cast: warning
+force_try: warning
+function_body_length:
+  warning: 100
+  error: 200
+function_parameter_count:
+  warning: 7
+  error: 9
+identifier_name:
+  allowed_symbols:
+    - _
+  excluded:
+    - id
+    - x
+    - y
+    - i
+large_tuple:
+  warning: 3
+  error: 4
+line_length:
+  warning: 150
+  error: 400
+  ignores_urls: true
+nesting:
+  type_level:
+    warning: 2
+  statement_level:
+    warning: 4
+private_outlet:
+  allow_private_set: true
+trailing_comma:
+  mandatory_comma: true
+trailing_whitespace:
+  ignores_empty_lines: true
+type_body_length:
+  warning: 1000
+  error: 2000
+
+# File and Folder Exclusions
+excluded:
+  # CocoaPods
+  - Pods
+  # Swift Package Manager
+  - .build
+  - .swiftpm
+  - Tests/LinuxMain.swift
+  - "Tests/*/XCTestManifests.swift"
