@@ -182,7 +182,10 @@ private extension String {
     ///   - [What characters are allowed in an email address? (Stack Overflow](https://stackoverflow.com/questions/2049502/what-characters-are-allowed-in-an-email-address)
     private static let emailRegexPattern = "\(Self.emailUsernameRegexPattern)@\(Self.emailDomainRegexPattern)"
     
+    // swiftlint:disable:next line_length
     private static let emailUsernameRegexPattern = #"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")"#
+    
+    // swiftlint:disable:next line_length
     private static let emailDomainRegexPattern = #"(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"#
     
     func isValidEmail() -> Bool {
