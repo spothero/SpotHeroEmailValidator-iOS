@@ -148,15 +148,16 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-darwin-19
 
 DEPENDENCIES
-  bundler (~> 2.1.4)
+  bundler (~> 2.2.2)
   cocoapods (~> 1.10.0)
-  danger (~> 8.2.0)
+  danger (~> 8.2.1)
   danger-swiftformat (~> 0.7.0)
-  danger-swiftlint (~> 0.24.4)
+  danger-swiftlint (~> 0.24.5)
   httparty (~> 0.18.1)
   plist (~> 3.5.0)
 
 BUNDLED WITH
-   2.1.4
+   2.2.2
