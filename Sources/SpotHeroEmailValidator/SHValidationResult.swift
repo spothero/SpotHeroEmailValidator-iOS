@@ -3,7 +3,7 @@
 import Foundation
 
 public class SHValidationResult: NSObject {
-    /// Indicates whether or not the email address being analyzed is in valid syntax and format or not.
+    /// Indicates whether or not the email address being analyzed is in valid syntax and format.
     @objc public let passedValidation: Bool
     
     /// The autocorrect suggestion to be applied. Nil if there no suggestion.
