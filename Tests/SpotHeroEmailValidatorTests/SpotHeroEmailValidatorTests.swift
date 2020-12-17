@@ -1,17 +1,4 @@
-//  Copyright © 2019 SpotHero, Inc. All rights reserved.
-//
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
-//
+// Copyright © 2020 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroEmailValidator
 import XCTest
@@ -55,27 +42,52 @@ class SpotHeroEmailValidatorTests: XCTestCase {
             }
         }
     }
+    
+    func testValidEmailAddressPassesValidation() throws {
+        let email = "test@spothero.com"
+        
+        let validationResult = try SpotHeroEmailValidator.shared.validateAndAutocorrect(emailAddress: email)
 
+        XCTAssertTrue(validationResult.passedValidation)
+        XCTAssertNil(validationResult.autocorrectSuggestion)
+    }
+    
+    func testInvalidEmailAddressPassesValidation() throws {
+        let email = "test@gamil.con"
+        
+        let validationResult = try SpotHeroEmailValidator.shared.validateAndAutocorrect(emailAddress: email)
 
-    func testEmailSuggestions() {
+        XCTAssertTrue(validationResult.passedValidation)
+        XCTAssertNotNil(validationResult.autocorrectSuggestion)
+    }
+
+    func testEmailSuggestions() throws {
         let tests = [
+            // Emails with NO Autocorrect Suggestions
             ValidatorTestModel(emailAddress: "test@gmail.com", suggestion: nil),
             ValidatorTestModel(emailAddress: "test@yahoo.co.uk", suggestion: nil),
             ValidatorTestModel(emailAddress: "test@googlemail.com", suggestion: nil),
+            
+            // Emails with Autocorrect Suggestions
             ValidatorTestModel(emailAddress: "test@gamil.con", suggestion: "test@gmail.com"),
             ValidatorTestModel(emailAddress: "test@yaho.com.uk", suggestion: "test@yahoo.co.uk"),
             ValidatorTestModel(emailAddress: "test@yahooo.co.uk", suggestion: "test@yahoo.co.uk"),
             ValidatorTestModel(emailAddress: "test@goglemail.coj", suggestion: "test@googlemail.com"),
             ValidatorTestModel(emailAddress: "test@goglemail.com", suggestion: "test@googlemail.com"),
+            
+            // Emails with invalid syntax
+            ValidatorTestModel(emailAddress: "blorp", error: .invalidSyntax),
         ]
         
-        let validator = SpotHeroEmailValidator.shared
-        
         for test in tests {
-            if let suggestion = test.suggestion {
-                XCTAssertEqual(validator.autocorrectSuggestion(for: test.emailAddress), suggestion, "Test failed for email address: \(test.emailAddress)")
-            } else {
-                XCTAssertNil(validator.autocorrectSuggestion(for: test.emailAddress), "Test failed for email address: \(test.emailAddress)")
+            do {
+                let autocorrectSuggestion = try SpotHeroEmailValidator.shared.autocorrectSuggestion(for: test.emailAddress)
+                XCTAssertEqual(autocorrectSuggestion, test.suggestion, "Test failed for email address: \(test.emailAddress)")
+            } catch let error as SpotHeroEmailValidator.Error {
+                // If the test fails with an error, make sure the error was expected
+                XCTAssertEqual(test.error, error)
+            } catch {
+                XCTFail("Unexpected error has occurred: \(error.localizedDescription)")
             }
         }
     }

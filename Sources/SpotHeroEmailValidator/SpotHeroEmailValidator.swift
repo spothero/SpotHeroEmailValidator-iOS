@@ -1,17 +1,4 @@
-//  Copyright © 2019 SpotHero, Inc. All rights reserved.
-//
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
-//
+// Copyright © 2020 SpotHero, Inc. All rights reserved.
 
 import Foundation
 
@@ -26,7 +13,7 @@ public class SpotHeroEmailValidator: NSObject {
     private let commonDomains: [String]
     private let ianaRegisteredTLDs: [String]
     
-    private override init() {
+    override private init() {
         var dataDictionary: NSDictionary?
         
         // All TLDs registered with IANA as of October 8th, 2019 at 11:28 AM CST (latest list at: http://data.iana.org/TLD/tlds-alpha-by-domain.txt)
@@ -39,36 +26,39 @@ public class SpotHeroEmailValidator: NSObject {
         self.ianaRegisteredTLDs = dataDictionary?["IANARegisteredTLDs"] as? [String] ?? []
     }
     
-    // TODO: Remove @objc when entirely converted into Swift
-    @objc public func validateAndAutocorrect(emailAddress: String) throws -> SHValidationResult {
-        let autocorrectSuggestion = self.autocorrectSuggestion(for: emailAddress)
-        
-        return SHValidationResult(passedValidation: autocorrectSuggestion?.isEmpty == false,
-                                  autocorrectSuggestion: autocorrectSuggestion)
+    public func validateAndAutocorrect(emailAddress: String) throws -> SHValidationResult {
+        do {
+            // Attempt to get an autocorrect suggestion
+            // As long as no error is thrown, we can consider the email address to have passed validation
+            let autocorrectSuggestion = try self.autocorrectSuggestion(for: emailAddress)
+            
+            return SHValidationResult(passedValidation: true,
+                                      autocorrectSuggestion: autocorrectSuggestion)
+        } catch {
+            return SHValidationResult(passedValidation: false, autocorrectSuggestion: nil)
+        }
     }
     
-    // TODO: Remove @objc when entirely converted into Swift
-    @objc public func autocorrectSuggestion(for emailAddress: String) -> String? {
+    public func autocorrectSuggestion(for emailAddress: String) throws -> String? {
         guard let validated = try? self.validateSyntax(of: emailAddress), validated else {
-//            throw Error.invalidSyntax
-            return nil
+            throw Error.invalidSyntax
         }
 
         guard let emailParts = try? self.splitEmailAddress(emailAddress) else {
-            return nil
+            throw Error.invalidSyntax
         }
         
         var suggestedTLD = emailParts.tld
         
         if !self.ianaRegisteredTLDs.contains(emailParts.tld),
-            let closestTLD = self.closestString(for: emailParts.tld, fromArray: self.commonTLDs, withTolerance: 0.5) {
+           let closestTLD = self.closestString(for: emailParts.tld, fromArray: self.commonTLDs, withTolerance: 0.5) {
             suggestedTLD = closestTLD
         }
         
         var suggestedDomain = "\(emailParts.hostname).\(suggestedTLD)"
         
         if !self.commonDomains.contains(suggestedDomain),
-            let closestDomain = self.closestString(for: suggestedDomain, fromArray: self.commonDomains, withTolerance: 0.25) {
+           let closestDomain = self.closestString(for: suggestedDomain, fromArray: self.commonDomains, withTolerance: 0.25) {
             suggestedDomain = closestDomain
         }
         
@@ -112,14 +102,14 @@ public class SpotHeroEmailValidator: NSObject {
             return nil
         }
         
-        var closestString: String? = nil
+        var closestString: String?
         var closestDistance = Int.max
         
         // TODO: Use better name for arrayString parameter
         for arrayString in array {
             let distance = Int(string.levenshteinDistance(from: arrayString))
             
-            if distance < closestDistance && Float(distance) / Float(string.count) < tolerance {
+            if distance < closestDistance, Float(distance) / Float(string.count) < tolerance {
                 closestDistance = distance
                 closestString = arrayString
             }
@@ -158,8 +148,6 @@ public class SpotHeroEmailValidator: NSObject {
         
         return (username, domain, tld)
     }
-    
-    
 }
 
 // MARK: - Extensions
