@@ -40,13 +40,12 @@ public class SpotHeroEmailValidator: NSObject {
     }
     
     public func autocorrectSuggestion(for emailAddress: String) throws -> String? {
-        guard let validated = try? self.validateSyntax(of: emailAddress), validated else {
-            throw Error.invalidSyntax
-        }
+        // Attempt to validate the syntax of the email address
+        // If the email address has incorrect format or syntax, an error will be thrown
+        try self.validateSyntax(of: emailAddress)
 
-        guard let emailParts = try? self.splitEmailAddress(emailAddress) else {
-            throw Error.invalidSyntax
-        }
+        // Split the email address into its component parts
+        let emailParts = try self.splitEmailAddress(emailAddress)
         
         var suggestedTLD = emailParts.tld
         
@@ -71,6 +70,7 @@ public class SpotHeroEmailValidator: NSObject {
         return suggestedEmailAddress
     }
     
+    @discardableResult
     public func validateSyntax(of emailAddress: String) throws -> Bool {
         // Split the email address into parts
         let emailParts = try self.splitEmailAddress(emailAddress)
