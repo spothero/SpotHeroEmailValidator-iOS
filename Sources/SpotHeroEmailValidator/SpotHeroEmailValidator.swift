@@ -6,8 +6,7 @@ import Foundation
 public class SpotHeroEmailValidator: NSObject {
     private typealias EmailParts = (username: String, hostname: String, tld: String)
 
-    // TODO: Remove @objc when entirely converted into Swift
-    @objc public static let shared = SpotHeroEmailValidator()
+    public static let shared = SpotHeroEmailValidator()
     
     private let commonTLDs: [String]
     private let commonDomains: [String]
