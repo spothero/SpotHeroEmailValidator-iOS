@@ -8,8 +8,8 @@ public extension String {
     /// Source: [Minimum Edit Distance - Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Minimum%20Edit%20Distance)
     /// - Parameter other: The other string to compare with.
     func levenshteinDistance(from other: String) -> Int {
-        let m = self.count //swiftlint:disable:this identifier_name
-        let n = other.count //swiftlint:disable:this identifier_name
+        let m = self.count // swiftlint:disable:this identifier_name
+        let n = other.count // swiftlint:disable:this identifier_name
         var matrix = [[Int]](repeating: [Int](repeating: 0, count: n + 1), count: m + 1)
         
         // initialize matrix
