@@ -1,7 +1,8 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 import Foundation
 
+// swiftlint:disable identifier_name
 public extension String {
     /// Returns the minimum number of operations to edit this string into another string.
     ///

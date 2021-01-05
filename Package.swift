@@ -1,6 +1,6 @@
 // swift-tools-version:5.3
 
-//  Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 import PackageDescription
 
