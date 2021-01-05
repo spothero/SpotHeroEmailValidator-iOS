@@ -2,6 +2,7 @@
 
 import Foundation
 
+// swiftlint:disable identifier_name
 public extension String {
     /// Returns the minimum number of operations to edit this string into another string.
     ///
