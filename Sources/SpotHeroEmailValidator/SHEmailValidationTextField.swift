@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 #if canImport(UIKit)
 
@@ -143,6 +143,7 @@
     #if !os(tvOS)
 
         public extension SHEmailValidationTextField {
+            /// Must be called manually when animating a rotation so that the suggestion view is reoriented properly.
             func hostWillAnimateRotation(to interfaceOrientation: UIInterfaceOrientation) {
                 self.suggestionView?.updatePosition()
             }
