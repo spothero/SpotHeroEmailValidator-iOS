@@ -92,6 +92,7 @@ identifier_name:
     - x
     - y
     - i
+    - j
 large_tuple:
   warning: 3
   error: 4
