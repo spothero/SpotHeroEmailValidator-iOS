@@ -9,62 +9,9 @@
 SWIFTLINT_INLINE_MODE = true
 IS_DEBUGGING = false
 
-# ======================= #
-#   Convenience Methods   #
-# ======================= #
-
-def pr_title_tickets
-  title_ticket_regex = /([A-Z0-9]{2,3}-[0-9]+)/
-  github.pr_title.scan(title_ticket_regex).flatten || []
-end
-
-def pr_description_tickets
-  description_ticket_regex = /([A-Z0-9]{2,3}-[0-9]+)/
-  github.pr_body.scan(description_ticket_regex).flatten || []
-end
-
-def validate_pull_request
-  # TODO: Validate that the right branch is being merged, etc.
-  # if branch_for_base == 'main' && branch_for_head != 'develop'
-  #   fail ''
-  # end
-
-  # TODO: Update the title or description with appropriate tickets? Do we want to do this? If so, which is source of truth?
-
-  # get tickets in the PR title
-  title_tickets = pr_title_tickets
-
-  # get tickets in the PR description
-  description_tickets = pr_description_tickets
-
-  # validate that either the PR title or description contain JIRA tickets
-  if title_tickets.empty? && description_tickets.empty?
-    return
-  end
-
-  # validate that the same tickets are in the PR title and description
-  if title_tickets.sort == description_tickets.sort
-    return
-  end
-
-  # since we know the tickets in the title and description don't match,
-  # we need to get the difference of both ticket arrays and evaluate them
-  missing_title_tickets = (description_tickets - title_tickets).join(', ')
-  missing_description_tickets = (title_tickets - description_tickets).join(', ')
-
-  # if there are any tickets that are in the description but not in the title, warn
-  warn "PR title is missing JIRA tickets: #{missing_title_tickets}" unless missing_title_tickets.empty?
-
-  # if there are any tickets that are in the title but not in the description, warn
-  warn "PR description is missing JIRA tickets: #{missing_description_tickets}" unless missing_description_tickets.empty?
-end
-
 # =========== #
 #   Linting   #
 # =========== #
-
-# Validate that the Pull Request has a valid title and body
-validate_pull_request if defined?(github)
 
 # Sources for all third-party tools can be found here:
 # https://danger.systems/ruby/
