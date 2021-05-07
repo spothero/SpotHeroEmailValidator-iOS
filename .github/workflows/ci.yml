@@ -2,15 +2,15 @@ name: CI
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 env:
   PACKAGE_NAME: SpotHeroEmailValidator
   XCODEBUILD_WORKSPACE: SpotHeroEmailValidator.xcworkspace
   XCODEBUILD_SCHEME: SpotHeroEmailValidator
-  DEVELOPER_DIR: /Applications/Xcode_12.2.app/Contents/Developer
+  DEVELOPER_DIR: /Applications/Xcode_12.4.app/Contents/Developer
   DEPLOY_DIRECTORY: deploy
 
 jobs:
@@ -35,16 +35,9 @@ jobs:
     strategy:
       matrix:
         device_name: ["iPhone 12 Pro", "iPad Pro (11-inch) (2nd generation)"]
-        os: [14.2]
-        xcode_version: [12.2]
-        # The keys below are included as a one-off combination
-        # include:
-        #   - device_name: "iPhone SE (2nd generation)"
-        #     os: 13.4.1
-        #     xcode_version: 11.4.1
+        os: [14.4]
+        xcode_version: [12.4]
     env:
-      # Only Xcode 11.x and higher can run this project due to Swift Package Manager integration
-      # This means that we cannot test versions below iOS 13, tvOS 13, etc. specifically
       DEVELOPER_DIR: "/Applications/Xcode_${{ matrix.xcode_version }}.app/Contents/Developer"
     steps:
       - name: Checkout
@@ -68,22 +61,8 @@ jobs:
       - name: Upload Step Output
         uses: actions/upload-artifact@v1
         with:
-          name: "macOS Output"
+          name: "macOS 10.15 Output"
           path: ${{ env.DEPLOY_DIRECTORY }}
-  # TODO: Get macOS Catalyst working
-  # macOS_catalyst:
-  #   name: macOS Catalyst
-  #   runs-on: macos-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #     - name: Run Tests
-  #       run: sh ./scripts/xcode_build.sh "platform=macOS,variant=Mac Catalyst"
-  #     - name: Upload Step Output
-  #       uses: actions/upload-artifact@v1
-  #       with:
-  #         name: "macOS Catalyst Output"
-  #         path: ${{ env.DEPLOY_DIRECTORY }}
   tvOS:
     name: tvOS ${{ matrix.os }} ${{ matrix.device_name }}
     runs-on: macos-latest
@@ -91,7 +70,7 @@ jobs:
     strategy:
       matrix:
         device_name: ["Apple TV 4K"]
-        os: [14.2]
+        os: [14.3]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -103,9 +82,12 @@ jobs:
           name: "tvOS ${{ matrix.os }} ${{ matrix.device_name }} Output"
           path: ${{ env.DEPLOY_DIRECTORY }}
   spm:
-    name: SPM
-    runs-on: macos-latest
+    name: SPM (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
     needs: [lint]
+    strategy:
+      matrix:
+        os: [macos-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -114,5 +96,5 @@ jobs:
       - name: Upload Step Output
         uses: actions/upload-artifact@v1
         with:
-          name: "SPM Output"
+          name: SPM Output
           path: ${{ env.DEPLOY_DIRECTORY }}

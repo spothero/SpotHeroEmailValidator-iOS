@@ -5,7 +5,7 @@ import Foundation
 public extension String {
     /// Returns the minimum number of operations to edit this string into another string.
     ///
-    /// Source: [Minimum Edit Distance - Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Minimum%20Edit%20Distance)
+    /// Source: [Minimum Edit Distance - Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/main/Minimum%20Edit%20Distance)
     /// - Parameter other: The other string to compare with.
     func levenshteinDistance(from other: String) -> Int {
         let m = self.count // swiftlint:disable:this identifier_name

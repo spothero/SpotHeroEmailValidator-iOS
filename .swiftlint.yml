@@ -34,7 +34,7 @@ opt_in_rules:
   - let_var_whitespace # Let and var should be separated from other statements by a blank line.
   - literal_expression_end_indentation # Array and dictionary literal end should have the same indentation as the line that started it.
   - lower_acl_than_parent # Ensure definitions have a lower access control level than their enclosing parent
-  - missing_docs # Declarations should be documented.
+  #### - missing_docs # Declarations should be documented.
   - modifier_order # Modifier order should be consistent.
   - multiline_arguments # Arguments should be either on the same line, or one per line.
   - multiline_function_chains # Chained function calls should be either on the same line, or one per line.
@@ -92,7 +92,6 @@ identifier_name:
     - x
     - y
     - i
-    - j
 large_tuple:
   warning: 3
   error: 4
