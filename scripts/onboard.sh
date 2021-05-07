@@ -3,7 +3,7 @@
 # Verify the script has been executed
 echo "Running onboarding script..."
 
-ONBOARD_DOCUMENTATION="https://github.com/spothero/Shared-iOS/master/ONBOARDING.md"
+ONBOARD_DOCUMENTATION="https://github.com/spothero/Shared-iOS/main/ONBOARDING.md"
 
 # 1 - Install and Verify Build Tools
 

@@ -96,7 +96,6 @@
 		<string>agency</string>
 		<string>ai</string>
 		<string>aig</string>
-		<string>aigo</string>
 		<string>airbus</string>
 		<string>airforce</string>
 		<string>airtel</string>
@@ -111,6 +110,7 @@
 		<string>alsace</string>
 		<string>alstom</string>
 		<string>am</string>
+		<string>amazon</string>
 		<string>americanexpress</string>
 		<string>americanfamily</string>
 		<string>amex</string>
@@ -273,10 +273,8 @@
 		<string>career</string>
 		<string>careers</string>
 		<string>cars</string>
-		<string>cartier</string>
 		<string>casa</string>
 		<string>case</string>
-		<string>caseih</string>
 		<string>cash</string>
 		<string>casino</string>
 		<string>cat</string>
@@ -288,7 +286,6 @@
 		<string>cbs</string>
 		<string>cc</string>
 		<string>cd</string>
-		<string>ceb</string>
 		<string>center</string>
 		<string>ceo</string>
 		<string>cern</string>
@@ -306,7 +303,6 @@
 		<string>chintai</string>
 		<string>christmas</string>
 		<string>chrome</string>
-		<string>chrysler</string>
 		<string>church</string>
 		<string>ci</string>
 		<string>cipriani</string>
@@ -420,7 +416,6 @@
 		<string>do</string>
 		<string>docs</string>
 		<string>doctor</string>
-		<string>dodge</string>
 		<string>dog</string>
 		<string>domains</string>
 		<string>dot</string>
@@ -458,14 +453,12 @@
 		<string>es</string>
 		<string>esq</string>
 		<string>estate</string>
-		<string>esurance</string>
 		<string>et</string>
 		<string>etisalat</string>
 		<string>eu</string>
 		<string>eurovision</string>
 		<string>eus</string>
 		<string>events</string>
-		<string>everbank</string>
 		<string>exchange</string>
 		<string>expert</string>
 		<string>exposed</string>
@@ -530,7 +523,6 @@
 		<string>frontier</string>
 		<string>ftr</string>
 		<string>fujitsu</string>
-		<string>fujixerox</string>
 		<string>fun</string>
 		<string>fund</string>
 		<string>furniture</string>
@@ -681,7 +673,6 @@
 		<string>insurance</string>
 		<string>insure</string>
 		<string>int</string>
-		<string>intel</string>
 		<string>international</string>
 		<string>intuit</string>
 		<string>investments</string>
@@ -697,11 +688,9 @@
 		<string>it</string>
 		<string>itau</string>
 		<string>itv</string>
-		<string>iveco</string>
 		<string>jaguar</string>
 		<string>java</string>
 		<string>jcb</string>
-		<string>jcp</string>
 		<string>je</string>
 		<string>jeep</string>
 		<string>jetzt</string>
@@ -755,12 +744,10 @@
 		<string>kz</string>
 		<string>la</string>
 		<string>lacaixa</string>
-		<string>ladbrokes</string>
 		<string>lamborghini</string>
 		<string>lamer</string>
 		<string>lancaster</string>
 		<string>lancia</string>
-		<string>lancome</string>
 		<string>land</string>
 		<string>landrover</string>
 		<string>lanxess</string>
@@ -781,7 +768,6 @@
 		<string>lexus</string>
 		<string>lgbt</string>
 		<string>li</string>
-		<string>liaison</string>
 		<string>lidl</string>
 		<string>life</string>
 		<string>lifeinsurance</string>
@@ -800,6 +786,7 @@
 		<string>lixil</string>
 		<string>lk</string>
 		<string>llc</string>
+		<string>llp</string>
 		<string>loan</string>
 		<string>loans</string>
 		<string>locker</string>
@@ -819,7 +806,6 @@
 		<string>ltda</string>
 		<string>lu</string>
 		<string>lundbeck</string>
-		<string>lupin</string>
 		<string>luxe</string>
 		<string>luxury</string>
 		<string>lv</string>
@@ -855,7 +841,6 @@
 		<string>men</string>
 		<string>menu</string>
 		<string>merckmsd</string>
-		<string>metlife</string>
 		<string>mg</string>
 		<string>mh</string>
 		<string>miami</string>
@@ -882,7 +867,6 @@
 		<string>monash</string>
 		<string>money</string>
 		<string>monster</string>
-		<string>mopar</string>
 		<string>mormon</string>
 		<string>mortgage</string>
 		<string>moscow</string>
@@ -890,7 +874,6 @@
 		<string>motorcycles</string>
 		<string>mov</string>
 		<string>movie</string>
-		<string>movistar</string>
 		<string>mp</string>
 		<string>mq</string>
 		<string>mr</string>
@@ -909,10 +892,8 @@
 		<string>mz</string>
 		<string>na</string>
 		<string>nab</string>
-		<string>nadex</string>
 		<string>nagoya</string>
 		<string>name</string>
-		<string>nationwide</string>
 		<string>natura</string>
 		<string>navy</string>
 		<string>nba</string>
@@ -925,7 +906,6 @@
 		<string>network</string>
 		<string>neustar</string>
 		<string>new</string>
-		<string>newholland</string>
 		<string>news</string>
 		<string>next</string>
 		<string>nextdirect</string>
@@ -973,7 +953,6 @@
 		<string>ong</string>
 		<string>onl</string>
 		<string>online</string>
-		<string>onyourside</string>
 		<string>ooo</string>
 		<string>open</string>
 		<string>oracle</string>
@@ -1010,7 +989,6 @@
 		<string>photography</string>
 		<string>photos</string>
 		<string>physio</string>
-		<string>piaget</string>
 		<string>pics</string>
 		<string>pictet</string>
 		<string>pictures</string>
@@ -1093,7 +1071,6 @@
 		<string>rich</string>
 		<string>richardli</string>
 		<string>ricoh</string>
-		<string>rightathome</string>
 		<string>ril</string>
 		<string>rio</string>
 		<string>rip</string>
@@ -1144,7 +1121,6 @@
 		<string>schwarz</string>
 		<string>science</string>
 		<string>scjohnson</string>
-		<string>scor</string>
 		<string>scot</string>
 		<string>sd</string>
 		<string>se</string>
@@ -1176,7 +1152,6 @@
 		<string>shouji</string>
 		<string>show</string>
 		<string>showtime</string>
-		<string>shriram</string>
 		<string>si</string>
 		<string>silk</string>
 		<string>sina</string>
@@ -1206,13 +1181,12 @@
 		<string>song</string>
 		<string>sony</string>
 		<string>soy</string>
+		<string>spa</string>
 		<string>space</string>
 		<string>sport</string>
 		<string>spot</string>
-		<string>spreadbetting</string>
 		<string>sr</string>
 		<string>srl</string>
-		<string>srt</string>
 		<string>ss</string>
 		<string>st</string>
 		<string>stada</string>
@@ -1244,7 +1218,6 @@
 		<string>sx</string>
 		<string>sy</string>
 		<string>sydney</string>
-		<string>symantec</string>
 		<string>systems</string>
 		<string>sz</string>
 		<string>tab</string>
@@ -1265,7 +1238,6 @@
 		<string>tech</string>
 		<string>technology</string>
 		<string>tel</string>
-		<string>telefonica</string>
 		<string>temasek</string>
 		<string>tennis</string>
 		<string>teva</string>
@@ -1325,7 +1297,6 @@
 		<string>ua</string>
 		<string>ubank</string>
 		<string>ubs</string>
-		<string>uconnect</string>
 		<string>ug</string>
 		<string>uk</string>
 		<string>unicom</string>
@@ -1359,7 +1330,6 @@
 		<string>virgin</string>
 		<string>visa</string>
 		<string>vision</string>
-		<string>vistaprint</string>
 		<string>viva</string>
 		<string>vivo</string>
 		<string>vlaanderen</string>
@@ -1378,7 +1348,6 @@
 		<string>walter</string>
 		<string>wang</string>
 		<string>wanggou</string>
-		<string>warman</string>
 		<string>watch</string>
 		<string>watches</string>
 		<string>weather</string>
@@ -1429,6 +1398,7 @@
 		<string>xn--45br5cyl</string>
 		<string>xn--45brj9c</string>
 		<string>xn--45q11c</string>
+		<string>xn--4dbrk0ce</string>
 		<string>xn--4gbrim</string>
 		<string>xn--54b7fta0cc</string>
 		<string>xn--55qw42g</string>
@@ -1454,6 +1424,7 @@
 		<string>xn--c1avg</string>
 		<string>xn--c2br7g</string>
 		<string>xn--cck2b3b</string>
+		<string>xn--cckwcxetd</string>
 		<string>xn--cg4bki</string>
 		<string>xn--clchc0ea0b2g2a9gcd</string>
 		<string>xn--czr694b</string>
@@ -1464,7 +1435,6 @@
 		<string>xn--e1a4c</string>
 		<string>xn--eckvdtc9d</string>
 		<string>xn--efvy88h</string>
-		<string>xn--estv75g</string>
 		<string>xn--fct429k</string>
 		<string>xn--fhbei</string>
 		<string>xn--fiq228c5hs</string>
@@ -1490,12 +1460,12 @@
 		<string>xn--j1aef</string>
 		<string>xn--j1amh</string>
 		<string>xn--j6w193g</string>
+		<string>xn--jlq480n2rg</string>
 		<string>xn--jlq61u9w7b</string>
 		<string>xn--jvr189m</string>
 		<string>xn--kcrx77d1x4a</string>
 		<string>xn--kprw13d</string>
 		<string>xn--kpry57d</string>
-		<string>xn--kpu716f</string>
 		<string>xn--kput3i</string>
 		<string>xn--l1acc</string>
 		<string>xn--lgbbat1ad8j</string>
@@ -1513,6 +1483,7 @@
 		<string>xn--mgbbh1a71e</string>
 		<string>xn--mgbc0a9azcg</string>
 		<string>xn--mgbca7dzdo</string>
+		<string>xn--mgbcpq6gpa1a</string>
 		<string>xn--mgberp4a5d4ar</string>
 		<string>xn--mgbgu82a</string>
 		<string>xn--mgbi4ecexp</string>
@@ -1535,9 +1506,9 @@
 		<string>xn--otu796d</string>
 		<string>xn--p1acf</string>
 		<string>xn--p1ai</string>
-		<string>xn--pbt977c</string>
 		<string>xn--pgbs0dh</string>
 		<string>xn--pssy2u</string>
+		<string>xn--q7ce6a</string>
 		<string>xn--q9jyb4c</string>
 		<string>xn--qcka1pmc</string>
 		<string>xn--qxa6a</string>
