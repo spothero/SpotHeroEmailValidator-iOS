@@ -20,6 +20,7 @@ class SpotHeroEmailValidatorTests: XCTestCase {
             ValidatorTestModel(emailAddress: "test.com", error: .invalidSyntax),
             ValidatorTestModel(emailAddress: #"test&*\"@email.com"#, error: .invalidSyntax),
             ValidatorTestModel(emailAddress: #"test&*\@email.com"#, error: .invalidSyntax),
+            ValidatorTestModel(emailAddress: "test@email.com@", error: .invalidSyntax),
             // Username Tests
             ValidatorTestModel(emailAddress: #"John..Doe@email.com"#, error: .invalidUsername),
             ValidatorTestModel(emailAddress: #".JohnDoe@email.com"#, error: .invalidUsername),
