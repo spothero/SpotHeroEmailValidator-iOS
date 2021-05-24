@@ -118,12 +118,12 @@ public class SpotHeroEmailValidator: NSObject {
     }
 
     private func splitEmailAddress(_ emailAddress: String) throws -> EmailParts {
-        let emailAddressParts = emailAddress.split(separator: "@")
-        
-        guard emailAddressParts.count == 2 else {
-            // There are either no @ symbols or more than one @ symbol, throw an error
+        // Ensure there is exactly one @ symbol.
+        guard emailAddress.filter({ $0 == "@" }).count == 1 else {
             throw Error.invalidSyntax
         }
+        
+        let emailAddressParts = emailAddress.split(separator: "@")
         
         // Extract the username from the email address parts
         let username = String(emailAddressParts.first ?? "")
