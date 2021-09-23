@@ -10,13 +10,12 @@ env:
   PACKAGE_NAME: SpotHeroEmailValidator
   XCODEBUILD_WORKSPACE: SpotHeroEmailValidator.xcworkspace
   XCODEBUILD_SCHEME: SpotHeroEmailValidator
-  DEVELOPER_DIR: /Applications/Xcode_12.4.app/Contents/Developer
   DEPLOY_DIRECTORY: deploy
 
 jobs:
   lint:
     name: Lint
-    runs-on: macos-latest
+    runs-on: macos-11
     permissions: 
       pull-requests: write
     env:
@@ -32,18 +31,18 @@ jobs:
         run: sh ./scripts/danger_lint.sh
   iOS:
     name: iOS ${{ matrix.os }} ${{ matrix.device_name }}
-    runs-on: macos-latest
+    runs-on: macos-11
     needs: [lint]
     strategy:
       matrix:
         device_name: ["iPhone 12 Pro", "iPad Pro (11-inch) (2nd generation)"]
-        os: [14.4]
-        xcode_version: [12.4]
-    env:
-      DEVELOPER_DIR: "/Applications/Xcode_${{ matrix.xcode_version }}.app/Contents/Developer"
+        os: ["15.0"]
+        xcode_version: ["13.0"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Switch Xcode Version
+        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
       - name: Run Tests
         run: sh ./scripts/xcode_build.sh "name=${{ matrix.device_name }},OS=${{ matrix.os }},platform=iOS Simulator"
       - name: Upload Step Output
@@ -53,29 +52,37 @@ jobs:
           path: ${{ env.DEPLOY_DIRECTORY }}
   macOS:
     name: macOS
-    runs-on: macos-latest
+    runs-on: macos-11
     needs: [lint]
+    strategy:
+      matrix:
+        xcode_version: ["13.0"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Switch Xcode Version
+        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
       - name: Run Tests
         run: sh ./scripts/xcode_build.sh "platform=macOS"
       - name: Upload Step Output
         uses: actions/upload-artifact@v1
         with:
-          name: "macOS 10.15 Output"
+          name: "macOS 11 Output"
           path: ${{ env.DEPLOY_DIRECTORY }}
   tvOS:
     name: tvOS ${{ matrix.os }} ${{ matrix.device_name }}
-    runs-on: macos-latest
+    runs-on: macos-11
     needs: [lint]
     strategy:
       matrix:
         device_name: ["Apple TV 4K"]
-        os: [14.3]
+        os: ["15.0"]
+        xcode_version: ["13.0"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Switch Xcode Version
+        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
       - name: Run Tests
         run: sh ./scripts/xcode_build.sh "name=${{ matrix.device_name }},OS=${{ matrix.os }},platform=tvOS Simulator"
       - name: Upload Step Output
@@ -89,10 +96,13 @@ jobs:
     needs: [lint]
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [macos-11]
+        xcode_version: ["13.0"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Switch Xcode Version
+        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
       - name: Run Tests
         run: sh ./scripts/swift_build.sh
       - name: Upload Step Output
