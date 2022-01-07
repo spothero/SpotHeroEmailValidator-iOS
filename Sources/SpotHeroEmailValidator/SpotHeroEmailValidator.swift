@@ -72,7 +72,7 @@ public class SpotHeroEmailValidator: NSObject {
     @discardableResult
     public func validateSyntax(of emailAddress: String) throws -> Bool {
         // We are not validating against case sensitivity for emails
-        let lowerCasedEmailAddress = emailAddress.lowercased()
+        let lowercasedEmailAddress = emailAddress.lowercased()
         
         // Split the email address into parts
         let emailParts = try self.splitEmailAddress(lowerCasedEmailAddress)
