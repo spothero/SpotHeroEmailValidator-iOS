@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 import Foundation
 
@@ -188,17 +188,17 @@ private extension String {
     private static let emailDomainRegexPattern = #"(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"#
     
     func isValidEmail() -> Bool {
-        return self.range(of: Self.emailRegexPattern, options: .regularExpression) != nil
+        return self.lowercased().range(of: Self.emailRegexPattern, options: .regularExpression) != nil
     }
     
     func isValidEmailUsername() -> Bool {
         return !self.hasPrefix(".")
             && !self.hasSuffix(".")
             && (self as NSString).range(of: "..").location == NSNotFound
-            && self.range(of: Self.emailUsernameRegexPattern, options: .regularExpression) != nil
+            && self.lowercased().range(of: Self.emailUsernameRegexPattern, options: .regularExpression) != nil
     }
     
     func isValidEmailDomain() -> Bool {
-        return self.range(of: Self.emailDomainRegexPattern, options: .regularExpression) != nil
+        return self.lowercased().range(of: Self.emailDomainRegexPattern, options: .regularExpression) != nil
     }
 }
