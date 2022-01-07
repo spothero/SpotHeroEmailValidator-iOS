@@ -14,6 +14,7 @@ class SpotHeroEmailValidatorTests: XCTestCase {
         let tests = [
             // Successful Examples
             ValidatorTestModel(emailAddress: "test@email.com", error: nil),
+            ValidatorTestModel(emailAddress: "TEST@EMAIL.COM", error: nil),
             ValidatorTestModel(emailAddress: "test+-.test@email.com", error: nil),
             ValidatorTestModel(emailAddress: #""JohnDoe"@email.com"#, error: nil),
             // General Syntax Tests
