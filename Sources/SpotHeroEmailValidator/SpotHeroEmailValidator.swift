@@ -75,7 +75,7 @@ public class SpotHeroEmailValidator: NSObject {
         let lowercasedEmailAddress = emailAddress.lowercased()
         
         // Split the email address into parts
-        let emailParts = try self.splitEmailAddress(lowerCasedEmailAddress)
+        let emailParts = try self.splitEmailAddress(lowercasedEmailAddress)
         
         // Ensure the username is valid by itself
         guard emailParts.username.isValidEmailUsername() else {
@@ -91,7 +91,7 @@ public class SpotHeroEmailValidator: NSObject {
         }
         
         // Ensure that the entire email forms a syntactically valid email
-        guard lowerCasedEmailAddress.isValidEmail() else {
+        guard lowercasedEmailAddress.isValidEmail() else {
             throw Error.invalidSyntax
         }
         
