@@ -195,7 +195,7 @@ private extension String {
         return !self.hasPrefix(".")
             && !self.hasSuffix(".")
             && (self as NSString).range(of: "..").location == NSNotFound
-        && self.lowercased().range(of: Self.emailUsernameRegexPattern, options: .regularExpression) != nil
+            && self.lowercased().range(of: Self.emailUsernameRegexPattern, options: .regularExpression) != nil
     }
     
     func isValidEmailDomain() -> Bool {
