@@ -3,6 +3,7 @@
 @testable import SpotHeroEmailValidator
 import XCTest
 
+// swiftlint:disable nesting
 class EmailComponentsTests: XCTestCase {
     struct TestModel {
         enum ExpectedResult {
