@@ -4,8 +4,6 @@ import Foundation
 
 // TODO: Remove NSObject when entirely converted into Swift
 public class SpotHeroEmailValidator: NSObject {
-    private typealias EmailParts = (username: String, hostname: String, tld: String)
-
     public static let shared = SpotHeroEmailValidator()
     
     private let commonTLDs: [String]
@@ -44,7 +42,7 @@ public class SpotHeroEmailValidator: NSObject {
         try self.validateSyntax(of: emailAddress)
 
         // Split the email address into its component parts
-        let emailParts = try self.splitEmailAddress(emailAddress)
+        let emailParts = try EmailComponents(email: emailAddress)
         
         var suggestedTLD = emailParts.tld
         
@@ -72,7 +70,7 @@ public class SpotHeroEmailValidator: NSObject {
     @discardableResult
     public func validateSyntax(of emailAddress: String) throws -> Bool {
         // Split the email address into parts
-        let emailParts = try self.splitEmailAddress(emailAddress)
+        let emailParts = try EmailComponents(email: emailAddress)
         
         // Ensure the username is valid by itself
         guard emailParts.username.isValidEmailUsername() else {
@@ -115,37 +113,6 @@ public class SpotHeroEmailValidator: NSObject {
         }
         
         return closestString
-    }
-
-    private func splitEmailAddress(_ emailAddress: String) throws -> EmailParts {
-        // Ensure there is exactly one @ symbol.
-        guard emailAddress.filter({ $0 == "@" }).count == 1 else {
-            throw Error.invalidSyntax
-        }
-        
-        let emailAddressParts = emailAddress.split(separator: "@")
-        
-        // Extract the username from the email address parts
-        let username = String(emailAddressParts.first ?? "")
-        // Extract the full domain (including TLD) from the email address parts
-        let fullDomain = String(emailAddressParts.last ?? "")
-        // Split the domain parts for evaluation
-        let domainParts = fullDomain.split(separator: ".")
-        
-        guard domainParts.count >= 2 else {
-            // There are no periods found in the domain, throw an error
-            throw Error.invalidDomain
-        }
-        
-        // TODO: This logic is wrong and doesn't take subdomains into account. We should compare TLDs against the commonTLDs list."
-        
-        // Extract the domain from the domain parts
-        let domain = domainParts.first?.lowercased() ?? ""
-        
-        // Extract the TLD from the domain parts, which are all the remaining parts joined with a period again
-        let tld = domainParts.dropFirst().joined(separator: ".")
-        
-        return (username, domain, tld)
     }
 }
 
