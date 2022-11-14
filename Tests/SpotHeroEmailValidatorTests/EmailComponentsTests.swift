@@ -49,7 +49,8 @@ class EmailComponentsTests: XCTestCase {
             switch test.expectedResult {
             case .throw:
                 XCTAssertThrowsError(try EmailComponents(email: test.email)) { error in
-                    XCTAssertEqual(error.localizedDescription, error.localizedDescription,
+                    XCTAssertEqual(error.localizedDescription,
+                                   error.localizedDescription,
                                    "Test failed for email address: \(test.email)")
                 }
             case let .return(username, hostname, tld):
