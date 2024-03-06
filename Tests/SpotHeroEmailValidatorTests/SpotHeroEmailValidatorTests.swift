@@ -1,4 +1,4 @@
-// Copyright © 2022 SpotHero, Inc. All rights reserved.
+// Copyright © 2024 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroEmailValidator
 import XCTest
@@ -26,6 +26,7 @@ class SpotHeroEmailValidatorTests: XCTestCase {
             ValidatorTestModel(emailAddress: #"John..Doe@email.com"#, error: .invalidUsername),
             ValidatorTestModel(emailAddress: #".JohnDoe@email.com"#, error: .invalidUsername),
             ValidatorTestModel(emailAddress: #"JohnDoe.@email.com"#, error: .invalidUsername),
+            ValidatorTestModel(emailAddress: "te st@email.com", error: .invalidUsername),
             // Domain Tests
             ValidatorTestModel(emailAddress: "test@.com", error: .invalidDomain),
             ValidatorTestModel(emailAddress: "test@com", error: .invalidDomain),
