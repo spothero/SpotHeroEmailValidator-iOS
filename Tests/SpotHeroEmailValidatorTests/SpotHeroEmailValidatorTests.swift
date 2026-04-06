@@ -31,6 +31,10 @@ class SpotHeroEmailValidatorTests: XCTestCase {
             ValidatorTestModel(emailAddress: "test@.com", error: .invalidDomain),
             ValidatorTestModel(emailAddress: "test@com", error: .invalidDomain),
             ValidatorTestModel(emailAddress: "test@email+.com", error: .invalidDomain),
+            // TLD Tests
+            ValidatorTestModel(emailAddress: "test@email.invalidtld", error: .invalidTLD),
+            ValidatorTestModel(emailAddress: "test@yahoo.co.uk", error: nil),
+            ValidatorTestModel(emailAddress: "test@email.co m", error: .invalidTLD),
         ]
         
         let validator = SpotHeroEmailValidator.shared
