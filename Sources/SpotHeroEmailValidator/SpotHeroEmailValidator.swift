@@ -98,6 +98,12 @@ public class SpotHeroEmailValidator: NSObject {
             throw Error.invalidDomain
         }
 
+        // Ensure the TLD contains only structurally valid characters before checking IANA.
+        // This catches things like spaces that slip past the partial-match domain regex.
+        guard emailParts.tld.range(of: #"^[a-zA-Z0-9.-]+$"#, options: .regularExpression) != nil else {
+            throw Error.invalidDomain
+        }
+
         // Validate the TLD against the IANA registered TLD list.
         // For multi-part TLDs (e.g. "co.uk"), validate the rightmost component ("uk").
         let tldTopLevel = emailParts.tld.split(separator: ".").last.map(String.init)?.lowercased()
