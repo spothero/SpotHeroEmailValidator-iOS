@@ -37,29 +37,42 @@ public class SpotHeroEmailValidator: NSObject {
     }
     
     public func autocorrectSuggestion(for emailAddress: String) throws -> String? {
-        // Attempt to validate the syntax of the email address
-        // If the email address has incorrect format or syntax, an error will be thrown
-        try self.validateSyntax(of: emailAddress)
+        // Attempt to validate the syntax of the email address.
+        // An unrecognized TLD may still be correctable, so we handle that case separately below.
+        do {
+            try self.validateSyntax(of: emailAddress)
+        } catch Error.invalidTLD {
+            // TLD is unrecognized but may be correctable — continue to suggestion logic
+        } catch {
+            throw error
+        }
 
         // Split the email address into its component parts
         let emailParts = try EmailComponents(email: emailAddress)
-        
+
         var suggestedTLD = emailParts.tld
-        
-        if !self.ianaRegisteredTLDs.contains(emailParts.tld),
+
+        if !self.ianaRegisteredTLDs.contains(emailParts.tld.lowercased()),
            let closestTLD = self.closestString(for: emailParts.tld, fromArray: self.commonTLDs, withTolerance: 0.5) {
             suggestedTLD = closestTLD
         }
-        
+
         var suggestedDomain = "\(emailParts.hostname).\(suggestedTLD)"
-        
+
         if !self.commonDomains.contains(suggestedDomain),
            let closestDomain = self.closestString(for: suggestedDomain, fromArray: self.commonDomains, withTolerance: 0.25) {
             suggestedDomain = closestDomain
         }
-        
+
+        // After correction attempts, verify the resulting TLD is IANA-registered.
+        // If not, the address is unrecoverable.
+        let finalTLDTopLevel = suggestedDomain.split(separator: ".").last.map(String.init)?.lowercased() ?? ""
+        guard self.ianaRegisteredTLDs.contains(finalTLDTopLevel) else {
+            throw Error.invalidTLD
+        }
+
         let suggestedEmailAddress = "\(emailParts.username)@\(suggestedDomain)"
-        
+
         guard suggestedEmailAddress != emailAddress else {
             return nil
         }
@@ -84,7 +97,15 @@ public class SpotHeroEmailValidator: NSObject {
         guard domain.isValidEmailDomain() else {
             throw Error.invalidDomain
         }
-        
+
+        // Validate the TLD against the IANA registered TLD list.
+        // For multi-part TLDs (e.g. "co.uk"), validate the rightmost component ("uk").
+        let tldTopLevel = emailParts.tld.split(separator: ".").last.map(String.init)?.lowercased()
+                          ?? emailParts.tld.lowercased()
+        guard self.ianaRegisteredTLDs.contains(tldTopLevel) else {
+            throw Error.invalidTLD
+        }
+
         // Ensure that the entire email forms a syntactically valid email
         guard emailAddress.isValidEmail() else {
             throw Error.invalidSyntax
@@ -124,6 +145,7 @@ public extension SpotHeroEmailValidator {
         case invalidSyntax = 1001
         case invalidUsername = 1002
         case invalidDomain = 1003
+        case invalidTLD = 1004
 
         public var errorDescription: String? {
             switch self {
@@ -135,6 +157,8 @@ public extension SpotHeroEmailValidator {
                 return "The syntax of the entered email address is invalid."
             case .invalidUsername:
                 return "The username section of the entered email address is invalid."
+            case .invalidTLD:
+                return "The top-level domain of the entered email address is not a valid IANA-registered TLD."
             }
         }
     }
